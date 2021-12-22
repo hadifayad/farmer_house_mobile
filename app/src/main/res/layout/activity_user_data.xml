@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UserData">
+
+    <EditText
+        android:id="@+id/fullnameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="الاسم الكامل"></EditText>
+
+    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+        android:id="@+id/SearchableSpinner"
+app:hintText="اختر القرية"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <EditText
+        android:id="@+id/addressView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="العنوان التفصيلي"></EditText>
+
+    <Button
+        android:id="@+id/uploadView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:text="تحميل المعلومات" />
+
+
+</LinearLayout>

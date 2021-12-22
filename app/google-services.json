@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "681282021679",
+    "project_id": "farmer-house-7deaa",
+    "storage_bucket": "farmer-house-7deaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681282021679:android:fc6c1d68fbfacd07dcd9da",
+        "android_client_info": {
+          "package_name": "com.farmerhouse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "681282021679-mi8fnah5fs3c7o060n434m7gr54l7jc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh0GvI3JeoA7Hku-dt5dOxxltNP41Exng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681282021679-mi8fnah5fs3c7o060n434m7gr54l7jc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Inbox">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/helv"
+        android:text="البريد"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newMessageButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_new_message"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        ></ImageView>
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/searchText"
+        android:background="#F0F3F4"
+        android:textDirection="rtl"
+        android:layoutDirection="rtl"
+        android:layout_margin="20dp"
+        android:layout_below="@id/newMessageButton"
+        android:hint="ابحث في الرسائل "
+        android:textAlignment="center"
+        android:fontFamily="@font/helv"
+        android:drawablePadding="4dp"
+        android:drawableEnd="@drawable/ic_search_default"></com.google.android.material.textfield.TextInputEditText>
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/messagesRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/searchText"
+    android:layoutDirection="rtl"></androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="3"
+    android:background="@color/app_green"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".LoginOrSignup">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1.6"
+
+    android:background="@color/app_brown">
+
+    <ImageView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+android:layout_alignParentRight="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginTop="70dp"
+
+
+        android:src="@drawable/ic_dot"></ImageView>
+
+    <TextView
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dot"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:fontFamily="@font/helv"
+        android:text="سجل حسابك الجديد"
+        android:textColor="@color/white"
+        android:layout_marginBottom="40dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+
+
+        ></TextView>
+
+    <ImageView
+        android:id="@+id/dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+
+        android:layout_marginBottom="40dp"
+
+        android:src="@drawable/ic_dash"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dash"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:fontFamily="@font/ir_sharp"
+        android:text="للحصول على افل نتائج من التطبيق"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+
+
+        ></TextView>
+
+</RelativeLayout>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1.4">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/profileViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_brown"
+        >
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout_in_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextAppearance="@style/MineCustomTabText"
+            app:tabIndicatorColor="@color/white" />
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="180dp"-->
+<!--        android:layout_alignParentBottom="true"-->
+
+
+<!--        android:src="@drawable/splash_model"></ImageView>-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/start"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_marginBottom="-7dp"-->
+<!--        android:background="@drawable/ic_button_register"-->
+<!--        android:fontFamily="@font/ir_sharp"-->
+<!--        android:text="اشترك من خلال رقم هاتفك"-->
+<!--        android:textAlignment="center"-->
+
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>-->
+
+</RelativeLayout>
+
+
+</LinearLayout>

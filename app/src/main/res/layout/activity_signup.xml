@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Signup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/ccp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="0dp"
+            app:ccp_textSize="16dp"
+            app:ccp_arrowSize="16dp"
+            android:backgroundTint="#9a9a9a"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_contentColor="#9a9a9a"
+            app:ccp_defaultLanguage="ARABIC"
+
+
+
+
+            tools:ignore="MissingConstraints"></com.hbb20.CountryCodePicker>
+
+
+
+        <EditText
+            android:id="@+id/phoneNumberView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ادخل رقم الهاتف"
+            android:layoutDirection="rtl"
+            android:textDirection="rtl"
+            android:inputType="phone"
+            > </EditText>
+    </LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/passwordView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="انشأ كلمة مرور "
+        android:layoutDirection="rtl"
+
+        android:textDirection="rtl"
+        android:inputType="textPassword"
+        > </EditText>
+
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="تسجيل"
+        ></Button>
+<TextView
+    android:id="@+id/progressResultView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"></TextView>
+</LinearLayout>

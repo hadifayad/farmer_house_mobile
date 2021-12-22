@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="2"
+    android:background="@color/app_brown"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".Verify">
+
+
+    <TextView
+        android:id="@+id/text1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/helv"
+
+        android:text="ادخل رقم التأكيد"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp"></TextView>
+    <ImageView
+        android:id="@+id/dash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/text1"
+
+
+        android:layout_centerHorizontal="true"
+
+
+        android:src="@drawable/ic_dash"></ImageView>
+
+
+    <EditText
+        android:id="@+id/code_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dash"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
+        android:hint="رقم التأكيد"
+
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"
+
+        ></EditText>
+
+
+
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"
+
+        android:src="@drawable/splash_model"></ImageView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/verify_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/ic_button_register"
+
+        android:fontFamily="@font/ir_sharp"
+        android:text="تأكيد"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+
+</RelativeLayout>
+
+
+
+
+
+    <!--<com.google.android.material.textfield.TextInputEditText-->
+<!--android:id="@+id/code_edit_text"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:hint="Enter Verifcation Code"-->
+<!--android:inputType="number"-->
+<!--android:maxLines="1" ></com.google.android.material.textfield.TextInputEditText>-->
+
+
+
+
+<!--<Button-->
+<!--android:id="@+id/verify_button"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_gravity="center_horizontal"-->
+
+<!--android:text="accept" />-->

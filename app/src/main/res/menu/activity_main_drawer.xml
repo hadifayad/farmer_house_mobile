@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+
+            android:id="@+id/nav_home"
+            android:title="الرئيسية" />
+
+
+
+        <item
+            android:id="@+id/search"
+
+            android:title="أكتشف" />
+        <item
+            android:id="@+id/profile"
+
+            android:title="حسابك" />
+        <item
+            android:id="@+id/nav_activities"
+
+            android:title="متابعة الانشطة" />
+        <item
+            android:id="@+id/nav_specs"
+
+            android:title="خصائص" />
+    </group>
+
+
+</menu>

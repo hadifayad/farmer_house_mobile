@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:layout_marginTop="5dp"
+        android:background="#FFFFFF">
+
+        <!--        <androidx.appcompat.widget.Toolbar-->
+        <!--            app:titleTextColor="@color/white"-->
+        <!--            android:id="@+id/toolbar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="?attr/actionBarSize"-->
+        <!--            android:background="@color/black"-->
+        <!--          />-->
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"></androidx.appcompat.widget.Toolbar>
+
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/drawer_open"
+                android:paddingStart="30dp"
+                android:clickable="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_drawer_open" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:src="@drawable/logo_header_wide"-->
+<!--                android:layout_gravity="center_vertical" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/helv"
+                android:paddingEnd="5dp"
+                android:text="يوزرسيف"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+
+                ></TextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_png" />
+
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"></View>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inbox"
+android:paddingEnd="30dp"
+                android:src="@drawable/ic_inbox_icon"
+                android:layout_gravity="center_vertical" />
+
+
+
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/fab"-->
+
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:layout_width="70dp"-->
+    <!--        android:visibility="gone"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:src="@drawable/ic_add" />-->
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
