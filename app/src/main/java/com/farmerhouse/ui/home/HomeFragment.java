@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
                     public void onResponse(com.farmerhouse.models.New[] response) {
                         Log.d("TAG", "onResponse: "+response[0].getDate());
                         dialog.dismiss();
-                        NewsRecyclerViewAdapter newsRecyclerViewAdapter = new NewsRecyclerViewAdapter(Arrays.asList(response));
+                        NewsRecyclerViewAdapter newsRecyclerViewAdapter = new NewsRecyclerViewAdapter(Arrays.asList(response),HomeFragment.this);
                         newsRecycleView.setAdapter(newsRecyclerViewAdapter);
                     }
                 },
