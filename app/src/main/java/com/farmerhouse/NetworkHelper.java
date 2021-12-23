@@ -31,6 +31,7 @@ public class NetworkHelper {
     public static final String ACTION_GET_USER_MESSAGES = "mobile/get-user-messages";
     public static final String ACTION_GET_NEWS ="mobile/get-news";
     public static final String ACTION_GET_CHILDREN ="mobile/get-children";
+    public static final String ACTION_GET_TOP_PARENT ="mobile/get-top-parent";
 
 
     public static String getUrl(String action) {

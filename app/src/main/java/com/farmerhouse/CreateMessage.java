@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.farmerhouse.Adapters.ChoicesRecyclerView;
 import com.farmerhouse.Adapters.DataRecyclerViewAdapter;
 import com.farmerhouse.Adapters.MessagesRecyclerViewAdapter;
+import com.farmerhouse.Adapters.TopParentRecyclerView;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.Message;
 
@@ -32,6 +33,7 @@ public class CreateMessage extends AppCompatActivity {
 
     RelativeLayout aked,daleel;
    public  RecyclerView dataRecyclerView;
+   RecyclerView topParentRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class CreateMessage extends AppCompatActivity {
 
         aked = findViewById(R.id.aked);
         daleel =findViewById(R.id.daleel);
+        topParentRecyclerView =findViewById(R.id.topParentRecyclerView);
 
 
 
@@ -56,7 +59,47 @@ public class CreateMessage extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(CreateMessage.this);
         dataRecyclerView.setLayoutManager(layoutManager);
+        LinearLayoutManager layoutManagerw = new LinearLayoutManager(CreateMessage.this,LinearLayoutManager.HORIZONTAL,false);
+
+        topParentRecyclerView.setLayoutManager(layoutManagerw);
+
+        //////top parent
+
+
+        final ProgressDialog dialog = ProgressDialog.show(CreateMessage.this, "",
+                "Please wait...", true);
+
+        // volley
+        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_TOP_PARENT);
+        Log.d("url", url.toString());
+        Map<String, String> params = new HashMap();
+//        params.put("parentId", data.getId());
+        GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, com.farmerhouse.models.Data[].class, null, params,
+                new Response.Listener<com.farmerhouse.models.Data[]>() {
+                    @Override
+                    public void onResponse(com.farmerhouse.models.Data[] response) {
+//                                    Log.d("TAG", "onResponse: " + response[0].getDate());
+                        dialog.dismiss();
+                        TopParentRecyclerView topParentRecyclerViewAdapter = new TopParentRecyclerView(Arrays.asList(response));
+                        topParentRecyclerView.setAdapter(topParentRecyclerViewAdapter);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        dialog.dismiss();
+                        NetworkHelper.handleError(error);
+                    }
+                });
+
+        VolleySingleton.getInstance(CreateMessage.this).addToRequestQueue(myGsonRequest);
+
+
+        /////
         List<Data> AllData = new ArrayList<>();
+
+
+
 
 
         aked.setOnClickListener(new View.OnClickListener() {
