@@ -115,13 +115,14 @@
                 android:layout_marginRight="10dp"
 
                 android:layout_alignParentRight="true"></ImageView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="دليل المزارع"
+                android:layout_centerInParent="true"
                 android:fontFamily="@font/helv"
-                android:textColor="@color/black"
-                android:layout_centerInParent="true"></TextView>
+                android:text="دليل المزارع"
+                android:textColor="@color/black"></TextView>
 
 
 
