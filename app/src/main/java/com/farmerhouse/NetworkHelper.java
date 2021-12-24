@@ -24,12 +24,15 @@ public class NetworkHelper {
 //    public static final String SERVER_IP = "192.168.43.196/room_web";
 //    public static final String SERVER_IP = "localhost/farmer_house";
     public static final String SERVER_IP = "192.168.10.103/farmer_house";
-
+    public static final String IMAGES_PATH_POST_PICTURES = "http://" + SERVER_IP + "/web/newsUploads/";
 
     public static final String ACTION_SIGNUP_USER = "mobile/signup";
     public static final String ACTION_GET_VILLAGES = "mobile/get-villages";
     public static final String ACTION_GET_USER_MESSAGES = "mobile/get-user-messages";
     public static final String ACTION_GET_NEWS ="mobile/get-news";
+    public static final String ACTION_GET_CHILDREN ="mobile/get-children";
+    public static final String ACTION_GET_TOP_PARENT ="mobile/get-top-parent";
+
 
 
     public static String getUrl(String action) {
