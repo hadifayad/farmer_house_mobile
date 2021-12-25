@@ -23,7 +23,8 @@ public class NetworkHelper {
 //    public static final String SERVER_IP = "192.168.0.158/room_web";
 //    public static final String SERVER_IP = "192.168.43.196/room_web";
 //    public static final String SERVER_IP = "localhost/farmer_house";
-    public static final String SERVER_IP = "192.168.10.103/farmer_house";
+//    public static final String SERVER_IP = "192.168.10.103/farmer_house";
+    public static final String SERVER_IP = "192.168.1.9/farmer_house";
     public static final String IMAGES_PATH_POST_PICTURES = "http://" + SERVER_IP + "/web/newsUploads/";
 
     public static final String ACTION_SIGNUP_USER = "mobile/signup";

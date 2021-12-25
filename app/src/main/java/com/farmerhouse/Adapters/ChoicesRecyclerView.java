@@ -23,6 +23,12 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
 
     List<Data> Choices;
     Context context;
+    boolean isLastPosition = false;
+    TextChoosen mCallback;
+
+    public interface TextChoosen {
+        public void sendTextChoosen(String id, String text);
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -39,10 +45,11 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
     }
 
 
-    public ChoicesRecyclerView(List<Data> Choices) {
+    public ChoicesRecyclerView(List<Data> Choices, DataRecyclerViewAdapter dataRecyclerViewAdapter, boolean isLastPosition) {
 
-
+        mCallback = (TextChoosen) dataRecyclerViewAdapter;
         this.Choices = Choices;
+        this.isLastPosition = isLastPosition;
     }
 
 
@@ -61,17 +68,18 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
 
         holder.title.setText(choice.getTitle());
 
-        holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (isLastPosition) {
+            holder.layout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    mCallback.sendTextChoosen(choice.getId(), choice.getTitle());
 
 //                DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(choice);
 //                CreateMessage.choicesRecyclerView.setAdapter(dataRecyclerViewAdapter);
-            }
-        });
-
-
-
+                }
+            });
+        }
 
 
     }

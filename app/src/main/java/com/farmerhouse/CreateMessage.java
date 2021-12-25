@@ -21,6 +21,7 @@ import com.farmerhouse.Adapters.DataRecyclerViewAdapter;
 import com.farmerhouse.Adapters.MessagesRecyclerViewAdapter;
 import com.farmerhouse.Adapters.TopParentRecyclerView;
 import com.farmerhouse.models.Data;
+import com.farmerhouse.models.DataMessages;
 import com.farmerhouse.models.Message;
 
 import java.util.ArrayList;
@@ -31,37 +32,36 @@ import java.util.Map;
 
 public class CreateMessage extends AppCompatActivity {
 
-    RelativeLayout aked,daleel;
-   public  RecyclerView dataRecyclerView;
-   RecyclerView topParentRecyclerView;
+    //    RelativeLayout aked, daleel;
+    public RecyclerView dataRecyclerView;
+//    RecyclerView topParentRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_message);
-        Data akedData = new Data();
-              Data  daleelData=new Data();
-        akedData.setId("2");
-        daleelData.setId("1");
+//        Data akedData = new Data();
+//        Data daleelData = new Data();
+//        akedData.setId("2");
+//        daleelData.setId("1");
 
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(Color.parseColor("#ffffff"));
 
-        aked = findViewById(R.id.aked);
-        daleel =findViewById(R.id.daleel);
-        topParentRecyclerView =findViewById(R.id.topParentRecyclerView);
+//        aked = findViewById(R.id.aked);
+//        daleel = findViewById(R.id.daleel);
+//        topParentRecyclerView = findViewById(R.id.topParentRecyclerView);
 
 
-
-        dataRecyclerView =findViewById(R.id.dataRecyclerView);
+        dataRecyclerView = findViewById(R.id.dataRecyclerView);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(CreateMessage.this);
         dataRecyclerView.setLayoutManager(layoutManager);
-        LinearLayoutManager layoutManagerw = new LinearLayoutManager(CreateMessage.this,LinearLayoutManager.HORIZONTAL,false);
+//        LinearLayoutManager layoutManagerw = new LinearLayoutManager(CreateMessage.this, LinearLayoutManager.HORIZONTAL, false);
 
-        topParentRecyclerView.setLayoutManager(layoutManagerw);
+//        topParentRecyclerView.setLayoutManager(layoutManagerw);
 
         //////top parent
 
@@ -74,14 +74,23 @@ public class CreateMessage extends AppCompatActivity {
         Log.d("url", url.toString());
         Map<String, String> params = new HashMap();
 //        params.put("parentId", data.getId());
-        GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, com.farmerhouse.models.Data[].class, null, params,
+        GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, Data[].class, null, params,
                 new Response.Listener<com.farmerhouse.models.Data[]>() {
                     @Override
-                    public void onResponse(com.farmerhouse.models.Data[] response) {
+                    public void onResponse(Data[] response) {
 //                                    Log.d("TAG", "onResponse: " + response[0].getDate());
                         dialog.dismiss();
-                        TopParentRecyclerView topParentRecyclerViewAdapter = new TopParentRecyclerView(Arrays.asList(response));
-                        topParentRecyclerView.setAdapter(topParentRecyclerViewAdapter);
+
+                        DataMessages dataMessage = new DataMessages();
+                        dataMessage.setData(Arrays.asList(response));
+
+                        List<DataMessages> dataMessages = new ArrayList<>();
+                        dataMessages.add(dataMessage);
+
+                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(dataMessages);
+                        dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
+//                        TopParentRecyclerView topParentRecyclerViewAdapter = new TopParentRecyclerView(Arrays.asList(response));
+//                        topParentRecyclerView.setAdapter(topParentRecyclerViewAdapter);
                     }
                 },
                 new Response.ErrorListener() {
@@ -96,38 +105,35 @@ public class CreateMessage extends AppCompatActivity {
 
 
         /////
-        List<Data> AllData = new ArrayList<>();
+//        List<Data> AllData = new ArrayList<>();
 
 
+//        aked.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Data akedData = new Data();
+//                Data daleelData = new Data();
+//                akedData.setId("2");
+//                daleelData.setId("1");
+//                AllData.add(akedData);
+//                DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(AllData);
+//                dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
+//            }
+//        });
 
 
-
-        aked.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Data akedData = new Data();
-                Data  daleelData=new Data();
-                akedData.setId("2");
-                daleelData.setId("1");
-                AllData.add(akedData);
-                DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(AllData);
-                dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
-            }
-        });
-
-
-        daleel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Data akedData = new Data();
-                Data  daleelData=new Data();
-                akedData.setId("2");
-                daleelData.setId("1");
-                AllData.add(daleelData);
-                DataRecyclerViewAdapter dataRecyclerViewAdapterr = new DataRecyclerViewAdapter(AllData);
-                dataRecyclerView.setAdapter(dataRecyclerViewAdapterr);
-
-            }
-        });
+//        daleel.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Data akedData = new Data();
+//                Data daleelData = new Data();
+//                akedData.setId("2");
+//                daleelData.setId("1");
+//                AllData.add(daleelData);
+//                DataRecyclerViewAdapter dataRecyclerViewAdapterr = new DataRecyclerViewAdapter(AllData);
+//                dataRecyclerView.setAdapter(dataRecyclerViewAdapterr);
+//
+//            }
+//        });
     }
 }
