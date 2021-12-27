@@ -39,7 +39,7 @@
                 android:layout_marginRight="10dp"
                 android:text="11:23 AM"
                 android:textColor="#a8a8a8"
-                android:id="@+id/messageDate"
+                android:id="@+id/chatDate"
 
                 android:layout_gravity="left"
                 android:textSize="12dp"

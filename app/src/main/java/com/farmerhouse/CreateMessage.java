@@ -8,21 +8,15 @@ import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.RelativeLayout;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.farmerhouse.Adapters.ChoicesRecyclerView;
 import com.farmerhouse.Adapters.DataRecyclerViewAdapter;
-import com.farmerhouse.Adapters.MessagesRecyclerViewAdapter;
-import com.farmerhouse.Adapters.TopParentRecyclerView;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.DataMessages;
-import com.farmerhouse.models.Message;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,6 +38,13 @@ public class CreateMessage extends AppCompatActivity {
 //        Data daleelData = new Data();
 //        akedData.setId("2");
 //        daleelData.setId("1");
+
+
+
+        String   chatId = getIntent().getStringExtra("chatId");
+
+
+//            Log.d("TAG", "onCreate: phone and pass" +phoneNumberString +" "+passwordString);
 
 
         Window window = getWindow();
@@ -87,7 +88,7 @@ public class CreateMessage extends AppCompatActivity {
                         List<DataMessages> dataMessages = new ArrayList<>();
                         dataMessages.add(dataMessage);
 
-                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(dataMessages);
+                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(dataMessages,chatId);
                         dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
 //                        TopParentRecyclerView topParentRecyclerViewAdapter = new TopParentRecyclerView(Arrays.asList(response));
 //                        topParentRecyclerView.setAdapter(topParentRecyclerViewAdapter);

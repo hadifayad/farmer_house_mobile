@@ -34,6 +34,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 
 
     List<DataMessages> dataMessages;
+    String chatId;
 
     Context context;
 
@@ -62,10 +63,11 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 //                "Please wait...", true);
 
         // volley
-        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHILDREN);
+        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHILDREN_AND_SAVE_MESSAGE);
         Log.d("url", url.toString());
         Map<String, String> params = new HashMap();
         params.put("parentId", id);
+        params.put("chatId", chatId);
         GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, com.farmerhouse.models.Data[].class, null, params,
                 new Response.Listener<com.farmerhouse.models.Data[]>() {
                     @Override
@@ -105,8 +107,9 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
     }
 
 
-    public DataRecyclerViewAdapter(List<DataMessages> dataMessages) {
+    public DataRecyclerViewAdapter(List<DataMessages> dataMessages, String chatId) {
         this.dataMessages = dataMessages;
+        this.chatId = chatId;
     }
 
 

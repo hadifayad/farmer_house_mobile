@@ -2,7 +2,7 @@ package com.farmerhouse.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Message {
+public class Chat {
     @SerializedName("id")
     String id;
 
@@ -25,25 +25,14 @@ public class Message {
         return date;
     }
 
-    @SerializedName("chatId")
-    String chatId;
+    @SerializedName("userId")
+    String userId;
 
-    public void setChatId(String userId) {
-        this.chatId = chatId;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getChatId() {
-        return chatId;
-    }
-
-    @SerializedName("dataId")
-    String dataId;
-
-    public String getDataId() {
-        return dataId;
-    }
-
-    public void setDataId(String dataId) {
-        this.dataId = dataId;
+    public String getUserId() {
+        return userId;
     }
 }

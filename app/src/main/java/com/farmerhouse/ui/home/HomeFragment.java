@@ -6,28 +6,22 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.farmerhouse.Adapters.MessagesRecyclerViewAdapter;
 import com.farmerhouse.Adapters.NewsRecyclerViewAdapter;
 import com.farmerhouse.GsonRequest;
-import com.farmerhouse.Inbox;
 import com.farmerhouse.NetworkHelper;
 import com.farmerhouse.R;
 import com.farmerhouse.VolleySingleton;
 import com.farmerhouse.databinding.FragmentHomeBinding;
-import com.farmerhouse.models.Message;
 import com.farmerhouse.models.New;
 
 import java.util.Arrays;

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.farmerhouse.R;
+import com.farmerhouse.models.Chat;
 import com.farmerhouse.models.Message;
 
 import java.util.List;
@@ -20,45 +21,45 @@ import java.util.List;
 
 
 
-    public class MessagesRecyclerViewAdapter extends RecyclerView.Adapter<MessagesRecyclerViewAdapter.MyViewHolder> {
+    public class ChatsRecyclerViewAdapter extends RecyclerView.Adapter<ChatsRecyclerViewAdapter.MyViewHolder> {
 
-        List<Message> Messages;
+        List<Chat> Chats;
         Context context;
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            public TextView messageDate;
+            public TextView chatDate;
             public LinearLayout layout;
 
             public MyViewHolder(View view) {
                 super(view);
-                messageDate = view.findViewById(R.id.messageDate);
+                chatDate = view.findViewById(R.id.chatDate);
 
 //                layout = view.findViewById(R.id.layout);
             }
         }
 
 
-        public MessagesRecyclerViewAdapter(List<Message> Messages) {
+        public ChatsRecyclerViewAdapter(List<Chat> Chats) {
 
 
-            this.Messages = Messages;
+            this.Chats = Chats;
         }
 
 
         @Override
-        public MessagesRecyclerViewAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ChatsRecyclerViewAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.message_item, parent, false);
+                    .inflate(R.layout.chat_item, parent, false);
             context = parent.getContext();
-            return new MessagesRecyclerViewAdapter.MyViewHolder(itemView);
+            return new ChatsRecyclerViewAdapter.MyViewHolder(itemView);
         }
 
 
         @Override
-        public void onBindViewHolder(final MessagesRecyclerViewAdapter.MyViewHolder holder, final int position) {
-            final Message message = Messages.get(position);
+        public void onBindViewHolder(final ChatsRecyclerViewAdapter.MyViewHolder holder, final int position) {
+            final Chat chat = Chats.get(position);
 
-            holder.messageDate.setText(message.getDate());
+            holder.chatDate.setText(chat.getDate());
 
 
 
@@ -67,7 +68,7 @@ import java.util.List;
 
         @Override
         public int getItemCount() {
-            return Messages.size();
+            return Chats.size();
         }
 
 
