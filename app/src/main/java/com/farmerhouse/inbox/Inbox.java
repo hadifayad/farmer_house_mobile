@@ -1,4 +1,4 @@
-package com.farmerhouse;
+package com.farmerhouse.inbox;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,8 +8,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
@@ -26,14 +24,15 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.farmerhouse.Adapters.ChatsRecyclerViewAdapter;
+import com.farmerhouse.GsonRequest;
+import com.farmerhouse.NetworkHelper;
+import com.farmerhouse.R;
+import com.farmerhouse.VolleySingleton;
 import com.farmerhouse.models.Chat;
-import com.farmerhouse.models.Message;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 
 public class Inbox extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.farmerhouse;
+package com.farmerhouse.inbox;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,6 +15,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.farmerhouse.Adapters.DataRecyclerViewAdapter;
+import com.farmerhouse.GsonRequest;
+import com.farmerhouse.NetworkHelper;
+import com.farmerhouse.R;
+import com.farmerhouse.VolleySingleton;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.DataMessages;
 

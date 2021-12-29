@@ -13,14 +13,17 @@
         android:theme="@style/Theme.FarmerHouse"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".inbox.ViewMessageActivity"
+            android:exported="false" />
+        <activity
             android:name=".ViewMessage"
             android:exported="false" />
         <activity
-            android:name=".CreateMessage"
+            android:name=".inbox.CreateMessage"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Inbox"
+            android:name=".inbox.Inbox"
             android:exported="false"
             android:theme="@style/Theme.FarmerHouse.NoActionBar" />
         <activity

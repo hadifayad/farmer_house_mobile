@@ -1,6 +1,5 @@
 package com.farmerhouse.Adapters;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,14 +14,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.farmerhouse.CreateMessage;
 import com.farmerhouse.GsonRequest;
 import com.farmerhouse.NetworkHelper;
 import com.farmerhouse.R;
 import com.farmerhouse.VolleySingleton;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.DataMessages;
-import com.farmerhouse.models.Message;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -138,7 +134,12 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         if (position == getItemCount() - 1) {
             isLastPosition = true;
         }
-        ChoicesRecyclerView choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this,isLastPosition);
+        ChoicesRecyclerView choicesRecyclerViewAdapter;
+        if(!chatId.equals("0")){
+            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this,true);
+        }else{
+            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this,isLastPosition);
+        }
         holder.choicesRecyclerView.setAdapter(choicesRecyclerViewAdapter);
 
         if (title != null && !title.equals("")) {

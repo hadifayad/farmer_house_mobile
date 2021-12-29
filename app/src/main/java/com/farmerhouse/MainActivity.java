@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.farmerhouse.inbox.Inbox;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         inbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,Inbox.class);
+                Intent i = new Intent(MainActivity.this, Inbox.class);
                 startActivity(i);
             }
         });
