@@ -6,6 +6,8 @@ import java.util.List;
 
 public class DataMessages {
 
+    boolean isLastChild;
+
     @SerializedName("id")
     String id;
     @SerializedName("text")
@@ -36,6 +38,7 @@ public class DataMessages {
     public void setData(List<Data> data) {
         this.data = data;
     }
+
     @SerializedName("image")
     String image;
 
@@ -69,8 +72,11 @@ public class DataMessages {
         this.children = children;
     }
 
+    public boolean isLastChild() {
+        return isLastChild;
+    }
 
-
-
-
+    public void setLastChild(boolean lastChild) {
+        isLastChild = lastChild;
+    }
 }

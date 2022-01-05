@@ -20,7 +20,7 @@ public class Data {
 
 
     @SerializedName("children")
-    String children;
+    String children = "";
 
     public String getChildren() {
         return children;

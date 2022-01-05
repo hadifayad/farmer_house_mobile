@@ -105,11 +105,11 @@
                     ></ImageView>
 
                 <TextView
+                    android:id="@+id/dataText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                  android:layout_centerHorizontal="true"
-                    android:id="@+id/dataText"
                     android:layout_below="@id/dataImage"
+                    android:layout_centerHorizontal="true"
                     android:fontFamily="@font/helv"
                     android:text="الرجاء اختيار واحدة من الخدمات التالية"
                     android:textAlignment="center"
