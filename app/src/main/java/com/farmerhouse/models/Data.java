@@ -18,6 +18,18 @@ public class Data {
     @SerializedName("title")
     String title;
 
+
+    @SerializedName("children")
+    String children;
+
+    public String getChildren() {
+        return children;
+    }
+
+    public void setChildren(String children) {
+        this.children = children;
+    }
+
     public String getTitle() {
         return title;
     }

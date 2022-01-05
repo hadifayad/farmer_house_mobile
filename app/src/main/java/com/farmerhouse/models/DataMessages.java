@@ -36,4 +36,41 @@ public class DataMessages {
     public void setData(List<Data> data) {
         this.data = data;
     }
+    @SerializedName("image")
+    String image;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    @SerializedName("description")
+    String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @SerializedName("children")
+    String children;
+
+    public String getChildren() {
+        return children;
+    }
+
+    public void setChildren(String children) {
+        this.children = children;
+    }
+
+
+
+
+
 }

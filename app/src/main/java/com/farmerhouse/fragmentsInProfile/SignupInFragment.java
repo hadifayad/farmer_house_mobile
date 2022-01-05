@@ -40,6 +40,7 @@ import java.util.concurrent.TimeUnit;
 public class SignupInFragment extends Fragment {
     EditText phoneNumberView , passwordView;
     Button signupButton;
+    CountryCodePicker ccp;
     FirebaseAuth auth;
     TextView processText;
     private CountryCodePicker countryCodePicker;
@@ -90,7 +91,7 @@ public class SignupInFragment extends Fragment {
                 String passwordString = passwordView.getText().toString();
 
                 String countryCode = countryCodePicker.getSelectedCountryCode();
-                String fullPhoneNumber = "+" + countryCode + phoneNumberString;
+                String fullPhoneNumber =  countryCode + phoneNumberString;
                 if(fullPhoneNumber!= null && fullPhoneNumber!="" && !fullPhoneNumber.equalsIgnoreCase("") && passwordString!= null && passwordString!="" && !passwordString.equalsIgnoreCase("")){
 
                     dialog = ProgressDialog.show(getContext(), "",
@@ -150,9 +151,11 @@ public class SignupInFragment extends Fragment {
 
                         String phoneNumberString = phoneNumberView.getText().toString();
                         String passwordString = passwordView.getText().toString();
+                        String countryCode = countryCodePicker.getSelectedCountryCode();
+                        String fullPhoneNumber =  countryCode + phoneNumberString;
 
 
-                        otpIntent.putExtra("phone", phoneNumberString);
+                        otpIntent.putExtra("phone", fullPhoneNumber);
                         otpIntent.putExtra("password", passwordString);
 
 

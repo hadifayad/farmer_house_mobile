@@ -14,15 +14,15 @@ public class Chat {
         this.id = id;
     }
 
-    @SerializedName("date")
-    String date;
+    @SerializedName("created_at")
+    String created_at;
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCreated_at(String date) {
+        this.created_at = created_at;
     }
 
-    public String getDate() {
-        return date;
+    public String getCreated_at() {
+        return created_at;
     }
 
     @SerializedName("userId")
@@ -34,5 +34,16 @@ public class Chat {
 
     public String getUserId() {
         return userId;
+    }
+
+    @SerializedName("title")
+    String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

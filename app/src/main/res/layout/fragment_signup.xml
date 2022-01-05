@@ -6,34 +6,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-
-
-
-
-
-
-
-
         <com.hbb20.CountryCodePicker
             android:id="@+id/ccp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="0dp"
-            app:ccp_textSize="16dp"
-            app:ccp_arrowSize="16dp"
-            app:ccp_clickable="false"
-            app:ccpDialog_textColor="@color/black"
-android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="10dp"
             android:backgroundTint="#9a9a9a"
+            app:ccpDialog_textColor="@color/black"
+            app:ccp_arrowSize="16dp"
             app:ccp_autoDetectCountry="true"
+            app:ccp_clickable="false"
             app:ccp_contentColor="@color/black"
             app:ccp_defaultLanguage="ARABIC"
-
-
+            app:ccp_textSize="16dp"
 
 
             tools:ignore="MissingConstraints"></com.hbb20.CountryCodePicker>

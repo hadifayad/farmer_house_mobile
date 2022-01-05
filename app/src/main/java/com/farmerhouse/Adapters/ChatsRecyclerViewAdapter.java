@@ -2,6 +2,7 @@ package com.farmerhouse.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,12 +25,13 @@ public class ChatsRecyclerViewAdapter extends RecyclerView.Adapter<ChatsRecycler
     Context context;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView chatDate;
+        public TextView chatDate,title;
         public LinearLayout layout;
 
         public MyViewHolder(View view) {
             super(view);
             chatDate = view.findViewById(R.id.chatDate);
+            title = view.findViewById(R.id.title);
 
 //                layout = view.findViewById(R.id.layout);
         }
@@ -56,7 +58,12 @@ public class ChatsRecyclerViewAdapter extends RecyclerView.Adapter<ChatsRecycler
     public void onBindViewHolder(final ChatsRecyclerViewAdapter.MyViewHolder holder, final int position) {
         final Chat chat = Chats.get(position);
 
-        holder.chatDate.setText(chat.getDate());
+        holder.chatDate.setText(chat.getCreated_at());
+//        Log.d("TAG", "onBindViewHolder: "+chat.getTitle());
+//        Log.d("TAG", "onBindViewHolder: "+chat.getCreated_at());
+
+
+            holder.title.setText(chat.getTitle());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

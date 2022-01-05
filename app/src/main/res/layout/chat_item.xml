@@ -61,7 +61,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+android:id="@+id/title"
                 android:text="متابعة لما تم تقديمه من معلومات"
                 android:textColor="#993921"
                 android:textSize="14dp"

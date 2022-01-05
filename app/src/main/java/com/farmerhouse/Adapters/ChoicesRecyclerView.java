@@ -24,7 +24,7 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
     TextChoosen mCallback;
 
     public interface TextChoosen {
-        public void sendTextChoosen(String id, String text);
+        public void sendTextChoosen(Data s);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -70,7 +70,7 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
                 @Override
                 public void onClick(View v) {
 
-                    mCallback.sendTextChoosen(choice.getId(), choice.getTitle());
+                    mCallback.sendTextChoosen(choice);
 
 //                DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(choice);
 //                CreateMessage.choicesRecyclerView.setAdapter(dataRecyclerViewAdapter);

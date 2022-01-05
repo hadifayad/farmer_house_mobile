@@ -5,15 +5,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.farmerhouse.GsonRequest;
 import com.farmerhouse.NetworkHelper;
 import com.farmerhouse.R;
@@ -32,21 +37,29 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
     List<DataMessages> dataMessages;
     String chatId;
 
+
     Context context;
 
     @Override
-    public void sendTextChoosen(String id, String text) {
+    public void sendTextChoosen(Data s) {
         int lastPosition = getItemCount() - 1;
+
+
+
         if (lastPosition >= 0) {
             String title = this.dataMessages.get(lastPosition).getText();
             if (title != null && !title.equals("")) {
 
             } else {
-                this.dataMessages.get(lastPosition).setId(id);
-                this.dataMessages.get(lastPosition).setText(text);
+                Log.d("TAG", "sendTextChoosen: else");
+                this.dataMessages.get(lastPosition).setId(s.getId());
+                this.dataMessages.get(lastPosition).setText(s.getTitle());
+//                this.dataMessages.get(lastPosition).setImage(s.getImage());
+//                this.dataMessages.get(lastPosition).setDescription(s.getText());
+//                this.dataMessages.get(lastPosition).setChildren(s.getChildren());
                 notifyItemChanged(lastPosition);
 
-                getNextChoices(lastPosition, id);
+                getNextChoices(lastPosition, s.getId());
             }
         }
 //        notifyDataSetChanged();
@@ -71,6 +84,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 //                        dialog.dismiss();
                         DataMessages dataMessage = new DataMessages();
                         dataMessage.setData(Arrays.asList(response));
+                        Log.d("TAG", "onResponse: respose "+response[0].getChildren());
                         dataMessages.add(dataMessage);
                         notifyDataSetChanged();
                     }
@@ -92,6 +106,9 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         public TextView text;
         public LinearLayout layoutChoosen;
         public RecyclerView choicesRecyclerView;
+        RelativeLayout header;
+        ImageView dataImage;
+        TextView dataText;
 
         public MyViewHolder(View view) {
             super(view);
@@ -99,6 +116,9 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             choicesRecyclerView = view.findViewById(R.id.choicesRecyclerView);
 
             layoutChoosen = view.findViewById(R.id.layoutChoosen);
+            header  = view.findViewById(R.id.thirdlayout);
+            dataText = view.findViewById(R.id.dataText);
+            dataImage = view.findViewById(R.id.dataImage);
         }
     }
 
@@ -127,12 +147,16 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         String title = dataMessage.getText();
 
 
+
+
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         holder.choicesRecyclerView.setLayoutManager(layoutManager);
+
 
         boolean isLastPosition = false;
         if (position == getItemCount() - 1) {
             isLastPosition = true;
+
         }
         ChoicesRecyclerView choicesRecyclerViewAdapter;
         if(!chatId.equals("0")){
@@ -148,6 +172,22 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         } else {
             holder.layoutChoosen.setVisibility(View.GONE);
         }
+
+        /////honaaaaaaaaaa
+//if(){
+//    holder.dataText.setText();
+//
+//holder.header.setBackground(ContextCompat.getDrawable(context, R.drawable.data_chat));
+//    Log.d("picccc",url);
+//    Glide.with(getContext()).load(url)
+//            .centerCrop() .diskCacheStrategy(DiskCacheStrategy.DATA).into(holder.dataImage);
+//
+//
+//}
+
+
+
+
 
 //        final ProgressDialog dialog = ProgressDialog.show(context, "",
 //                "Please wait...", true);

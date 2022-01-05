@@ -1,37 +1,144 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UserData">
+<RelativeLayout android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:background="@color/app_green"
+xmlns:android="http://schemas.android.com/apk/res/android"
+tools:context=".UserData">
+
+
 
     <EditText
         android:id="@+id/fullnameView"
-        android:layout_width="match_parent"
+
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="الاسم الكامل"></EditText>
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
+        android:hint="الاسم الكامل"
+        android:textAlignment="center"
+
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"></EditText>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/yourcardid"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:elevation="1dp"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:innerRadius="0dp"-->
+<!--        -->
+<!--        android:shape="ring"-->
+<!--        android:thicknessRatio="1.9"-->
+<!--        >-->
+<!--        <Spinner-->
+<!--            android:id="@+id/spinner_services"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:textAlignment="center"-->
+<!--            f-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            />-->
+<!--    </androidx.cardview.widget.CardView>-->
+
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/SearchableSpinner"
-app:hintText="اختر القرية"
-        android:layout_width="match_parent"
+        app:hintText="اختر القرية"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
+        android:background="@drawable/ic_button"
+        android:layout_below="@id/fullnameView"
+        android:fontFamily="@font/ir_sharp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"
         />
     <EditText
+        android:id="@+id/secondPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SearchableSpinner"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
+        android:hint="رقم هاتف احتياطي"
+        android:textAlignment="center"
+
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"></EditText>
+
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondPhone"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
+        android:hint="البريد الالكتروني"
+        android:textAlignment="center"
+
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"></EditText>
+
+
+    <EditText
         android:id="@+id/addressView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="العنوان التفصيلي"></EditText>
+        android:layout_below="@+id/email"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
+        android:hint="العنوان التفصيلي"
+        android:textAlignment="center"
 
-    <Button
+        android:textColor="@color/black"
+        android:textColorHint="#808080"
+        android:textSize="17dp"></EditText>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/uploadView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/passwordView"
+        android:layout_centerInParent="true"
 
-        android:text="تحميل المعلومات" />
+        android:layout_marginBottom="-7dp"
+        android:background="@drawable/ic_button_register"
+        android:fontFamily="@font/ir_sharp"
+        android:text="تحميل المعلومات"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
 
 
-</LinearLayout>
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_alignParentBottom="true"
+
+
+    android:src="@drawable/splash_model"></ImageView>
+</RelativeLayout>

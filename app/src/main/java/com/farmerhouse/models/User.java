@@ -31,7 +31,41 @@ public class User {
     String address;
 
 
+    @SerializedName("phone")
+    String phone;
 
+
+
+    @SerializedName("token")
+    String token;
+
+
+    @SerializedName("profile_picture")
+    String profile_picture;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getProfile_picture() {
+        return profile_picture;
+    }
+
+    public void setProfile_picture(String profile_picture) {
+        this.profile_picture = profile_picture;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 
     public String getId() {
         return id;
