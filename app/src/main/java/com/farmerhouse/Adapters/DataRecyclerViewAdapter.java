@@ -84,7 +84,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 //                        dialog.dismiss();
                         DataMessages dataMessage = new DataMessages();
                         dataMessage.setData(Arrays.asList(response));
-                        Log.d("TAG", "onResponse: respose "+response[0].getChildren());
+//                        Log.d("TAG", "onResponse: respose "+response[0].getChildren());
                         dataMessages.add(dataMessage);
                         notifyDataSetChanged();
                     }

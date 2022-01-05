@@ -64,6 +64,30 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
         final Data choice = Choices.get(position);
 
         holder.title.setText(choice.getTitle());
+        if ((position % 8) == 7) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.deep_green_shape));
+
+
+        } else if ((position % 8) == 0) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.light_blue_shape));
+        } else if ((position % 8) == 1) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.violet_shape));
+        } else if ((position % 8) == 2) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.light_green_shape));
+        }
+     else if ((position % 8) == 3) {
+        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.turq_shape));
+    }
+ else if ((position % 8) == 4) {
+        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.green_shape));
+        }
+        else if ((position % 8) == 5) {
+        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.purpple_shape));
+
+        }
+
+
+
 
         if (isLastPosition) {
             holder.layout.setOnClickListener(new View.OnClickListener() {
