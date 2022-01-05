@@ -59,7 +59,7 @@ public class ViewMessageActivity extends AppCompatActivity {
                         dialog.dismiss();
 
 
-                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(Arrays.asList(response), "0");
+                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(Arrays.asList(response), chatId);
                         dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
                     }
                 },

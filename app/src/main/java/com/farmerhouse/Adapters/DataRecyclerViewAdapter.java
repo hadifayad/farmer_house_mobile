@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -45,7 +46,6 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         int lastPosition = getItemCount() - 1;
 
 
-
         if (lastPosition >= 0) {
             String title = this.dataMessages.get(lastPosition).getText();
             if (title != null && !title.equals("")) {
@@ -54,12 +54,16 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
                 Log.d("TAG", "sendTextChoosen: else");
                 this.dataMessages.get(lastPosition).setId(s.getId());
                 this.dataMessages.get(lastPosition).setText(s.getTitle());
-//                this.dataMessages.get(lastPosition).setImage(s.getImage());
-//                this.dataMessages.get(lastPosition).setDescription(s.getText());
-//                this.dataMessages.get(lastPosition).setChildren(s.getChildren());
+                this.dataMessages.get(lastPosition).setImage(s.getImage());
+                this.dataMessages.get(lastPosition).setDescription(s.getText());
+                this.dataMessages.get(lastPosition).setChildren(s.getChildren());
+                if (s.getChildren().equals("0")) {
+                    this.dataMessages.get(lastPosition).setLastChild(true);
+                } else {
+                    this.dataMessages.get(lastPosition).setLastChild(false);
+                    getNextChoices(lastPosition, s.getId());
+                }
                 notifyItemChanged(lastPosition);
-
-                getNextChoices(lastPosition, s.getId());
             }
         }
 //        notifyDataSetChanged();
@@ -81,12 +85,20 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
                 new Response.Listener<com.farmerhouse.models.Data[]>() {
                     @Override
                     public void onResponse(com.farmerhouse.models.Data[] response) {
-//                        dialog.dismiss();
-                        DataMessages dataMessage = new DataMessages();
-                        dataMessage.setData(Arrays.asList(response));
-                        Log.d("TAG", "onResponse: respose "+response[0].getChildren());
-                        dataMessages.add(dataMessage);
+                        if (response.length == 0) { // no data available
+                            dataMessages.get(lastPosition).setLastChild(true); // we added this because of the first item
+//                            Toast.makeText(context, dataMessages.get(lastPosition).getImage() + "", Toast.LENGTH_SHORT).show();
+                        } else {
+                            dataMessages.get(lastPosition).setLastChild(false);
+                            //                        dialog.dismiss();
+                            DataMessages dataMessage = new DataMessages();
+                            dataMessage.setData(Arrays.asList(response));
+//                        Log.d("TAG", "onResponse: respose "+response[0].getChildren());
+                            dataMessages.add(dataMessage);
+
+                        }
                         notifyDataSetChanged();
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -116,7 +128,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             choicesRecyclerView = view.findViewById(R.id.choicesRecyclerView);
 
             layoutChoosen = view.findViewById(R.id.layoutChoosen);
-            header  = view.findViewById(R.id.thirdlayout);
+            header = view.findViewById(R.id.thirdlayout);
             dataText = view.findViewById(R.id.dataText);
             dataImage = view.findViewById(R.id.dataImage);
         }
@@ -137,6 +149,9 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         return new DataRecyclerViewAdapter.MyViewHolder(itemView);
     }
 
+    public void ShowDetailOfLastData() {
+
+    }
 
     @Override
     public void onBindViewHolder(final DataRecyclerViewAdapter.MyViewHolder holder, final int position) {
@@ -147,8 +162,6 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         String title = dataMessage.getText();
 
 
-
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         holder.choicesRecyclerView.setLayoutManager(layoutManager);
 
@@ -156,13 +169,12 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         boolean isLastPosition = false;
         if (position == getItemCount() - 1) {
             isLastPosition = true;
-
         }
         ChoicesRecyclerView choicesRecyclerViewAdapter;
-        if(!chatId.equals("0")){
-            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this,true);
-        }else{
-            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this,isLastPosition);
+        if (!chatId.equals("0")) {
+            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this, true);
+        } else {
+            choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this, isLastPosition);
         }
         holder.choicesRecyclerView.setAdapter(choicesRecyclerViewAdapter);
 
@@ -171,6 +183,29 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             holder.text.setText(dataMessage.getText());
         } else {
             holder.layoutChoosen.setVisibility(View.GONE);
+        }
+
+        if (dataMessage.isLastChild()) {
+            holder.dataText.setVisibility(View.GONE);
+
+            if (dataMessage.getImage() != null && !dataMessage.getImage().equals("")) {
+                Glide.with(context)
+                        .load(NetworkHelper.IMAGES_PATH_DATA_PICTURES + dataMessage.getImage())
+                        .centerCrop()
+                        .into(holder.dataImage);
+                holder.dataImage.setVisibility(View.VISIBLE);
+            } else {
+                holder.dataImage.setVisibility(View.GONE);
+
+            }
+            if (dataMessage.getText() != null && !dataMessage.getText().equals("")) {
+                holder.dataText.setText(dataMessage.getDescription());
+                holder.dataText.setVisibility(View.VISIBLE);
+            } else {
+                holder.dataText.setVisibility(View.GONE);
+            }
+        }else{
+            holder.dataText.setVisibility(View.VISIBLE);
         }
 
         /////honaaaaaaaaaa
@@ -184,9 +219,6 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 //
 //
 //}
-
-
-
 
 
 //        final ProgressDialog dialog = ProgressDialog.show(context, "",
