@@ -82,7 +82,7 @@ CountryCodePicker ccp;
 
                     Map<String, String> params = new HashMap();
                     String usernamestring = phone.getText().toString();
-                    String phone =ccp.getSelectedCountryCode()+usernamestring;
+                    String phone ="+"+ccp.getSelectedCountryCode()+usernamestring;
                 Log.d("TAG", "onClick: "+phone);
 
                     String passwordstring = password.getText().toString();
@@ -103,7 +103,7 @@ CountryCodePicker ccp;
                     GsonRequest<User> myGsonRequest = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
                             response -> {
 
-                                Log.d("TAG", "onClick: "+response.toString());
+//                                Log.d("TAG", "onClick: "+response.toString());
 
                                     SharedPreferences.Editor ed = prefs.edit();
                                     ed.putString("phone", response.getPhone());
