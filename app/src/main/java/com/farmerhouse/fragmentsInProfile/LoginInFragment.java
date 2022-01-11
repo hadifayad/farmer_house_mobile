@@ -38,9 +38,9 @@ import java.util.Map;
  * create an instance of this fragment.
  */
 public class LoginInFragment extends Fragment {
-    Button login;
-    EditText phone, password;
-    CountryCodePicker ccp;
+Button login;
+EditText phone,password;
+CountryCodePicker ccp;
 
     public LoginInFragment() {
         // Required empty public constructor
@@ -77,23 +77,26 @@ public class LoginInFragment extends Fragment {
                 String token = prefs.getString("token", "");
 
 
-                String url = NetworkHelper.getUrl(NetworkHelper.ACTION_LOGIN_USER);
+                    String url = NetworkHelper.getUrl(NetworkHelper.ACTION_LOGIN_USER);
 //
 
-                Map<String, String> params = new HashMap();
-                String usernamestring = phone.getText().toString();
-                String phone = ccp.getSelectedCountryCode() + usernamestring;
-                Log.d("TAG", "onClick: " + phone);
+                    Map<String, String> params = new HashMap();
+                    String usernamestring = phone.getText().toString();
+                    String phone ="+"+ccp.getSelectedCountryCode()+usernamestring;
+                Log.d("TAG", "onClick: "+phone);
 
-                String passwordstring = password.getText().toString();
+                    String passwordstring = password.getText().toString();
 
 
-                params.put("phone", phone);
 
-                params.put("password", passwordstring);
+
+
+                    params.put("phone", phone);
+
+                    params.put("password", passwordstring);
 
 //                params.put("role", role);
-                params.put("token", token);
+                    params.put("token", token);
 
 
                 Log.d("tag", params.toString());
@@ -102,14 +105,14 @@ public class LoginInFragment extends Fragment {
                             if (response != null) {
                                 Log.d("TAG", "onClick: " + response.toString());
 
-                                SharedPreferences.Editor ed = prefs.edit();
-                                ed.putString("phone", response.getPhone());
+                                    SharedPreferences.Editor ed = prefs.edit();
+                                    ed.putString("phone", response.getPhone());
 //                                    ed.putString(KEY_PASSWORD, response.getPassword().toString());
-                                ed.putString("profile", response.getProfile_picture());
+                                    ed.putString("profile", response.getProfile_picture());
 
-                                ed.putString("fullname", response.getFullname().toString());
-                                ed.putString("userId", response.getId().toString());
-                                ed.putString("token", response.getToken().toString());
+                                    ed.putString("fullname", response.getFullname().toString());
+                                    ed.putString("userId", response.getId().toString());
+                                    ed.putString("token", response.getToken().toString());
 
 //                            ed.putString(KEY_TOKEN, response.getRole().toString());
 //                            if (response.getLink() != null) {
@@ -117,13 +120,13 @@ public class LoginInFragment extends Fragment {
 //                            }
 
 
-                                ed.commit();
+                                    ed.commit();
 
-                                Toast.makeText(getContext(), getActivity().getString(R.string.login_successful), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), "Login Successful", Toast.LENGTH_LONG).show();
 
-                                Intent intent = new Intent(getContext(), MainActivity.class);
-                                startActivity(intent);
-                                getActivity().finish();
+                                    Intent intent = new Intent(getContext(), MainActivity.class);
+                                    startActivity(intent);
+                                    getActivity().finish();
 
                             } else {
                                 Toast.makeText(getContext(), getActivity().getString(R.string.incorrect_username_or_password), Toast.LENGTH_SHORT).show();
@@ -140,7 +143,8 @@ public class LoginInFragment extends Fragment {
                 VolleySingleton.getInstance(getContext()).addToRequestQueue(myGsonRequest);
 
 
-            }
+                }
+
 
 
         });
