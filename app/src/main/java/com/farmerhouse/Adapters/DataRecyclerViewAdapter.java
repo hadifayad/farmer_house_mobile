@@ -119,7 +119,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         public LinearLayout layoutChoosen;
         public RecyclerView choicesRecyclerView;
         RelativeLayout header;
-        ImageView dataImage;
+        ImageView dataImage , triangleView;
         TextView dataText;
 
         public MyViewHolder(View view) {
@@ -131,6 +131,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             header = view.findViewById(R.id.thirdlayout);
             dataText = view.findViewById(R.id.dataText);
             dataImage = view.findViewById(R.id.dataImage);
+            triangleView = view.findViewById(R.id.triangleView);
         }
     }
 
@@ -187,6 +188,8 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 
         if (dataMessage.isLastChild()) {
             holder.dataText.setVisibility(View.GONE);
+            holder.triangleView.setVisibility(View.GONE);
+            holder.header.setBackground(ContextCompat.getDrawable(context, R.drawable.data_chat));
 
             if (dataMessage.getImage() != null && !dataMessage.getImage().equals("")) {
                 Glide.with(context)
@@ -212,7 +215,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 //if(){
 //    holder.dataText.setText();
 //
-//holder.header.setBackground(ContextCompat.getDrawable(context, R.drawable.data_chat));
+//
 //    Log.d("picccc",url);
 //    Glide.with(getContext()).load(url)
 //            .centerCrop() .diskCacheStrategy(DiskCacheStrategy.DATA).into(holder.dataImage);

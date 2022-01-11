@@ -3,8 +3,11 @@ package com.farmerhouse;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,7 +38,7 @@ public class UserData extends AppCompatActivity {
     SearchableSpinner villages;
     String villageId;
     String phoneNumberString , passwordString;
-    EditText fullnameView , addressView;
+    EditText fullnameView , addressView,secondPhone,email;
     List valuesArray = new ArrayList() ;
     Button uploadButton;
     @Override
@@ -55,6 +58,8 @@ public class UserData extends AppCompatActivity {
         uploadButton = findViewById(R.id.uploadView);
         fullnameView = findViewById(R.id.fullnameView);
         addressView = findViewById(R.id.addressView);
+        email = findViewById(R.id.email);
+        secondPhone = findViewById(R.id.secondPhone);
 
         /////////////////////////////////////////////
         //villages data
@@ -149,6 +154,11 @@ public class UserData extends AppCompatActivity {
                                 Log.d("upload", response);
 
 
+                                dialog.dismiss();
+                                Intent i =  new Intent(UserData.this,LoginOrSignup.class);
+                                startActivity(i);
+
+
 
                             }
                         },
@@ -169,6 +179,8 @@ public class UserData extends AppCompatActivity {
                         String villageIdString = villageId;
                         String addressString = addressView.getText().toString();
                         String fullnameString = fullnameView.getText().toString();
+                        String secondPhoneString = secondPhone.getText().toString();
+                        String emailString = email.getText().toString();
 
 
 
@@ -178,6 +190,13 @@ public class UserData extends AppCompatActivity {
                         params.put("password", passwordString);
                         params.put("villageId", villageIdString);
                         params.put("address", addressString);
+                        params.put("email", emailString);
+                        params.put("secondPhone", secondPhoneString);
+
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(UserData.this);
+                        String token = prefs.getString("token", "");
+
+                        params.put("token", token);
 
 //                        params.put("token", MyPreferencesUtils.getUserToken(Signup.this));
 

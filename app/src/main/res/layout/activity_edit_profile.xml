@@ -1,10 +1,10 @@
 <RelativeLayout android:layout_width="match_parent"
-android:layout_height="match_parent"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:background="@color/app_green"
-xmlns:android="http://schemas.android.com/apk/res/android"
-tools:context=".UserData">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_green"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".EditProfileActivity">
 
 
 
@@ -26,45 +26,45 @@ tools:context=".UserData">
         android:textColorHint="#808080"
         android:textSize="17dp"></EditText>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/yourcardid"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:elevation="1dp"-->
-<!--        app:cardCornerRadius="20dp"-->
-<!--        android:textAlignment="center"-->
-<!--        android:innerRadius="0dp"-->
-<!--        -->
-<!--        android:shape="ring"-->
-<!--        android:thicknessRatio="1.9"-->
-<!--        >-->
-<!--        <Spinner-->
-<!--            android:id="@+id/spinner_services"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:textAlignment="center"-->
-<!--            f-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:paddingLeft="10dp"-->
-<!--            />-->
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/yourcardid"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:elevation="1dp"-->
+    <!--        app:cardCornerRadius="20dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:innerRadius="0dp"-->
+    <!--        -->
+    <!--        android:shape="ring"-->
+    <!--        android:thicknessRatio="1.9"-->
+    <!--        >-->
+    <!--        <Spinner-->
+    <!--            android:id="@+id/spinner_services"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:textAlignment="center"-->
+    <!--            f-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:paddingLeft="10dp"-->
+    <!--            />-->
+    <!--    </androidx.cardview.widget.CardView>-->
 
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
         android:id="@+id/SearchableSpinner"
-        app:hintText="اختر القرية"
         android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_button"
         android:layout_below="@id/fullnameView"
-        android:fontFamily="@font/ir_sharp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/ic_button"
+        android:fontFamily="@font/ir_sharp"
         android:textAlignment="center"
 
         android:textColor="@color/black"
+
         android:textColorHint="#808080"
         android:textSize="17dp"
-        />
+        app:hintText="اختر القرية" />
 
     <EditText
         android:id="@+id/secondPhone"
@@ -135,11 +135,11 @@ tools:context=".UserData">
 
 
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_alignParentBottom="true"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
 
 
-    android:src="@drawable/splash_model"></ImageView>
+        android:src="@drawable/splash_model"></ImageView>
 </RelativeLayout>

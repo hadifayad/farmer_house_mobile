@@ -91,7 +91,7 @@ public class SignupInFragment extends Fragment {
                 String passwordString = passwordView.getText().toString();
 
                 String countryCode = countryCodePicker.getSelectedCountryCode();
-                String fullPhoneNumber =  countryCode + phoneNumberString;
+                String fullPhoneNumber =  "+"+countryCode + phoneNumberString;
                 if(fullPhoneNumber!= null && fullPhoneNumber!="" && !fullPhoneNumber.equalsIgnoreCase("") && passwordString!= null && passwordString!="" && !passwordString.equalsIgnoreCase("")){
 
                     dialog = ProgressDialog.show(getContext(), "",
@@ -152,7 +152,7 @@ public class SignupInFragment extends Fragment {
                         String phoneNumberString = phoneNumberView.getText().toString();
                         String passwordString = passwordView.getText().toString();
                         String countryCode = countryCodePicker.getSelectedCountryCode();
-                        String fullPhoneNumber =  countryCode + phoneNumberString;
+                        String fullPhoneNumber =  "+"+countryCode + phoneNumberString;
 
 
                         otpIntent.putExtra("phone", fullPhoneNumber);

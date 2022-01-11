@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:layoutDirection="rtl"
         android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
 
@@ -35,57 +36,67 @@
             android:layout_height="wrap_content"
 
 
+
             android:orientation="vertical">
-
-
             <RelativeLayout
-                android:id="@+id/thirdlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_user_chat">
+
+
+                android:background="@drawable/dialog_reversed">
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:id="@+id/thirdlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_user_chat">
 
-                    android:layout_centerInParent="true"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:paddingStart="5dp"
-                    android:paddingLeft="5dp"
-
-                    android:background="@drawable/choices_background">
-
-                    <ImageView
-                        android:id="@+id/bullet"
-                        android:layout_width="10dp"
-                        android:layout_height="20dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerInParent="true"
-                        android:layout_marginRight="10dp"
-
-                        android:background="@drawable/light_blue_shape"></ImageView>
-
-                    <TextView
-                        android:id="@+id/text"
+                    <RelativeLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:layout_toLeftOf="@+id/bullet"
-                        android:fontFamily="@font/helv"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:text=" يسشي سش يشالعقد"
-                        android:textColor="@color/black"></TextView>
+                        android:layout_height="30dp"
 
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/choices_background"
+
+                        android:paddingStart="5dp"
+                        android:paddingLeft="5dp">
+
+                        <ImageView
+                            android:id="@+id/bullet"
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_alignParentStart="true"
+
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+
+                            android:background="@drawable/circle"></ImageView>
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/bullet"
+                            android:fontFamily="@font/helv"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text=" يسشي سش يشالعقد"
+                            android:textColor="@color/black"></TextView>
+
+
+                    </RelativeLayout>
 
                 </RelativeLayout>
-
             </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -110,11 +121,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/dataImage"
                     android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/helv"
-                    android:text="الرجاء اختيار واحدة من الخدمات التالية"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/ir_sharp"
+                    android:text="الرجاء اختيار واحدة من الخيارات التالية"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
 
 
@@ -123,6 +135,16 @@
 
 
             </RelativeLayout>
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:rotation="90"
+                android:layout_marginStart="50dp"
+android:id="@+id/triangleView"
+                android:src="@drawable/triangle"
+                app:tint="@color/white">
+
+            </ImageView>
 
         </LinearLayout>
     </LinearLayout>

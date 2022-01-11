@@ -24,6 +24,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.farmerhouse.Adapters.ChatsRecyclerViewAdapter;
+import com.farmerhouse.CreateMessageOptions;
 import com.farmerhouse.GsonRequest;
 import com.farmerhouse.NetworkHelper;
 import com.farmerhouse.R;
@@ -85,61 +86,65 @@ ImageView newMessageButton;
             @Override
             public void onClick(View v) {
 
-                final ProgressDialog dialog = ProgressDialog.show(Inbox.this, "",
-                        "Please wait...", true);
-                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Inbox.this);
-                        String userId = prefs.getString("userId", "");
-                        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT);
-                Log.d("TAG", "onClick: "+url);
-                        final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                                new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String response) {
-//
+                Intent i = new Intent(Inbox.this, CreateMessageOptions.class);
 
-                                        dialog.dismiss();
-                                        Toast.makeText(Inbox.this, "new message",
-                                                Toast.LENGTH_LONG).show();
-                                        Log.d("upload", response);
-                                        Intent i = new Intent(Inbox.this,CreateMessage.class);
-                                        i.putExtra("chatId", response.toString());
                                         startActivity(i);
-//                        sendToMain();
-                                    }
-                                },
-                                new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        dialog.dismiss();
-                                        Toast.makeText(Inbox.this, "error", Toast.LENGTH_LONG).show();
 
-                                    }
-                                }) {
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-                                HashMap<String, String> params = new HashMap<>();
-                                //    Map<String, String> params = new Hashtable<>();
-
-
-                                params.put("userId", "2");
-                                Log.d("TAG", "getParams: "+params.toString());
-
-
-
-
-                                Log.d("tag", params.toString());
-                                return params;
-
-                            }
-                        };
-                        {
-                            int socketTimeout = 30000;
-                            RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-                            stringRequest.setRetryPolicy(policy);
-                            RequestQueue requestQueue = Volley.newRequestQueue(Inbox.this);
-
-                            requestQueue.add(stringRequest);
-                        }
+//                final ProgressDialog dialog = ProgressDialog.show(Inbox.this, "",
+//                        "Please wait...", true);
+//                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Inbox.this);
+//                        String userId = prefs.getString("userId", "");
+//                        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT);
+//                Log.d("TAG", "onClick: "+url);
+//                        final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+//                                new Response.Listener<String>() {
+//                                    @Override
+//                                    public void onResponse(String response) {
+////
+//
+//                                        dialog.dismiss();
+//                                        Toast.makeText(Inbox.this, "new message",
+//                                                Toast.LENGTH_LONG).show();
+//                                        Log.d("upload", response);
+//                                        Intent i = new Intent(Inbox.this,CreateMessage.class);
+//                                        i.putExtra("chatId", response.toString());
+//                                        startActivity(i);
+////                        sendToMain();
+//                                    }
+//                                },
+//                                new Response.ErrorListener() {
+//                                    @Override
+//                                    public void onErrorResponse(VolleyError error) {
+//                                        dialog.dismiss();
+//                                        Toast.makeText(Inbox.this, "error", Toast.LENGTH_LONG).show();
+//
+//                                    }
+//                                }) {
+//                            @Override
+//                            protected Map<String, String> getParams() throws AuthFailureError {
+//                                HashMap<String, String> params = new HashMap<>();
+//                                //    Map<String, String> params = new Hashtable<>();
+//
+//
+//                                params.put("userId", "2");
+//                                Log.d("TAG", "getParams: "+params.toString());
+//
+//
+//
+//
+//                                Log.d("tag", params.toString());
+//                                return params;
+//
+//                            }
+//                        };
+//                        {
+//                            int socketTimeout = 30000;
+//                            RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+//                            stringRequest.setRetryPolicy(policy);
+//                            RequestQueue requestQueue = Volley.newRequestQueue(Inbox.this);
+//
+//                            requestQueue.add(stringRequest);
+//                        }
                     }
                 });
 

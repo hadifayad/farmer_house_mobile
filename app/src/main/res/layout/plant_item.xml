@@ -1,0 +1,39 @@
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/layout"
+android:layout_width="120dp"
+android:layout_height="40dp"
+android:layout_marginLeft="5dp"
+android:layout_marginRight="5dp"
+android:paddingStart="10dp"
+android:paddingLeft="10dp"
+
+
+android:background="@drawable/choices_background">
+
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bullet"
+    android:layout_width="9dp"
+    android:layout_height="14dp"
+    android:layout_alignParentRight="true"
+
+    android:layout_centerVertical="true"
+    android:layout_marginRight="5dp"
+
+    android:background="@drawable/light_blue_shape"></ImageView>
+
+<TextView
+    android:id="@+id/plantName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:fontFamily="@font/helv"
+
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:text="الداخل"
+    android:textColor="@color/black"></TextView>
+
+
+</RelativeLayout>

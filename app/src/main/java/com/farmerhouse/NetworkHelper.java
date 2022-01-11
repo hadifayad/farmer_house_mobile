@@ -23,8 +23,9 @@ public class NetworkHelper {
 //    public static final String SERVER_IP = "192.168.0.158/room_web";
 //    public static final String SERVER_IP = "192.168.43.196/room_web";
 //    public static final String SERVER_IP = "localhost/farmer_house";
-//    public static final String SERVER_IP = "192.168.10.109/farmer_house";
-    public static final String SERVER_IP = "192.168.1.9/farmer_house";
+    public static final String SERVER_IP = "192.168.10.109/farmer_house";
+//    public static final String SERVER_IP = "192.168.2.157/farmer_house";
+//    public static final String SERVER_IP = "192.168.1.9/farmer_house";
     public static final String IMAGES_PATH_POST_PICTURES = "http://" + SERVER_IP + "/web/newsUploads/";
     public static final String IMAGES_PATH_DATA_PICTURES = "http://" + SERVER_IP + "/web/dataImages/";
 
@@ -34,6 +35,7 @@ public class NetworkHelper {
     public static final String ACTION_GET_NEWS ="mobile/get-news";
     public static final String ACTION_GET_CHILDREN ="mobile/get-children";
     public static final String ACTION_GET_TOP_PARENT ="mobile/get-top-parent";
+    public static final String ACTION_GET_PLANTS ="mobile/get-search-plants";
     public static final String ACTION_CREATE_CHAT ="mobile/create-chat";
     public static final String ACTION_GET_CHILDREN_AND_SAVE_MESSAGE = "mobile/get-children-and-save-message";
     public static final String ACTION_GET_CHAT_DATA = "mobile/get-chat-data";
