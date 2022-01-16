@@ -9,33 +9,30 @@
     tools:context=".Tour1">
 
 
+    <TextView
+        android:id="@+id/text1"
 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
 
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/helv"
+        android:text="ما هي ابرز نشاطات"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp"></TextView>
 
-
-        <TextView
-            android:layout_alignParentTop="true"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/helv"
-
-            android:textAlignment="center"
-            android:text="ما هي ابرز نشاطات"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:id="@+id/text1"
-            android:textColor="@color/white"
-            android:textSize="28dp"></TextView>
     <ImageView
         android:id="@+id/dash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_below="@id/text1"
-
-
         android:layout_centerHorizontal="true"
+
+
+        android:layout_marginTop="30dp"
 
 
         android:src="@drawable/ic_dash"></ImageView>

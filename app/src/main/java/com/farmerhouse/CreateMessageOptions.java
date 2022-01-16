@@ -39,7 +39,7 @@ public class CreateMessageOptions extends AppCompatActivity {
         setContentView(R.layout.activity_create_message_options);
         daleel = findViewById(R.id.daleel);
         ansab = findViewById(R.id.ansab);
-        sell = findViewById(R.id.sell);
+//        sell = findViewById(R.id.sell);
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

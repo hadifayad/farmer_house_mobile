@@ -1,15 +1,24 @@
 package com.farmerhouse;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.farmerhouse.inbox.Inbox;
+import com.farmerhouse.ui.home.HomeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -24,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
-    ImageView drawer_open,inbox;
-
+    ImageView drawer_open,inbox,add;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         drawer_open = findViewById(R.id.drawer_open);
         inbox = findViewById(R.id.inbox);
+        add = findViewById(R.id.add);
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -60,6 +70,63 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                switch (item.getItemId()) {
+                    case R.id.home_bottom:
+                        HomeFragment homeFragment = new HomeFragment();
+                        fragmentTransaction.replace(R.id.nav_host_fragment, homeFragment).commit();
+                        return true;
+                    case R.id.search_bottom:
+//                        SearchFragment searchFragment = new SearchFragment();
+//                        fragmentTransaction.replace(R.id.main_framelayout, searchFragment).commit();
+                        return true;
+
+
+
+                    case R.id.store_bottom:
+
+//                        ShopFragment shopFragment = new ShopFragment();
+//                        fragmentTransaction.replace(R.id.main_framelayout, shopFragment).commit();
+                        return true;
+
+                    case R.id.profile_bottom:
+
+
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                        String userId = prefs.getString("userId", "");
+                        Log.d("tag", "onReselectItem: " + userId);
+                        if (!userId.equals(null) && !userId.equals("")) {
+
+                            ProfileFragment profileFragment = new ProfileFragment();
+                            fragmentTransaction.replace(R.id.nav_host_fragment, profileFragment).commit();
+                            return true;
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "Please Login first..",
+                                    Toast.LENGTH_LONG).show();
+                            Intent intent1 = new Intent(MainActivity.this, LoginOrSignup.class);
+
+                            startActivity(intent1);
+                        }
+
+                }
+                return false;
+            }
+        });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, CreateMessageOptions.class);
+                startActivity(i);
+            }
+        });
 
         drawer_open.setOnClickListener(new View.OnClickListener() {
             @Override
