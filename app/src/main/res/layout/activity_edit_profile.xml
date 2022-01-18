@@ -1,4 +1,4 @@
-<RelativeLayout android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,65 +6,74 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".EditProfileActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
 
-    <EditText
-        android:id="@+id/fullnameView"
+            android:layout_below="@id/addressView"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helv"
+            android:text="ملف المزارع"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"></TextView>
 
-        android:layout_marginTop="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_button"
-        android:fontFamily="@font/ir_sharp"
-        android:hint="الاسم الكامل"
-        android:textAlignment="center"
-
-        android:textColor="@color/black"
-        android:textColorHint="#808080"
-        android:textSize="17dp"></EditText>
-
-    <!--    <androidx.cardview.widget.CardView-->
-    <!--        android:id="@+id/yourcardid"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="40dp"-->
-    <!--        android:elevation="1dp"-->
-    <!--        app:cardCornerRadius="20dp"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:innerRadius="0dp"-->
-    <!--        -->
-    <!--        android:shape="ring"-->
-    <!--        android:thicknessRatio="1.9"-->
-    <!--        >-->
-    <!--        <Spinner-->
-    <!--            android:id="@+id/spinner_services"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:textAlignment="center"-->
-    <!--            f-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:paddingLeft="10dp"-->
-    <!--            />-->
-    <!--    </androidx.cardview.widget.CardView>-->
+        <ImageView
+            android:id="@+id/dash2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2"
+            android:layout_centerHorizontal="true"
 
 
-    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-        android:id="@+id/SearchableSpinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/fullnameView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_button"
-        android:fontFamily="@font/ir_sharp"
-        android:textAlignment="center"
 
-        android:textColor="@color/black"
+            android:layout_marginTop="30dp"
 
-        android:textColorHint="#808080"
-        android:textSize="17dp"
-        app:hintText="اختر القرية" />
+
+            android:src="@drawable/ic_dash"></ImageView>
+
+        <EditText
+            android:id="@+id/fullnameView"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="130dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="الاسم الكامل"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/SearchableSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullnameView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+
+            android:textColorHint="#808080"
+            android:textSize="17dp"
+            app:hintText="اختر القرية" />
 
     <EditText
         android:id="@+id/secondPhone"
@@ -100,46 +109,605 @@
         android:textSize="17dp"></EditText>
 
 
-    <EditText
-        android:id="@+id/addressView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_button"
-        android:fontFamily="@font/ir_sharp"
-        android:hint="العنوان التفصيلي"
-        android:textAlignment="center"
+        <EditText
+            android:id="@+id/addressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
 
-        android:textColor="@color/black"
-        android:textColorHint="#808080"
-        android:textSize="17dp"></EditText>
+            android:hint="العنوان التفصيلي"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
 
+        <TextView
+            android:id="@+id/text1"
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/uploadView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passwordView"
-        android:layout_centerInParent="true"
-
-        android:layout_marginBottom="-7dp"
-        android:background="@drawable/ic_button_register"
-        android:fontFamily="@font/ir_sharp"
-        android:text="تحميل المعلومات"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
 
+            android:layout_below="@id/addressView"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helv"
+            android:text="معلومات عن الأرض"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"></TextView>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_alignParentBottom="true"
+        <ImageView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="20dp"
 
 
-        android:src="@drawable/splash_model"></ImageView>
-</RelativeLayout>
+            android:src="@drawable/ic_dash"></ImageView>
+
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/landVillage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dash"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+
+            android:textColorHint="#808080"
+            android:textSize="17dp"
+            app:hintText="اختر القرية" />
+
+        <EditText
+            android:id="@+id/landHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/landVillage"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="ارتفاع الأرض"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <Spinner
+            android:id="@+id/landLegal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landHeight"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+
+            android:textColorHint="#808080"
+            android:textSize="17dp"
+            app:hintText="الوضع القانوني" />
+
+        <EditText
+            android:id="@+id/landId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/landLegal"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="رقم اتفاقية الاستئجار او الملكية"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <EditText
+            android:id="@+id/landArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/landId"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="مساحة الأرض"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <Spinner
+            android:id="@+id/landWater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landArea"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:dropDownWidth="wrap_content"
+            android:dropDownSelector="@color/white"
+
+            android:fontFamily="@font/ir_sharp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"
+
+            app:hintText="نوع الري" />
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:id="@+id/landWell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landWater"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+
+            android:fontFamily="@font/ir_sharp"
+            android:layoutDirection="rtl"
+            android:outlineSpotShadowColor="@color/white"
+            android:shadowColor="@color/white"
+            android:text="يوجد بئر تحت الأرض في المزرعة"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white"
+            android:textDirection="rtl"
+            android:textSize="16dp"></androidx.appcompat.widget.AppCompatCheckBox>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/landPublic"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/landWell"
+            android:text="المزرعة متصلة بشبكات المرافق العامة"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/landPond"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="16dp"
+            android:drawablePadding="3dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/landPublic"
+            android:text="يوجد بركة ماء"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+
+        <TextView
+            android:id="@+id/text3"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_below="@id/landPond"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helv"
+            android:text="التقنيات المستخدمة"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"></TextView>
+
+        <ImageView
+            android:id="@+id/dash3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text3"
+
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="20dp"
+
+
+            android:src="@drawable/ic_dash"></ImageView>
+
+        <TextView
+            android:id="@+id/text4"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_below="@id/dash3"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/helv"
+            android:text="ما مصدر الطاقة الرئيسي المستخدم للقيام\n بأنشطة المزرعة؟"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"></TextView>
+
+<!--        <com.farmerhouse.ui.MultiSpinner-->
+<!--            android:id="@+id/masdarTa2a"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/dash3"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:background="@drawable/ic_button"-->
+<!--            android:fontFamily="@font/ir_sharp"-->
+<!--            android:textAlignment="center"-->
+
+<!--            android:textColor="@color/black"-->
+
+<!--            android:textColorHint="#808080"-->
+<!--            android:textSize="17dp"-->
+<!--            app:hintText="هل يوجد بركة متوفرة؟" />-->
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/masdar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:buttonTint="@color/white"
+
+            android:fontFamily="@font/ir_sharp"
+            android:layoutDirection="rtl"
+            android:outlineSpotShadowColor="@color/white"
+            android:shadowColor="@color/white"
+            android:text="عمال يدويون"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white"
+            android:textDirection="rtl"
+            android:textSize="16dp"></androidx.appcompat.widget.AppCompatCheckBox>>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:id="@+id/masdar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/masdar1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+
+            android:fontFamily="@font/ir_sharp"
+            android:layoutDirection="rtl"
+            android:outlineSpotShadowColor="@color/white"
+            android:shadowColor="@color/white"
+            android:text="طاقة حيوانات بالجر"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:textColorLink="@color/white"
+            android:textDirection="rtl"
+            android:textSize="18dp"></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/masdar3"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/masdar2"
+            android:text="الطاقة الآلية (مازوت - بنزين)"
+            ></androidx.appcompat.widget.AppCompatCheckBox>>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/masdar4"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/masdar3"
+            android:text="طاقة الرياح"
+            ></androidx.appcompat.widget.AppCompatCheckBox>>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/masdar5"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/masdar4"
+            android:text="الطاقة الشمسية"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/masdar6"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/masdar5"
+            android:text="شبكة الكهرباء"
+            ></androidx.appcompat.widget.AppCompatCheckBox>>
+
+
+
+
+
+
+
+                <TextView
+            android:id="@+id/text5"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:layout_below="@id/masdar6"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helv"
+            android:text="م الأنواع الرئيسية للمعدات \nوالآلات الزراعية المستخدمة؟"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"></TextView>
+
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/mo3adat1"
+           android:layout_marginBottom="10dp"
+           android:textAlignment="center"
+android:layout_centerHorizontal="true"
+           android:textColorLink="@color/white"
+               android:textColor="@color/white"
+           android:outlineSpotShadowColor="@color/white"
+           android:textColorHighlight="@color/white"
+           android:shadowColor="@color/white"
+           android:textDirection="rtl"
+           android:layoutDirection="rtl"
+           android:textSize="18dp"
+           android:fontFamily="@font/ir_sharp"
+                   android:layout_below="@id/text5"
+                   android:text="الجرار (دفع رباعي)"
+            ></androidx.appcompat.widget.AppCompatCheckBox>>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat2"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat1"
+            android:text="آلة الرش"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat3"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat2"
+            android:text="آلات الحرث والعزق"
+            ></androidx.appcompat.widget.AppCompatCheckBox>>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat4"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat3"
+            android:text="مقطورة الجرار"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat5"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat4"
+            android:text="صهريج"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat6"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat5"
+            android:text="مضخات مياه"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:buttonTint="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mo3adat7"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:textColorLink="@color/white"
+            android:textColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:textColorHighlight="@color/white"
+            android:shadowColor="@color/white"
+            android:textDirection="rtl"
+            android:layoutDirection="rtl"
+            android:textSize="18dp"
+            android:fontFamily="@font/ir_sharp"
+            android:layout_below="@id/mo3adat6"
+            android:text="شبكة ري"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+
+
+<!--                <com.farmerhouse.ui.MultiSpinner-->
+<!--                    android:id="@+id/mo3addet"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@id/masdar1"-->
+<!--                    android:layout_centerHorizontal="true"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:background="@drawable/ic_button"-->
+<!--                    android:fontFamily="@font/ir_sharp"-->
+<!--                    android:textAlignment="center"-->
+
+<!--                    android:textColor="@color/black"-->
+
+<!--                    android:textColorHint="#808080"-->
+<!--                    android:textSize="17dp"-->
+<!--                    app:hintText="هل يوجد بركة متوفرة؟" />-->
+
+<!--        <com.google.android.material.progressindicator.CircularProgressIndicator-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/mo3adat7"-->
+<!--            android:id="@+id/progress"-->
+<!--            ></com.google.android.material.progressindicator.CircularProgressIndicator>-->
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mo3adat7"
+            android:layout_centerHorizontal="true"
+
+            android:background="@drawable/ic_button_register"
+            android:fontFamily="@font/ir_sharp"
+            android:text="تحميل المعلومات"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+            </RelativeLayout>
+
+
+        </ScrollView>
