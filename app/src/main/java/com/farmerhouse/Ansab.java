@@ -32,10 +32,10 @@ import java.util.Map;
 public class Ansab extends AppCompatActivity {
 
 
-    LinearLayout mantaaView,mawsemView,tareeaView,zeraaTypeView,plantsTypeView,waterTypeView,soilTypeView,heightView,mantaaResponseView,mawsemResponseView,tareeaResponseView,zeraaTypeResponseView,plantsTypeResponseView,waterTypeResponseView,soilTypeResponseView,heightResponseView;
-    RelativeLayout dakhel,sa7el,jabal,sayfe,shatawe,rabee3e,kharejeyya,byoot,baaleyya,marweyya,khodar,bokoleyyat,ashjar,blbakhakh,blferayra,bljar,ramleyya,teeneyya,salteyya,ramleyyaTeeneyya;
-    RelativeLayout height0,height100,height200,height300,height400,height500,height600,height700,height800,height900,height1000,height1100,height1200,height1300,height1400,height1500;
-    TextView mantaaResponse, mawsemResponse,tareeaResponse,zeraaTypeResponse,plantsTypeResponse,waterTypeResponse,soilTypeResponse,heightResponse;
+    LinearLayout mantaaView, mawsemView, tareeaView, zeraaTypeView, plantsTypeView, waterTypeView, soilTypeView, heightView, mantaaResponseView, mawsemResponseView, tareeaResponseView, zeraaTypeResponseView, plantsTypeResponseView, waterTypeResponseView, soilTypeResponseView, heightResponseView;
+    RelativeLayout dakhel, sa7el, jabal, sayfe, shatawe, rabee3e, kharejeyya, byoot, baaleyya, marweyya, khodar, bokoleyyat, ashjar, blbakhakh, blferayra, bljar, ramleyya, teeneyya, salteyya, ramleyyaTeeneyya;
+    RelativeLayout height0, height100, height200, height300, height400, height500, height600, height700, height800, height900, height1000, height1100, height1200, height1300, height1400, height1500;
+    TextView mantaaResponse, mawsemResponse, tareeaResponse, zeraaTypeResponse, plantsTypeResponse, waterTypeResponse, soilTypeResponse, heightResponse;
     ScrollView scrollview;
     RecyclerView ansabRecyclerView;
 
@@ -108,13 +108,13 @@ public class Ansab extends AppCompatActivity {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(Ansab.this, LinearLayoutManager.HORIZONTAL, false);
         ansabRecyclerView.setLayoutManager(layoutManager);
-        scrollview.post(new Runnable() {
-            @Override
-            public void run() {
-//                scrollview.fullScroll(View.FOCUS_DOWN);
-                scrollview.scrollTo(0, scrollview.getBottom());
-            }
-        });
+//        scrollview.post(new Runnable() {
+//            @Override
+//            public void run() {
+////                scrollview.fullScroll(View.FOCUS_DOWN);
+//                scrollview.scrollTo(0, scrollview.getBottom());
+//            }
+//        });
 
 
         dakhel.setOnClickListener(new View.OnClickListener() {
@@ -198,6 +198,7 @@ public class Ansab extends AppCompatActivity {
                 tareeaResponse.setVisibility(View.VISIBLE);
                 tareeaResponse.setText("بيوت بلاستيكية");
 
+
             }
         });
 
@@ -211,7 +212,6 @@ public class Ansab extends AppCompatActivity {
 
             }
         });
-
 
 
         baaleyya.setOnClickListener(new View.OnClickListener() {
@@ -291,7 +291,7 @@ public class Ansab extends AppCompatActivity {
 
             }
         });
- ramleyya.setOnClickListener(new View.OnClickListener() {
+        ramleyya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soilTypeResponseView.setVisibility(View.VISIBLE);
@@ -301,7 +301,7 @@ public class Ansab extends AppCompatActivity {
 
             }
         });
- ramleyyaTeeneyya.setOnClickListener(new View.OnClickListener() {
+        ramleyyaTeeneyya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soilTypeResponseView.setVisibility(View.VISIBLE);
@@ -311,7 +311,7 @@ public class Ansab extends AppCompatActivity {
 
             }
         });
- salteyya.setOnClickListener(new View.OnClickListener() {
+        salteyya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soilTypeResponseView.setVisibility(View.VISIBLE);
@@ -322,7 +322,7 @@ public class Ansab extends AppCompatActivity {
 
             }
         });
- teeneyya.setOnClickListener(new View.OnClickListener() {
+        teeneyya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soilTypeResponseView.setVisibility(View.VISIBLE);
@@ -349,8 +349,7 @@ public class Ansab extends AppCompatActivity {
     }
 
 
-
-    public void getPlants(){
+    public void getPlants() {
 
         final ProgressDialog dialog = ProgressDialog.show(Ansab.this, "",
                 "Please wait...", true);
@@ -364,16 +363,13 @@ public class Ansab extends AppCompatActivity {
                 new Response.Listener<com.farmerhouse.models.Plant[]>() {
                     @Override
                     public void onResponse(Plant[] response) {
-                                    Log.d("TAG", "onResponse: " + response[0].getName());
-                        PlantsRecyclerView plantsRecyclerView = new PlantsRecyclerView(Arrays.asList(response));
-                        ansabRecyclerView.setAdapter(plantsRecyclerView);
-                        dialog.dismiss();
-
-
+//                        Log.d("TAG", "onResponse: " + response[0].getName());
+//                        PlantsRecyclerView plantsRecyclerView = new PlantsRecyclerView(Arrays.asList(response));
+//                        ansabRecyclerView.setAdapter(plantsRecyclerView);
+//                        dialog.dismiss();
 
 
                     }
-
 
 
                 },
@@ -387,6 +383,15 @@ public class Ansab extends AppCompatActivity {
 
         VolleySingleton.getInstance(Ansab.this).addToRequestQueue(myGsonRequest);
 
+    }
+
+    public void scrollDown() {
+        scrollview.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scrollview.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        }, 200);
     }
 }
 

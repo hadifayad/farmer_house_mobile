@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.farmerhouse.AnsabMazro3atActivity;
 import com.farmerhouse.R;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.Plant;
@@ -23,7 +24,11 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
     List<Plant> plants;
     Context context;
 
+    PlantInterface mCallbackPlantClicked;
 
+    public interface PlantInterface {
+        public void plantClicked(Plant plant);
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -40,11 +45,11 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
     }
 
 
-    public PlantsRecyclerView(List<Plant> plants) {
-        Log.d("TAG", "PlantsRecyclerView: "+plants.get(0).getName());
+    public PlantsRecyclerView(List<Plant> plants, AnsabMazro3atActivity mCallbackPlantClicked) {
+        Log.d("TAG", "PlantsRecyclerView: " + plants.get(0).getName());
 
         this.plants = plants;
-
+        this.mCallbackPlantClicked = (PlantInterface) mCallbackPlantClicked;
     }
 
 
@@ -53,7 +58,7 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.plant_item, parent, false);
 
-         context = parent.getContext();
+        context = parent.getContext();
         return new PlantsRecyclerView.MyViewHolder(itemView);
     }
 
@@ -63,7 +68,7 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
         final Plant plant = plants.get(position);
 
 
-        Log.d("TAG", "onBindViewHolder: "+plant.getName());
+        Log.d("TAG", "onBindViewHolder: " + plant.getName());
 
         holder.title.setText(plant.getName());
 
@@ -77,21 +82,21 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
             holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.violet_shape));
         } else if ((position % 8) == 2) {
             holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.light_green_shape));
-        }
-     else if ((position % 8) == 3) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.turq_shape));
-    }
- else if ((position % 8) == 4) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.green_shape));
-        }
-        else if ((position % 8) == 5) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.purpple_shape));
+        } else if ((position % 8) == 3) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.turq_shape));
+        } else if ((position % 8) == 4) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.green_shape));
+        } else if ((position % 8) == 5) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.purpple_shape));
 
         }
 
-
-
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCallbackPlantClicked.plantClicked(plant);
+            }
+        });
 
 
     }

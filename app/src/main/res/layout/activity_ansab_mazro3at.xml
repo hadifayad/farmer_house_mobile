@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#ECEFF0"
+        android:orientation="vertical"
+        tools:context=".Ansab">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/icon_profile"></ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/helv"
+                android:text="يوزرسيف"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp"></TextView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/firstlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_profile"></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+
+                android:background="@drawable/ic_uzarsif_chat"
+
+                android:fontFamily="@font/helv"
+                android:text="اهلا بكم\n نرجو ادخال المعلومات للحصول على أفضل نتيجة"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="15dp"></TextView>
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/zera3aTypesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ansabRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/plantsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/platChoosenLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="right"
+                    android:src="@drawable/icon_profile"></ImageView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:background="@drawable/dialog_reversed">
+
+                        <RelativeLayout
+                            android:id="@+id/thirdlayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/ic_user_chat">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/choices_background"
+
+                                android:paddingStart="5dp"
+                                android:paddingLeft="5dp">
+
+                                <ImageView
+                                    android:id="@+id/bullet"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_alignParentStart="true"
+
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="10dp"
+
+                                    android:background="@drawable/circle"></ImageView>
+
+                                <TextView
+                                    android:id="@+id/plantText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toLeftOf="@+id/bullet"
+                                    android:fontFamily="@font/helv"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    android:text=" يسشي سش يشالعقد"
+                                    android:textColor="@color/black"></TextView>
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_dialog">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/ir_sharp"
+                            android:text="الرجاء اختيار واحدة من الخيارات التالية"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="13dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/plantsDataRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

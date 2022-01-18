@@ -35,11 +35,13 @@ public class NetworkHelper {
     public static final String ACTION_GET_NEWS ="mobile/get-news";
     public static final String ACTION_GET_CHILDREN ="mobile/get-children";
     public static final String ACTION_GET_TOP_PARENT ="mobile/get-top-parent";
+    public static final String ACTION_GET_TOP_PARENT_AFTER_PICKING_PLANT ="mobile/get-top-parent-after-picking-plant";
     public static final String ACTION_GET_PLANTS ="mobile/get-search-plants";
     public static final String ACTION_CREATE_CHAT ="mobile/create-chat";
     public static final String ACTION_GET_CHILDREN_AND_SAVE_MESSAGE = "mobile/get-children-and-save-message";
     public static final String ACTION_GET_CHAT_DATA = "mobile/get-chat-data";
     public static final String ACTION_LOGIN_USER = "mobile/login" ;
+    public static final String ACTION_GET_ZERA3AT_TYPES = "mobile/get-data" ;
 
 
     public static String getUrl(String action) {

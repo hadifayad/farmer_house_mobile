@@ -14,6 +14,9 @@
         android:theme="@style/Theme.FarmerHouse"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AnsabMazro3atActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
