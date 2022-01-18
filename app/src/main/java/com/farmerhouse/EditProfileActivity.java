@@ -18,6 +18,7 @@ import android.widget.Spinner;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.farmerhouse.models.ProfileData;
 import com.farmerhouse.models.User;
 import com.farmerhouse.models.Village;
 import com.farmerhouse.ui.MultiSpinner;
@@ -37,7 +38,7 @@ Spinner villages,landVillage,landLegal,landWater;
     Button upload;
 ProgressBar progress;
     String land_state,land_water,land_has_well,land_related_public_water,land_has_pond,land_area,land_id,land_height,land_village;
-    EditText landHeight,landId,landArea;
+    EditText landHeight,landId,landArea,fullnameView,secondPhone,email,addressView;
     CheckBox masdar1,masdar2,masdar3,masdar4,masdar5,masdar6,mo3adat1,mo3adat2,mo3adat3,mo3adat4,mo3adat5,mo3adat6,mo3adat7;
 
     String masdar1String,masdar2String,masdar3String,masdar4String,masdar5String,masdar6String,mo3adat1String,mo3adat2String,mo3adat3String,mo3adat4String,mo3adat5String,mo3adat6String,mo3adat7String;
@@ -58,6 +59,11 @@ ProgressBar progress;
         upload = findViewById(R.id.upload);
         landHeight = findViewById(R.id.landHeight);
         landId = findViewById(R.id.landId);
+        addressView = findViewById(R.id.addressView);
+
+        fullnameView = findViewById(R.id.fullnameView);
+        secondPhone = findViewById(R.id.secondPhone);
+        email = findViewById(R.id.email);
         landArea = findViewById(R.id.landArea);
 
         masdar1 = findViewById(R.id.masdar1);
@@ -406,6 +412,43 @@ public void uploadData(){
 
 
 
+}
+
+public void getProfileData(){
+
+    String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_PROFILE_DATA);
+    Log.d("url", url.toString());
+
+
+//        testanim object=new testanim(AddPost.this);
+//        object.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//        object.show();
+    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditProfileActivity.this);
+    String userId = prefs.getString("userId", "");
+
+    Map<String, String> params1 = new HashMap();
+    params1.put("userId",userId);
+
+    GsonRequest<ProfileData> myGsonRequest1 = new GsonRequest<ProfileData>(Request.Method.POST, url, ProfileData.class, null, params1,
+            new Response.Listener<ProfileData>() {
+                @Override
+                public void onResponse(ProfileData response) {
+
+
+
+
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+//                        object.dismiss();
+                    NetworkHelper.handleError(error);
+                    Log.d("error", "onErrorResponse: " + error.getMessage());
+                }
+            });
+
+    VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
 }
 
 
