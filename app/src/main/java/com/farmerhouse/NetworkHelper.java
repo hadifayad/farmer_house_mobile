@@ -25,7 +25,7 @@ public class NetworkHelper {
 //    public static final String SERVER_IP = "localhost/farmer_house";
     public static final String SERVER_IP = "192.168.10.109/farmer_house";
 //    public static final String SERVER_IP = "192.168.2.157/farmer_house";
-    public static final String SERVER_IP = "192.168.1.9/farmer_house";
+//    public static final String SERVER_IP = "192.168.1.9/farmer_house";
     public static final String IMAGES_PATH_POST_PICTURES = "http://" + SERVER_IP + "/web/newsUploads/";
     public static final String IMAGES_PATH_DATA_PICTURES = "http://" + SERVER_IP + "/web/dataImages/";
 
