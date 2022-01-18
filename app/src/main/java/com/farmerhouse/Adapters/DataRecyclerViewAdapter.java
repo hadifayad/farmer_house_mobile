@@ -81,6 +81,11 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         Map<String, String> params = new HashMap();
         params.put("parentId", id);
         params.put("chatId", chatId);
+        if (chatId.equals("-1")) {
+            params.put("withoutSaving", "true");
+        } else {
+            params.put("withoutSaving", "");
+        }
         GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, com.farmerhouse.models.Data[].class, null, params,
                 new Response.Listener<com.farmerhouse.models.Data[]>() {
                     @Override
@@ -119,7 +124,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         public LinearLayout layoutChoosen;
         public RecyclerView choicesRecyclerView;
         RelativeLayout header;
-        ImageView dataImage , triangleView;
+        ImageView dataImage, triangleView;
         TextView dataText;
 
         public MyViewHolder(View view) {
@@ -172,9 +177,9 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             isLastPosition = true;
         }
         ChoicesRecyclerView choicesRecyclerViewAdapter;
-        if (!chatId.equals("0")) {
+        if (!chatId.equals("0") && !chatId.equals("-1")) { // ya3ne 3am ye5la2 message
             choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this, true);
-        } else {
+        } else { // ya3ne bas baddo ya3mel view lal message
             choicesRecyclerViewAdapter = new ChoicesRecyclerView(data, this, isLastPosition);
         }
         holder.choicesRecyclerView.setAdapter(choicesRecyclerViewAdapter);
@@ -207,7 +212,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
             } else {
                 holder.dataText.setVisibility(View.GONE);
             }
-        }else{
+        } else {
             holder.dataText.setVisibility(View.VISIBLE);
         }
 

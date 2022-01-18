@@ -74,19 +74,14 @@ public class ChoicesRecyclerView extends RecyclerView.Adapter<ChoicesRecyclerVie
             holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.violet_shape));
         } else if ((position % 8) == 2) {
             holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.light_green_shape));
-        }
-     else if ((position % 8) == 3) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.turq_shape));
-    }
- else if ((position % 8) == 4) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.green_shape));
-        }
-        else if ((position % 8) == 5) {
-        holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.purpple_shape));
+        } else if ((position % 8) == 3) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.turq_shape));
+        } else if ((position % 8) == 4) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.green_shape));
+        } else if ((position % 8) == 5) {
+            holder.bullet.setBackground(context.getResources().getDrawable(R.drawable.purpple_shape));
 
         }
-
-
 
 
         if (isLastPosition) {

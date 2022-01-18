@@ -99,11 +99,11 @@ CountryCodePicker ccp;
                     params.put("token", token);
 
 
-                    Log.d("tag", params.toString());
-                    GsonRequest<User> myGsonRequest = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
-                            response -> {
-
-//                                Log.d("TAG", "onClick: "+response.toString());
+                Log.d("tag", params.toString());
+                GsonRequest<User> myGsonRequest = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
+                        response -> {
+                            if (response != null) {
+                                Log.d("TAG", "onClick: " + response.toString());
 
                                     SharedPreferences.Editor ed = prefs.edit();
                                     ed.putString("phone", response.getPhone());
@@ -128,17 +128,19 @@ CountryCodePicker ccp;
                                     startActivity(intent);
                                     getActivity().finish();
 
-
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(getContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
-                                    // dialog.dismiss();
-                                    NetworkHelper.handleError(error);
-                                }
-                            });
-                    VolleySingleton.getInstance(getContext()).addToRequestQueue(myGsonRequest);
+                            } else {
+                                Toast.makeText(getContext(), getActivity().getString(R.string.incorrect_username_or_password), Toast.LENGTH_SHORT).show();
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getContext(), "Incorrect Username or Password", Toast.LENGTH_LONG).show();
+                                // dialog.dismiss();
+                                NetworkHelper.handleError(error);
+                            }
+                        });
+                VolleySingleton.getInstance(getContext()).addToRequestQueue(myGsonRequest);
 
 
                 }
