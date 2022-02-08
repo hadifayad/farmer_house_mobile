@@ -30,18 +30,18 @@ import java.util.Map;
 
 public class EditProfileActivity extends AppCompatActivity {
 
-MultiSpinner.MultiSpinnerListener listener;
-    List valuesArray = new ArrayList() ;
+    MultiSpinner.MultiSpinnerListener listener;
+    List valuesArray = new ArrayList();
 
-Spinner villages,landVillage,landLegal,landWater;
-    CheckBox landPond,landPublic,landWell;
+    Spinner villages, landVillage, landLegal, landWater;
+    CheckBox landPond, landPublic, landWell;
     Button upload;
-ProgressBar progress;
-    String land_state,land_water,land_has_well,land_related_public_water,land_has_pond,land_area,land_id,land_height,land_village;
-    EditText landHeight,landId,landArea,fullnameView,secondPhone,email,addressView;
-    CheckBox masdar1,masdar2,masdar3,masdar4,masdar5,masdar6,mo3adat1,mo3adat2,mo3adat3,mo3adat4,mo3adat5,mo3adat6,mo3adat7;
+    ProgressBar progress;
+    String land_state, land_water, land_has_well, land_related_public_water, land_has_pond, land_area, land_id, land_height, land_village;
+    EditText landHeight, landId, landArea, fullnameView, secondPhone, email, addressView;
+    CheckBox masdar1, masdar2, masdar3, masdar4, masdar5, masdar6, mo3adat1, mo3adat2, mo3adat3, mo3adat4, mo3adat5, mo3adat6, mo3adat7;
 
-    String masdar1String,masdar2String,masdar3String,masdar4String,masdar5String,masdar6String,mo3adat1String,mo3adat2String,mo3adat3String,mo3adat4String,mo3adat5String,mo3adat6String,mo3adat7String;
+    String masdar1String, masdar2String, masdar3String, masdar4String, masdar5String, masdar6String, mo3adat1String, mo3adat2String, mo3adat3String, mo3adat4String, mo3adat5String, mo3adat6String, mo3adat7String;
 
 
     @Override
@@ -141,7 +141,7 @@ ProgressBar progress;
         landWater.setAdapter(waterTypeChoicesAdapter);
 
 
-        landVillage. setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        landVillage.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 land_village = valuesArray.get(i).toString();
@@ -151,8 +151,7 @@ ProgressBar progress;
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        } );
-
+        });
 
 
         upload.setOnClickListener(new View.OnClickListener() {
@@ -160,126 +159,108 @@ ProgressBar progress;
             public void onClick(View v) {
 
 
+                if (landWell.isSelected()) {
+                    land_has_well = "1";
+                } else {
+                    land_has_well = "0";
+                }
 
+                if (landPond.isSelected()) {
 
-                        if(landWell.isSelected()){
-                            land_has_well="1";
-                        }
-                        else {
-                            land_has_well="0";
-                        }
+                    land_has_pond = "1";
+                } else {
+                    land_has_pond = "0";
 
-                        if(landPond.isSelected()){
-
-                            land_has_pond ="1";
-                        }
-                        else{
-                            land_has_pond ="0";
-
-                        }
-                        if(landPublic.isSelected()){
-                            land_related_public_water ="1";
-                        }
-                        else{
-                            land_related_public_water="0";
-                        }
+                }
+                if (landPublic.isSelected()) {
+                    land_related_public_water = "1";
+                } else {
+                    land_related_public_water = "0";
+                }
 
 
                 land_area = landArea.getText().toString();
                 land_id = landId.getText().toString();
-                land_height =landHeight.getText().toString();
+                land_height = landHeight.getText().toString();
 
-                if(masdar1.isSelected()){
-                    masdar1String ="1";
-                }
-                else{
+                if (masdar1.isSelected()) {
+                    masdar1String = "1";
+                } else {
 
-                    masdar1String ="0";
+                    masdar1String = "0";
                 }
-                if(masdar2.isSelected()){
-                    masdar2String ="1";
-                }
-                else{
+                if (masdar2.isSelected()) {
+                    masdar2String = "1";
+                } else {
 
-                    masdar2String ="0";
+                    masdar2String = "0";
                 }
-                if(masdar3.isSelected()){
-                    masdar3String ="1";
-                }
-                else{
+                if (masdar3.isSelected()) {
+                    masdar3String = "1";
+                } else {
 
-                    masdar3String ="0";
+                    masdar3String = "0";
                 }
-                if(masdar4.isSelected()){
-                    masdar4String ="1";
-                }
-                else{
+                if (masdar4.isSelected()) {
+                    masdar4String = "1";
+                } else {
 
-                    masdar4String ="0";
+                    masdar4String = "0";
                 }
-                if(masdar5.isSelected()){
-                    masdar5String ="1";
-                }
-                else{
+                if (masdar5.isSelected()) {
+                    masdar5String = "1";
+                } else {
 
-                    masdar5String ="0";
+                    masdar5String = "0";
                 }
-                if(masdar6.isSelected()){
-                    masdar6String ="1";
-                }
-                else{
+                if (masdar6.isSelected()) {
+                    masdar6String = "1";
+                } else {
 
-                    masdar6String ="0";
+                    masdar6String = "0";
                 }
 
-                if(mo3adat1.isSelected()){
-                    mo3adat1String ="1";
-                }
-                else{
+                if (mo3adat1.isSelected()) {
+                    mo3adat1String = "1";
+                } else {
 
-                    mo3adat1String ="0";
+                    mo3adat1String = "0";
                 }
-                if(mo3adat2.isSelected()){
-                    mo3adat2String ="1";
-                }
-                else{
+                if (mo3adat2.isSelected()) {
+                    mo3adat2String = "1";
+                } else {
 
-                    mo3adat2String ="0";
+                    mo3adat2String = "0";
                 }
-                if(mo3adat3.isSelected()){
-                    mo3adat3String ="1";
-                }
-                else{
+                if (mo3adat3.isSelected()) {
+                    mo3adat3String = "1";
+                } else {
 
-                    mo3adat3String ="0";
+                    mo3adat3String = "0";
                 }
-                if(mo3adat4.isSelected()){
-                    mo3adat4String ="1";
-                }
-                else{
+                if (mo3adat4.isSelected()) {
+                    mo3adat4String = "1";
+                } else {
 
-                    mo3adat4String ="0";
+                    mo3adat4String = "0";
                 }
-                if(mo3adat5.isSelected()){
-                    mo3adat5String ="1";
-                }
-                else{
+                if (mo3adat5.isSelected()) {
+                    mo3adat5String = "1";
+                } else {
 
-                    mo3adat5String ="0";
+                    mo3adat5String = "0";
                 }
-                if(mo3adat6.isSelected()){
-                    mo3adat6String ="1";
-                }
-                else{
+                if (mo3adat6.isSelected()) {
+                    mo3adat6String = "1";
+                } else {
 
-                    mo3adat6String ="0";
+                    mo3adat6String = "0";
                 }
-                if(mo3adat7.isSelected()){
-                    mo3adat7String ="1";
-                }
-                else{
+                if (mo3adat7.isSelected()) {
+                    mo3adat7String = "1";
+                } else {
 
-                    mo3adat7String ="0";
+                    mo3adat7String = "0";
                 }
 
 
@@ -290,169 +271,140 @@ ProgressBar progress;
         });
 
 
+    }
 
 
+    public void getVillages() {
+        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_VILLAGES);
+        Log.d("url", url.toString());
 
 
+//        testanim object=new testanim(AddPost.this);
+//        object.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//        object.show();
+
+        Map<String, String> params1 = new HashMap();
 
 
+        GsonRequest<Village[]> myGsonRequest1 = new GsonRequest<Village[]>(Request.Method.POST, url, Village[].class, null, params1,
+                new Response.Listener<Village[]>() {
+                    @Override
+                    public void onResponse(Village[] response) {
+
+                        Log.d("TAG", "onResponse: " + response[0]);
+
+                        String VillageArray[] = new String[response.length];
+
+                        for (int i = 0; i < response.length; i++) {
+                            VillageArray[i] = response[i].getName();
+//                            valuesArray[i] = response[i].getId();
+                            valuesArray.add(response[i].getId());
+                        }
 
 
+// Application of the Array to the Spinner
+                        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(EditProfileActivity.this, android.R.layout.simple_spinner_item, VillageArray);
+                        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
 
 
+                        villages.setAdapter(spinnerArrayAdapter);
+                        landVillage.setAdapter(spinnerArrayAdapter);
+//                        object.dismiss();
 
 
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//                        object.dismiss();
+                        NetworkHelper.handleError(error);
+                        Log.d("error", "onErrorResponse: " + error.getMessage());
+                    }
+                });
+
+        VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
+
+    }
+
+    public void uploadData() {
+
+
+        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_UPDATE_PROFILE);
+        Log.d("url", url.toString());
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditProfileActivity.this);
+        String userId = prefs.getString("userId", "");
+
+        Map<String, String> params = new HashMap();
+        params.put("land_height", land_height);
+        params.put("land_id", land_id);
+        params.put("land_area", land_area);
+        params.put("land_related_public_water", land_related_public_water);
+        params.put("land_has_pond", land_has_pond);
+        params.put("land_has_well", land_has_well);
+        params.put("land_village", land_village);
+        params.put("land_state", land_state);
+        params.put("land_water", land_water);
+        params.put("userId", userId);
+        Log.d("TAG", "uploadData: " + params.toString());
+
+
+        GsonRequest<User> myGsonRequest1 = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
+                new Response.Listener<User>() {
+                    @Override
+                    public void onResponse(User response) {
+
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//                        object.dismiss();
+                        NetworkHelper.handleError(error);
+                        Log.d("error", "onErrorResponse: " + error.getMessage());
+                    }
+                });
+
+        VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
 
 
     }
 
+    public void getProfileData() {
 
-
-    public void getVillages()
-
-        {
-            String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_VILLAGES);
-            Log.d("url", url.toString());
+        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_PROFILE_DATA);
+        Log.d("url", url.toString());
 
 
 //        testanim object=new testanim(AddPost.this);
 //        object.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 //        object.show();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditProfileActivity.this);
+        String userId = prefs.getString("userId", "");
 
-            Map<String, String> params1 = new HashMap();
+        Map<String, String> params1 = new HashMap();
+        params1.put("userId", userId);
 
-
-            GsonRequest<Village[]> myGsonRequest1 = new GsonRequest<Village[]>(Request.Method.POST, url, Village[].class, null, params1,
-                    new Response.Listener<Village[]>() {
-                        @Override
-                        public void onResponse(Village[] response) {
-
-                            Log.d("TAG", "onResponse: " + response[0]);
-
-                            String VillageArray[] = new String[response.length];
-
-                            for (int i = 0; i < response.length; i++) {
-                                VillageArray[i] = response[i].getName();
-//                            valuesArray[i] = response[i].getId();
-                                valuesArray.add(response[i].getId());
-                            }
+        GsonRequest<ProfileData> myGsonRequest1 = new GsonRequest<ProfileData>(Request.Method.POST, url, ProfileData.class, null, params1,
+                new Response.Listener<ProfileData>() {
+                    @Override
+                    public void onResponse(ProfileData response) {
 
 
-// Application of the Array to the Spinner
-                            ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(EditProfileActivity.this, android.R.layout.simple_spinner_item, VillageArray);
-                            spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-
-
-                            villages.setAdapter(spinnerArrayAdapter);
-                            landVillage.setAdapter(spinnerArrayAdapter);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
 //                        object.dismiss();
+                        NetworkHelper.handleError(error);
+                        Log.d("error", "onErrorResponse: " + error.getMessage());
+                    }
+                });
 
-
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-//                        object.dismiss();
-                            NetworkHelper.handleError(error);
-                            Log.d("error", "onErrorResponse: " + error.getMessage());
-                        }
-                    });
-
-            VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
-
-        }
-
-public void uploadData(){
-
-
-    String url = NetworkHelper.getUrl(NetworkHelper.ACTION_UPDATE_PROFILE);
-    Log.d("url", url.toString());
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditProfileActivity.this);
-    String userId = prefs.getString("userId", "");
-
-    Map<String, String> params = new HashMap();
-    params.put("land_height",land_height);
-    params.put("land_id",land_id);
-    params.put("land_area",land_area);
-    params.put("land_related_public_water",land_related_public_water);
-    params.put("land_has_pond",land_has_pond);
-    params.put("land_has_well",land_has_well);
-    params.put("land_village",land_village);
-    params.put("land_state",land_state);
-    params.put("land_water",land_water);
-    params.put("userId",userId);
-    Log.d("TAG", "uploadData: "+params.toString());
-
-
-
-    GsonRequest<User> myGsonRequest1 = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
-            new Response.Listener<User>() {
-                @Override
-                public void onResponse(User response) {
-
-
-
-
-                }
-            },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-//                        object.dismiss();
-                    NetworkHelper.handleError(error);
-                    Log.d("error", "onErrorResponse: " + error.getMessage());
-                }
-            });
-
-    VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
-
-
-
-
-
-
-}
-
-public void getProfileData(){
-
-    String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_PROFILE_DATA);
-    Log.d("url", url.toString());
-
-
-//        testanim object=new testanim(AddPost.this);
-//        object.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-//        object.show();
-    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(EditProfileActivity.this);
-    String userId = prefs.getString("userId", "");
-
-    Map<String, String> params1 = new HashMap();
-    params1.put("userId",userId);
-
-    GsonRequest<ProfileData> myGsonRequest1 = new GsonRequest<ProfileData>(Request.Method.POST, url, ProfileData.class, null, params1,
-            new Response.Listener<ProfileData>() {
-                @Override
-                public void onResponse(ProfileData response) {
-
-
-
-
-                }
-            },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-//                        object.dismiss();
-                    NetworkHelper.handleError(error);
-                    Log.d("error", "onErrorResponse: " + error.getMessage());
-                }
-            });
-
-    VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
-}
-
-
-
+        VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
+    }
 
 
 }
