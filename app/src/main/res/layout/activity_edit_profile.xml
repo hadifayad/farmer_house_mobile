@@ -75,38 +75,38 @@
             android:textSize="17dp"
             app:hintText="اختر القرية" />
 
-    <EditText
-        android:id="@+id/secondPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/SearchableSpinner"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_button"
-        android:fontFamily="@font/ir_sharp"
-        android:hint="رقم هاتف احتياطي"
+        <EditText
+            android:id="@+id/secondPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SearchableSpinner"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
 
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textColorHint="#808080"
-        android:textSize="17dp"></EditText>
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="رقم هاتف احتياطي"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
 
 
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/secondPhone"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/ic_button"
-        android:fontFamily="@font/ir_sharp"
-        android:hint="البريد الالكتروني"
-        android:textAlignment="center"
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/secondPhone"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
 
-        android:textColor="@color/black"
-        android:textColorHint="#808080"
-        android:textSize="17dp"></EditText>
+            android:hint="البريد الالكتروني"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
 
 
         <EditText
@@ -117,8 +117,8 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_button"
-            android:fontFamily="@font/ir_sharp"
 
+            android:fontFamily="@font/ir_sharp"
             android:hint="العنوان التفصيلي"
             android:textAlignment="center"
             android:textColor="@color/black"

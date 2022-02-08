@@ -43,6 +43,7 @@ public class NetworkHelper {
     public static final String ACTION_LOGIN_USER = "mobile/login" ;
     public static final String ACTION_GET_ZERA3AT_TYPES = "mobile/get-data" ;
     public static final String ACTION_UPDATE_PROFILE = "mobile/update-profile" ;
+    public static final String ACTION_GET_PROFILE_DATA = "mobile/get-profile-data" ;
 
 
     public static String getUrl(String action) {
