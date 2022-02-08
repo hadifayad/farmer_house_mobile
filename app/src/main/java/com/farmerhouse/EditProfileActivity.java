@@ -349,7 +349,13 @@ ProgressBar progress;
                             villages.setAdapter(spinnerArrayAdapter);
                             landVillage.setAdapter(spinnerArrayAdapter);
 //                            landVillage.setSelection(valuesArray.get(Integer.parseInt(landVillageId)));
-                            Log.d("TAG", "onResponse: "+landVillageId +"length"+valuesArray.get(Integer.parseInt(landVillageId)));
+//                            Log.d("TAG", "onResponse: "+landVillageId +"length"+ valuesArray.get(Integer.parseInt(landVillageId)));
+//                            for(int i =0 ; i<valuesArray.size();i++){
+//                                if(valuesArray.get(i)==landVillageId){
+//                                    Log.d("TAG", "onResponse: l id hwwwwee"+i+"name"+response[i]);
+//                                }
+//
+//                            }
 //                        object.dismiss();
 
 
