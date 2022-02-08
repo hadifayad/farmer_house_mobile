@@ -24,6 +24,7 @@ import com.farmerhouse.GsonRequest;
 import com.farmerhouse.NetworkHelper;
 import com.farmerhouse.R;
 import com.farmerhouse.VolleySingleton;
+import com.farmerhouse.inbox.CreateMessage;
 import com.farmerhouse.models.Data;
 import com.farmerhouse.models.DataMessages;
 
@@ -80,11 +81,12 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
         Log.d("url", url.toString());
         Map<String, String> params = new HashMap();
         params.put("parentId", id);
-        params.put("chatId", chatId);
         if (chatId.equals("-1")) {
             params.put("withoutSaving", "true");
+            params.put("chatId", chatId);
         } else {
             params.put("withoutSaving", "");
+            params.put("chatId", CreateMessage.chatId);
         }
         GsonRequest<Data[]> myGsonRequest = new GsonRequest<com.farmerhouse.models.Data[]>(Request.Method.POST, url, com.farmerhouse.models.Data[].class, null, params,
                 new Response.Listener<com.farmerhouse.models.Data[]>() {

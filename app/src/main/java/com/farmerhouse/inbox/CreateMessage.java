@@ -32,7 +32,8 @@ public class CreateMessage extends AppCompatActivity {
 
     //    RelativeLayout aked, daleel;
     public RecyclerView dataRecyclerView;
-//    RecyclerView topParentRecyclerView;
+    //    RecyclerView topParentRecyclerView;
+    public static String chatId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class CreateMessage extends AppCompatActivity {
 //        daleelData.setId("1");
 
 
-//        String   chatId = getIntent().getStringExtra("chatId");
+        chatId = getIntent().getStringExtra("chatId");
 
 
 //            Log.d("TAG", "onCreate: phone and pass" +phoneNumberString +" "+passwordString);
@@ -85,15 +86,15 @@ public class CreateMessage extends AppCompatActivity {
 //                                    Log.d("TAG", "onResponse: " + response[0].getDate());
                         dialog.dismiss();
 
-                            DataMessages dataMessage = new DataMessages();
-                            dataMessage.setData(Arrays.asList(response));
+                        DataMessages dataMessage = new DataMessages();
+                        dataMessage.setData(Arrays.asList(response));
 
-                            List<DataMessages> dataMessages = new ArrayList<>();
-                            dataMessages.add(dataMessage);
+                        List<DataMessages> dataMessages = new ArrayList<>();
+                        dataMessages.add(dataMessage);
 
-                            DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(dataMessages, "0");
-                            dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
-                        }
+                        DataRecyclerViewAdapter dataRecyclerViewAdapter = new DataRecyclerViewAdapter(dataMessages, "0");
+                        dataRecyclerView.setAdapter(dataRecyclerViewAdapter);
+                    }
 
 
 //                        TopParentRecyclerView topParentRecyclerViewAdapter = new TopParentRecyclerView(Arrays.asList(response));
