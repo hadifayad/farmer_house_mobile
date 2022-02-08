@@ -17,15 +17,15 @@
 
             android:title="أكتشف" />
         <item
-            android:id="@+id/profile"
+            android:id="@+id/profileFragment"
 
             android:title="حسابك" />
         <item
-            android:id="@+id/nav_activities"
+            android:id="@+id/activitiesFragment"
 
             android:title="متابعة الانشطة" />
         <item
-            android:id="@+id/nav_specs"
+            android:id="@+id/createMessageOptions"
 
             android:title="خصائص" />
     </group>
