@@ -91,17 +91,31 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.store_bottom:
 
-//                        ShopFragment shopFragment = new ShopFragment();
-//                        fragmentTransaction.replace(R.id.main_framelayout, shopFragment).commit();
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                        String userId = prefs.getString("userId", "");
+                        Log.d("tag", "onReselectItem: " + userId);
+                        if (!userId.equals(null) && !userId.equals("")) {
+
+                            ActivitiesFragment activitiesFragment = new ActivitiesFragment();
+                            fragmentTransaction.replace(R.id.nav_host_fragment, activitiesFragment).commit();
+                            return true;
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "Please Login first..",
+                                    Toast.LENGTH_LONG).show();
+                            Intent intent1 = new Intent(MainActivity.this, LoginOrSignup.class);
+
+                            startActivity(intent1);
+                        }
                         return true;
 
                     case R.id.profile_bottom:
 
 
-                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                        String userId = prefs.getString("userId", "");
-                        Log.d("tag", "onReselectItem: " + userId);
-                        if (!userId.equals(null) && !userId.equals("")) {
+                        SharedPreferences prefs1 = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                        String userId1 = prefs1.getString("userId", "");
+                        Log.d("tag", "onReselectItem: " + userId1);
+                        if (!userId1.equals(null) && !userId1.equals("")) {
 
                             ProfileFragment profileFragment = new ProfileFragment();
                             fragmentTransaction.replace(R.id.nav_host_fragment, profileFragment).commit();
@@ -119,6 +133,24 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+                mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home,
+//                R.id.loginItem,
+                R.id.search,
+                R.id.profileFragment,
+                R.id.activitiesFragment,
+                R.id.createMessageOptions
+
+        )
+                .setDrawerLayout(drawer)
+                .build();
+
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+
+        NavigationUI.setupWithNavController(navigationView, navController);
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

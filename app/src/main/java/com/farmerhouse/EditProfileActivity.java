@@ -32,6 +32,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
 MultiSpinner.MultiSpinnerListener listener;
     List valuesArray = new ArrayList() ;
+    public String villageId , landVillageId;
 
 Spinner villages,landVillage,landLegal,landWater;
     CheckBox landPond,landPublic,landWell;
@@ -84,6 +85,7 @@ ProgressBar progress;
 //        progress = findViewById(R.id.progress);
 //        progress.setProgress(85);
         getVillages();
+        getProfileData();
 //        MultiSpinner multiSpinner = (MultiSpinner) findViewById(R.id.masdarTa2a);
 //        List<String> items = new ArrayList<>();
 //        items.add("hadi");
@@ -327,9 +329,10 @@ ProgressBar progress;
                         @Override
                         public void onResponse(Village[] response) {
 
-                            Log.d("TAG", "onResponse: " + response[0]);
+                            Log.d("TAG", "onResponse:length " + response.length);
 
                             String VillageArray[] = new String[response.length];
+
 
                             for (int i = 0; i < response.length; i++) {
                                 VillageArray[i] = response[i].getName();
@@ -345,6 +348,8 @@ ProgressBar progress;
 
                             villages.setAdapter(spinnerArrayAdapter);
                             landVillage.setAdapter(spinnerArrayAdapter);
+//                            landVillage.setSelection(valuesArray.get(Integer.parseInt(landVillageId)));
+                            Log.d("TAG", "onResponse: "+landVillageId +"length"+valuesArray.get(Integer.parseInt(landVillageId)));
 //                        object.dismiss();
 
 
@@ -381,6 +386,19 @@ public void uploadData(){
     params.put("land_village",land_village);
     params.put("land_state",land_state);
     params.put("land_water",land_water);
+    params.put("human",masdar1String);
+    params.put("animals",masdar2String);
+    params.put("automatic_energy",masdar3String);
+    params.put("wind_energy",masdar4String);
+    params.put("solar_energy",masdar5String);
+    params.put("electricity",masdar6String);
+    params.put("jarrar",mo3adat1String);
+    params.put("rash",mo3adat2String);
+    params.put("maktoura",mo3adat3String);
+    params.put("sahreej",mo3adat4String);
+    params.put("mdakha",mo3adat5String);
+    params.put("shabaket_ray",mo3adat6String);
+    params.put("alat",mo3adat7String);
     params.put("userId",userId);
     Log.d("TAG", "uploadData: "+params.toString());
 
@@ -429,10 +447,87 @@ public void getProfileData(){
     Map<String, String> params1 = new HashMap();
     params1.put("userId",userId);
 
-    GsonRequest<ProfileData> myGsonRequest1 = new GsonRequest<ProfileData>(Request.Method.POST, url, ProfileData.class, null, params1,
+    GsonRequest<ProfileData> myGsonRequest = new GsonRequest<ProfileData>(Request.Method.POST, url, ProfileData.class, null, params1,
             new Response.Listener<ProfileData>() {
                 @Override
-                public void onResponse(ProfileData response) {
+                public void onResponse(ProfileData response)
+
+
+
+
+
+                {
+                    Log.d("TAG", "onResponse: "+response.getFullname());
+//                    villages = findViewById(R.id.SearchableSpinner);
+//                    landVillage = findViewById(R.id.landVillage);
+//                    landLegal = findViewById(R.id.landLegal);
+//
+//                    landWater = findViewById(R.id.landWater);
+//                    landPond = findViewById(R.id.landPond);
+//                    landPublic = findViewById(R.id.landPublic);
+//                    landWell = findViewById(R.id.landWell);
+
+                    landHeight.setText(response.getLand_height());
+                    landId.setText(response.getLand_id());
+                    addressView.setText(response.getAddress());
+
+                    fullnameView.setText(response.getFullname());
+                    secondPhone.setText(response.getSecond_phone());
+                    email.setText(response.getEmail());
+                    landArea.setText(response.getLand_area());
+                    Log.d("TAG", "onResponse: "+valuesArray.size() +" land "+response.getLand_village());
+//                  villages.setSelection(Integer.parseInt(response.getVillage()));
+//                  villages.setSelection(Integer.parseInt(response.getLand_village()));
+                    villageId =  response.getVillage();
+                    landVillageId =  response.getLand_village();
+                    if(response.getLand_has_well().toString().equals("1")){
+                        landWell.setChecked(true);
+                    }
+                    if(response.getLand_has_pond().toString().equals("1")){
+                        landPond.setChecked(true);
+                    }
+                    if(response.getLand_related_public_water().toString().equals("1")){
+                        landPublic.setChecked(true);
+                    }
+                    if(response.getHuman().toString().equals("1")){
+                        masdar1.setChecked(true);
+                    }
+                    if(response.getAnimals().toString().equals("1")){
+                        masdar2.setChecked(true);
+                    }
+                    if(response.getAutomatic_energy().toString().equals("1")){
+                        masdar3.setChecked(true);
+                    }
+                    if(response.getWind_energy().toString().equals("1")){
+                        masdar4.setChecked(true);
+                    }
+                    if(response.getSolar_energy().toString().equals("1")){
+                        masdar5.setChecked(true);
+                    }
+                    if(response.getElectricity().toString().equals("1")){
+                        masdar6.setChecked(true);
+                    }
+                    if(response.getJarrar().toString().equals("1")){
+                        mo3adat1.setChecked(true);
+                    }
+                    if(response.getRash().toString().equals("1")){
+                        mo3adat2.setChecked(true);
+                    }
+                    if(response.getAlat().toString().equals("1")){
+                        mo3adat3.setChecked(true);
+                    }
+                    if(response.getMaktoura().toString().equals("1")){
+                        mo3adat4.setChecked(true);
+                    }
+                    if(response.getSahreej().toString().equals("1")){
+                        mo3adat5.setChecked(true);
+                    }
+                    if(response.getMdakha().toString().equals("1")){
+                        mo3adat6.setChecked(true);
+                    }
+                    if(response.getShabaket_ray().toString().equals("1")){
+                        mo3adat7.setChecked(true);
+                    }
 
 
 
@@ -448,7 +543,7 @@ public void getProfileData(){
                 }
             });
 
-    VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest1);
+    VolleySingleton.getInstance(EditProfileActivity.this).addToRequestQueue(myGsonRequest);
 }
 
 

@@ -46,7 +46,7 @@ public class PlantsRecyclerView extends RecyclerView.Adapter<PlantsRecyclerView.
 
 
     public PlantsRecyclerView(List<Plant> plants, AnsabMazro3atActivity mCallbackPlantClicked) {
-        Log.d("TAG", "PlantsRecyclerView: " + plants.get(0).getName());
+//        Log.d("TAG", "PlantsRecyclerView: " + plants.get(0).getName());
 
         this.plants = plants;
         this.mCallbackPlantClicked = (PlantInterface) mCallbackPlantClicked;

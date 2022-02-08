@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        android:background="@drawable/hero"
+
+        >
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+android:id="@+id/card"
+            android:layout_marginTop="27.5dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/elipse"
+
+
+                android:onClick="profilePictureClicked"
+                android:outlineProvider="background"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullname"
+            android:layout_below="@id/card"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="My Name"
+            android:textColor="@color/white"
+            android:fontFamily="@font/helv"
+            android:textStyle="bold"
+            android:textSize="18dp"></TextView>
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/editProfile"
@@ -14,11 +70,14 @@
 
         android:layout_centerHorizontal="true"
 
-        android:background="@drawable/ic_button_register"
+        android:background="@drawable/ic_button"
+        android:backgroundTint="@color/app_brown"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/ir_sharp"
         android:text="تعديل الحساب"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
 
-</FrameLayout>
+</LinearLayout>

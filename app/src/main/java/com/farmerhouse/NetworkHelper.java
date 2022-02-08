@@ -23,7 +23,8 @@ public class NetworkHelper {
 //    public static final String SERVER_IP = "192.168.0.158/room_web";
 //    public static final String SERVER_IP = "192.168.43.196/room_web";
 //    public static final String SERVER_IP = "localhost/farmer_house";
-    public static final String SERVER_IP = "192.168.10.109/farmer_house";
+//    public static final String SERVER_IP = "192.168.10.105/farmer_house";
+    public static final String SERVER_IP = "wonderful-archimedes.194-60-87-55.plesk.page/farmer_house";
 //    public static final String SERVER_IP = "192.168.2.157/farmer_house";
 //    public static final String SERVER_IP = "192.168.1.9/farmer_house";
     public static final String IMAGES_PATH_POST_PICTURES = "http://" + SERVER_IP + "/web/newsUploads/";
@@ -44,10 +45,12 @@ public class NetworkHelper {
     public static final String ACTION_GET_ZERA3AT_TYPES = "mobile/get-data" ;
     public static final String ACTION_UPDATE_PROFILE = "mobile/update-profile" ;
     public static final String ACTION_GET_PROFILE_DATA = "mobile/get-profile-data" ;
+    public static final String ACTION_ADD_ACTIVITY = "mobile/add-activity" ;
+    public static final String ACTION_GET_USER_ACTIVITIES ="mobile/get-user-activities" ;
 
 
     public static String getUrl(String action) {
-        String serverURL = "http://" + SERVER_IP + "/web/index.php?r=";
+        String serverURL = "https://" + SERVER_IP + "/web/index.php?r=";
         String url = serverURL + "api/" + action;
 
         return url;

@@ -61,7 +61,7 @@ public class splash extends AppCompatActivity {
 
                         ed.commit();
 
-                        Toast.makeText(splash.this, token, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(splash.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
 

@@ -22,4 +22,19 @@
         android:name="com.farmerhouse.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/createMessageOptions"
+        android:name="com.farmerhouse.CreateMessageOptions"
+        android:label="activity_create_message_options"
+        tools:layout="@layout/activity_create_message_options" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.farmerhouse.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/activitiesFragment"
+        android:name="com.farmerhouse.ActivitiesFragment"
+        android:label="fragment_activities"
+        tools:layout="@layout/fragment_activities" />
 </navigation>

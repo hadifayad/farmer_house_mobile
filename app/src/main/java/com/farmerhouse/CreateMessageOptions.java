@@ -73,8 +73,8 @@ public class CreateMessageOptions extends AppCompatActivity {
 //
 
                                 dialog.dismiss();
-                                Toast.makeText(CreateMessageOptions.this, "new message",
-                                        Toast.LENGTH_LONG).show();
+//                                Toast.makeText(CreateMessageOptions.this, "new message",
+//                                        Toast.LENGTH_LONG).show();
                                 Log.d("upload", response);
                                 Intent i = new Intent(CreateMessageOptions.this, CreateMessage.class);
                                 i.putExtra("chatId", response.toString());
