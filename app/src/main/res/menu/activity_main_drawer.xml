@@ -15,7 +15,7 @@
         <item
             android:id="@+id/search"
 
-            android:title="أكتشف" />
+            android:title="الخدمات" />
         <item
             android:id="@+id/profileFragment"
 
@@ -23,7 +23,7 @@
         <item
             android:id="@+id/activitiesFragment"
 
-            android:title="متابعة الانشطة" />
+            android:title="متابعة الأنشطة" />
         <item
             android:id="@+id/createMessageOptions"
 

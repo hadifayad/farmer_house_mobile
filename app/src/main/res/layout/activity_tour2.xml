@@ -37,16 +37,16 @@
         android:src="@drawable/ic_dash"></ImageView>
 
     <TextView
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ir_sharp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/text2"
-        android:layout_marginTop="30dp"
-        android:textAlignment="center"
-
         android:layout_below="@+id/dash"
-        android:text="سجل حسابك لتابعة انشطتك"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/ir_sharp"
+
+        android:text="سجل حسابك لمتابعة انشطتك"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17dp"></TextView>
     <ImageView
