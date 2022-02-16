@@ -463,7 +463,7 @@ public void getProfileData(){
 
 
                 {
-                    Log.d("TAG", "onResponse: "+response.getFullname());
+                    Log.d("TAG", "onResponse: "+response.toString());
 //                    villages = findViewById(R.id.SearchableSpinner);
 //                    landVillage = findViewById(R.id.landVillage);
 //                    landLegal = findViewById(R.id.landLegal);

@@ -61,6 +61,7 @@ public class CustomDialog extends Dialog implements
                 break;
             case R.id.btn_no:
                 dismiss();
+                c.finish();
                 break;
             default:
                 break;
