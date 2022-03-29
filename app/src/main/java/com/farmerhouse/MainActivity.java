@@ -94,19 +94,45 @@ public class MainActivity extends AppCompatActivity {
                         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                         String userId = prefs.getString("userId", "");
                         Log.d("tag", "onReselectItem: " + userId);
-                        if (!userId.equals(null) && !userId.equals("")) {
 
-                            ActivitiesFragment activitiesFragment = new ActivitiesFragment();
-                            fragmentTransaction.replace(R.id.nav_host_fragment, activitiesFragment).commit();
-                            return true;
+                        String role = prefs.getString("role", "");
+                        if(role.contains("1")) {
+                            Log.d("TAG", "onCreate: "+role);
 
-                        } else {
-                            Toast.makeText(MainActivity.this, "Please Login first..",
-                                    Toast.LENGTH_LONG).show();
-                            Intent intent1 = new Intent(MainActivity.this, LoginOrSignup.class);
+                            if (!userId.equals(null) && !userId.equals("")) {
 
-                            startActivity(intent1);
+                                MandoubActivitiesFragment mandoobAkedActivity = new MandoubActivitiesFragment();
+                                fragmentTransaction.replace(R.id.nav_host_fragment, mandoobAkedActivity).commit();
+                                return true;
+
+                            } else {
+                                Toast.makeText(MainActivity.this, "Please Login first..",
+                                        Toast.LENGTH_LONG).show();
+                                Intent intent1 = new Intent(MainActivity.this, LoginOrSignup.class);
+
+                                startActivity(intent1);
+                            }
+
                         }
+                        else{
+                            Log.d("TAG", "onCreate:else "+role);
+                            if (!userId.equals(null) && !userId.equals("")) {
+
+                                ActivitiesFragment activitiesFragment = new ActivitiesFragment();
+                                fragmentTransaction.replace(R.id.nav_host_fragment, activitiesFragment).commit();
+                                return true;
+
+                            } else {
+                                Toast.makeText(MainActivity.this, "Please Login first..",
+                                        Toast.LENGTH_LONG).show();
+                                Intent intent1 = new Intent(MainActivity.this, LoginOrSignup.class);
+
+                                startActivity(intent1);
+                            }
+                        }
+
+
+
                         return true;
 
                     case R.id.profile_bottom:
@@ -171,8 +197,13 @@ public class MainActivity extends AppCompatActivity {
         inbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Inbox.class);
+//                Intent i = new Intent(MainActivity.this, Inbox.class);
+//                startActivity(i);
+
+                Intent i = new Intent(MainActivity.this, ChatWithMandoubActivity.class);
                 startActivity(i);
+
+
             }
         });
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-android:background="@drawable/new_background"
+    android:background="@drawable/new_background"
 
     android:paddingTop="5dp"
     android:layout_marginBottom="15dp">
@@ -27,11 +27,11 @@ android:background="@drawable/new_background"
             android:layout_height="80dp"
             android:layout_margin="10dp"
             android:id="@+id/profile"
-android:src="@drawable/icon_profile"
+            android:src="@drawable/icon_profile"
             android:scaleType="centerCrop"
 
             android:layout_gravity="center"       ></ImageView>
-<!--            android:background="@drawable/pic_back"-->
+        <!--            android:background="@drawable/pic_back"-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@ android:src="@drawable/icon_profile"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/farmer_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -52,6 +52,15 @@ android:src="@drawable/icon_profile"
                 android:textStyle="bold"></TextView>
 
             <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helv"
+                android:text="اليوم الساعة  5:37 PM"
+                android:textColor="@color/app_red"
+                android:textDirection="rtl"
+                android:textSize="10dp"></TextView>
+            <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,10 +72,10 @@ android:src="@drawable/icon_profile"
 
             <TextView
 
-                android:id="@+id/text"
+                android:id="@+id/notes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-android:layout_marginLeft="20dp"
+                android:layout_marginLeft="20dp"
                 android:fontFamily="@font/helv"
                 android:text="شارك حسن في زراعة 15 كيلومتر من الخس"
                 android:textColor="@color/black"
@@ -80,38 +89,17 @@ android:layout_marginLeft="20dp"
 
 
     </LinearLayout>
-<!--    <ImageView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/image"-->
-<!--        android:layout_margin="10dp"-->
-<!--        android:layout_below="@+id/firstlayout"-->
-<!--        android:src="@drawable/image"-->
-<!--        ></ImageView>-->
-
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pictures_viewpager"
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:layout_height="250dp"
-        android:layout_below="@+id/firstlayout" />
+    <!--    <ImageView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/image"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:layout_below="@+id/firstlayout"-->
+    <!--        android:src="@drawable/image"-->
+    <!--        ></ImageView>-->
 
 
-    <com.rd.PageIndicatorView
-        android:id="@+id/pageIndicatorView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pictures_viewpager"
-        app:piv_animationType="scale"
-        app:piv_dynamicCount="true"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true"
-        app:piv_interactiveAnimation="true"
-        app:piv_padding="4dp"
-        app:piv_radius="4dp"
-        app:piv_selectedColor="@color/app_brown"
-        app:piv_unselectedColor="@color/app_green"
- />
+
 
 
 
@@ -125,42 +113,10 @@ android:layout_marginLeft="20dp"
 
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_below="@id/pageIndicatorView"
+        android:layout_below="@id/firstlayout"
         ></View>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/line"
-        android:layoutDirection="rtl"
-        android:visibility="gone"
-        android:orientation="horizontal">
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"></View>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:fontFamily="@font/helv"
-            android:text="الرد"></TextView>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_comment"></ImageView>
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"></View>
-
-    </LinearLayout>
 
 
 

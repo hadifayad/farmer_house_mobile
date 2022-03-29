@@ -13,10 +13,6 @@
 
 
         <item
-            android:id="@+id/search"
-
-            android:title="الخدمات" />
-        <item
             android:id="@+id/profileFragment"
 
             android:title="حسابك" />
@@ -28,6 +24,11 @@
             android:id="@+id/createMessageOptions"
 
             android:title="خصائص" />
+
+        <item
+            android:id="@+id/search"
+
+            android:title="من نحن" />
     </group>
 
 

@@ -78,6 +78,7 @@ CountryCodePicker ccp;
 
 
                     String url = NetworkHelper.getUrl(NetworkHelper.ACTION_LOGIN_USER);
+                Log.d("TAG", "onClick: +"+url);
 //
 
                     Map<String, String> params = new HashMap();
@@ -113,6 +114,8 @@ CountryCodePicker ccp;
                                     ed.putString("fullname", response.getFullname().toString());
                                     ed.putString("userId", response.getId().toString());
                                     ed.putString("token", response.getToken().toString());
+                                    ed.putString("mandoobId", response.getMandoobId().toString());
+                                    ed.putString("role", response.getUser_role().toString());
 
 //                            ed.putString(KEY_TOKEN, response.getRole().toString());
 //                            if (response.getLink() != null) {

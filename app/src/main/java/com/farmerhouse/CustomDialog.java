@@ -133,5 +133,7 @@ public class CustomDialog extends Dialog implements
 
         VolleySingleton.getInstance(getContext()).addToRequestQueue(myGsonRequest1);
 
-    }}
+    }
+
+    }
 }

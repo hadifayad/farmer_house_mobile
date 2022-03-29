@@ -51,6 +51,8 @@ public class UserData extends AppCompatActivity {
             phoneNumberString= getIntent().getStringExtra("phone");
              passwordString = getIntent().getStringExtra("password");
 
+
+
 //            Log.d("TAG", "onCreate: phone and pass" +phoneNumberString +" "+passwordString);
         }
 

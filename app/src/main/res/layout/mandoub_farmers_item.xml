@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+
+
+    android:paddingTop="5dp"
+    android:layout_marginBottom="15dp">
+
+
+
+    <LinearLayout
+        android:id="@+id/firstlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layoutDirection="rtl">
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/image"-->
+        <!--            android:layout_width="80dp"-->
+        <!--            android:layout_height="80dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:scaleType="centerCrop"-->
+
+        <!--            android:src="@drawable/icon_profile"></ImageView>-->
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="60dp"-->
+        <!--            android:layout_height="60dp"-->
+
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:background="@color/white"-->
+
+        <!--            android:innerRadius="10dp"-->
+        <!--            android:shape="ring"-->
+        <!--            app:cardCornerRadius="100dp">-->
+        <!--            <androidx.cardview.widget.CardView-->
+        <!--                android:id="@+id/fab"-->
+        <!--                android:layout_width="60dp"-->
+        <!--                android:layout_height="60dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:shape="ring"-->
+        <!--                app:cardCornerRadius="30dp"-->
+        <!--        android:background="@drawable/white_circle"-->
+        <!--         app:cardPreventCornerOverlap="false"-->
+        <!--                app:cardElevation="60dp"-->
+        <!--               >-->
+
+
+
+        <!--        <ImageView-->
+        <!--                android:id="@+id/image"-->
+        <!--                android:layout_width="60dp"-->
+        <!--                android:layout_height="60dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:background="@drawable/ic_icon_profile_message"-->
+
+        <!--                android:outlineProvider="background"-->
+        <!--                android:scaleType="centerCrop" />-->
+
+        <!--            </androidx.cardview.widget.CardView>-->
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/prof"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerInParent="true"
+
+
+
+                android:background="@drawable/item_back"></ImageView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+
+
+                android:layout_centerInParent="true"
+
+
+
+                android:innerRadius="0dp"
+                android:shape="ring"
+                app:cardCornerRadius="100dp">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerInParent="true"
+
+                    android:src="@drawable/ic_icon_profile_message"
+
+
+                    android:onClick="profilePictureClicked"
+                    android:outlineProvider="background"
+                    android:scaleType="fitCenter" />
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+
+        <!--        <androidx.cardview.widget.CardView-->
+
+        <!--            android:layout_width="60dp"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:innerRadius="0dp"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            android:shape="ring"-->
+        <!--            app:cardCornerRadius="75dp">-->
+
+        <!--            <ImageView-->
+        <!--                android:layout_width="60dp"-->
+        <!--                android:layout_height="60dp"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:background="@drawable/ic_icon_profile_message" />-->
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <!--            android:background="@drawable/pic_back"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/helv"
+                android:text=""
+                android:textColor="#334856"
+                android:textDirection="rtl"
+                android:textStyle="bold"></TextView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--    <ImageView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/image"-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:layout_below="@+id/firstlayout"-->
+    <!--        android:src="@drawable/image"-->
+    <!--        ></ImageView>-->
+
+
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line"
+        android:background="#F0F3F4"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+
+        ></View>
+
+
+
+
+
+</RelativeLayout>

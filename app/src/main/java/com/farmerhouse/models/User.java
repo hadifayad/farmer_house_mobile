@@ -39,9 +39,34 @@ public class User {
     @SerializedName("token")
     String token;
 
+    @SerializedName("user_role")
+    String user_role;
+
+    @SerializedName("mandoobId")
+    String mandoobId;
+
+
 
     @SerializedName("profile_picture")
     String profile_picture;
+
+    public String getMandoobId() {
+        return mandoobId;
+    }
+
+    public String getUser_role() {
+        return user_role;
+    }
+
+    public void setUser_role(String user_role) {
+        this.user_role = user_role;
+    }
+
+    public void setMandoobId(String mandoobId) {
+        this.mandoobId = mandoobId;
+    }
+
+
 
     public String getPhone() {
         return phone;
@@ -141,7 +166,7 @@ public class User {
 
     public static String getID(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        String ID = prefs.getString("id", "");
+        String ID = prefs.getString("userId", "");
 
         return ID;
     }
