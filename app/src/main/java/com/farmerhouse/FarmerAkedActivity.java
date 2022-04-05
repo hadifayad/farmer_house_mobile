@@ -37,7 +37,7 @@ import java.util.Map;
 
 public class FarmerAkedActivity extends AppCompatActivity {
     EditText place,quantity,price,date_tesleem,place_tesleem,notes,type;
-    TextView fullnameView,phone,email,addressView;
+    TextView fullnameView,phone,email,addressView,SearchableSpinner;
     List farmersValuesArray = new ArrayList() ;
     List typesValuesArray = new ArrayList() ;
     Spinner activity_type,activity_farmer;
@@ -68,6 +68,7 @@ public class FarmerAkedActivity extends AppCompatActivity {
         addressView = findViewById(R.id.addressView);
         activity_farmer = findViewById(R.id.activity_farmer);
         upload = findViewById(R.id.upload);
+        SearchableSpinner = findViewById(R.id.SearchableSpinner);
         myCalendar = Calendar.getInstance();
         setDatePicker();
         getProfileData();
@@ -115,8 +116,9 @@ public class FarmerAkedActivity extends AppCompatActivity {
                             addressView.setText(response.getAddress());
 
                             fullnameView.setText(response.getFullname());
-                            phone.setText(response.getSecond_phone());
+                            phone.setText(response.getPhone());
                             email.setText(response.getEmail());
+                            SearchableSpinner.setText(response.getVillage());
 
                         }
 

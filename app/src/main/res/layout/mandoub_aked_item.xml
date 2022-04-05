@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/new_background"
+    android:id="@+id/lay"
 
     android:paddingTop="5dp"
     android:layout_marginBottom="15dp">

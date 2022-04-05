@@ -16,11 +16,16 @@ import com.farmerhouse.R;
 import com.farmerhouse.models.Comment;
 import com.farmerhouse.models.User;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CommentsRecyclerViewAdapter extends RecyclerView.Adapter<CommentsRecyclerViewAdapter.MyViewHolder> {
 
-        List<Comment> comments;
+//        List<Comment> comments ;
+    List<Comment> comments ;
+
         Context context;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -44,6 +49,14 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
         this.comments = comments;
     }
 
+    public void addItem(Comment comment) {
+        Log.d("TAG", "addItem: fettt" +comment.getText());
+
+
+
+        this.comments.add(comment);
+        notifyItemInserted(this.comments.size() - 1);
+    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

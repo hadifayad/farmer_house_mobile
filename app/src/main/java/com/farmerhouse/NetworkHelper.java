@@ -63,6 +63,7 @@ public class NetworkHelper {
     public static final String GET_FARMER_AKEDS =  "mobile/get-farmer-akeds"    ;
     public static final String GET_MANDOUB_FARMER_AKEDS ="mobile/get-mandoub-farmer-akeds"  ;
     public static final String GET_FARMER_OFFICIAL_AKEDS = "mobile/get-farmer-official-akeds"  ;
+    public static final String ACTION_UPDATE_TOKEN = "mobile/update-token"  ;
 
     public static String getUrl(String action) {
         String serverURL = "https://" + SERVER_IP + "/web/index.php?r=";

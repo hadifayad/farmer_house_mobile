@@ -36,7 +36,35 @@ public class FarmerAked {
         @SerializedName("notes")
         String notes;
 
-        public String getNotes() {
+        @SerializedName("email")
+        String email;
+
+    @SerializedName("phone")
+    String phone;
+
+    @SerializedName("address")
+    String address;
+
+    @SerializedName("village")
+    String village;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getVillage() {
+        return village;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNotes() {
             return notes;
         }
 

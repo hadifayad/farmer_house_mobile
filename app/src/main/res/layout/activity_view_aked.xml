@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/app_green"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".FarmerAkedActivity">
+    tools:context=".ViewAkedActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -63,10 +63,10 @@
             android:layout_below="@id/title1"
             android:layout_centerHorizontal="true"
 
-            android:gravity="center"
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
             android:hint="الاسم الكامل"
             android:textAlignment="center"
 
@@ -94,7 +94,7 @@
 
 
         <TextView
-            android:id="@+id/SearchableSpinner"
+            android:id="@+id/village"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title2"
@@ -105,16 +105,15 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/black"
-
             android:textColorHint="#808080"
             android:textSize="17dp"
-            app:hintText="اختر القرية" />
+            android:text="اختر القرية" />
 
         <TextView
             android:id="@+id/title3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/SearchableSpinner"
+            android:layout_below="@id/village"
             android:layout_centerHorizontal="true"
 
             android:layout_marginBottom="5dp"
@@ -234,7 +233,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -248,7 +247,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
 
         <TextView
             android:id="@+id/title7"
@@ -269,7 +268,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -283,7 +282,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
 
         <TextView
             android:id="@+id/title8"
@@ -304,7 +303,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -318,7 +317,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
 
         <TextView
             android:id="@+id/title9"
@@ -339,7 +338,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -353,7 +352,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
         <TextView
             android:id="@+id/title10"
             android:layout_width="wrap_content"
@@ -373,7 +372,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/date_tesleem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -387,7 +386,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
 
         <TextView
             android:id="@+id/title11"
@@ -408,7 +407,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/place_tesleem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -422,7 +421,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
+            android:textSize="17dp"></TextView>
         <TextView
             android:id="@+id/title12"
             android:layout_width="wrap_content"
@@ -442,7 +441,7 @@
             android:textSize="17dp"></TextView>
 
 
-        <EditText
+        <TextView
             android:id="@+id/notes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -456,21 +455,7 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="17dp"></EditText>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/upload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/notes"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-
-            android:background="@drawable/ic_button_register"
-            android:fontFamily="@font/ir_sharp"
-            android:text="حفظ"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+            android:textSize="17dp"></TextView>
 
     </RelativeLayout>
 </ScrollView>

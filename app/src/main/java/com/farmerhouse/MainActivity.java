@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.farmerhouse.inbox.Inbox;
 import com.farmerhouse.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +31,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.farmerhouse.databinding.ActivityMainBinding;
 import com.google.firebase.FirebaseApp;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -176,6 +182,46 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
+            // volley
+//            String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_ONE_ROOM);
+//            Map<String, String> params = new HashMap();
+//            params.put("roomId", roomId);
+//            GsonRequest<Room> myGsonRequest = new GsonRequest<Room>(Request.Method.POST, url, Room.class, null, params,
+//                    new Response.Listener<Room>() {
+//                        @Override
+//                        public void onResponse(Room room) {
+//
+//                            Intent intent = new Intent(getApplicationContext(), RoomDetailsActivity.class);
+//                            intent.putExtra("id", room.getId());
+//                            intent.putExtra("imageName", room.getProfile_picture());
+//                            intent.putExtra("text", room.getC_text());
+//                            intent.putExtra("userId", room.getR_admin());
+//                            intent.putExtra("date", room.getCreation_date());
+//                            intent.putExtra("fullname", room.getPage_name());
+//                            intent.putExtra("live_link", room.getPage_link());
+//                            startActivity(intent);
+//                        }
+//                    },
+//                    new Response.ErrorListener() {
+//                        @Override
+//                        public void onErrorResponse(VolleyError error) {
+//                            NetworkHelper.handleError(error);
+//                        }
+//                    });
+//
+//            VolleySingleton.getInstance(this).addToRequestQueue(myGsonRequest);
+
+
+//        }
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null && getIntent().hasExtra("chatId")) {
+            String chatId = bundle.getString("chatId");
+            Toast.makeText(MainActivity.this, "chatId: "+chatId, Toast.LENGTH_SHORT).show();
+
+        }
 
 
         add.setOnClickListener(new View.OnClickListener() {

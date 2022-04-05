@@ -71,13 +71,26 @@ android:background="#ECEFF0"
 
 
     </LinearLayout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lay"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@id/commentLayout"
+
+      >
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comments_recyclerView"
-        android:layout_below="@id/lay"
-        android:layout_marginTop="10dp"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+
+        />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     <LinearLayout
         android:id="@+id/commentLayout"
         android:layoutDirection="rtl"

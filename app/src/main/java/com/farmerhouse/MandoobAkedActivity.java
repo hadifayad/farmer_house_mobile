@@ -38,7 +38,7 @@ import java.util.Map;
 public class MandoobAkedActivity extends AppCompatActivity {
 
     EditText place,quantity,price,place_tesleem,notes,type;
-    TextView fullnameView,phone,date_tesleem,email,addressView;
+    TextView fullnameView,phone,date_tesleem,email,addressView,SearchableSpinner;
     List farmersValuesArray = new ArrayList() ;
     List typesValuesArray = new ArrayList() ;
     Spinner activity_type,activity_farmer;
@@ -67,6 +67,7 @@ public class MandoobAkedActivity extends AppCompatActivity {
         addressView = findViewById(R.id.addressView);
         activity_farmer = findViewById(R.id.activity_farmer);
         upload = findViewById(R.id.upload);
+        SearchableSpinner = findViewById(R.id.SearchableSpinner);
         myCalendar = Calendar.getInstance();
         setDatePicker();
         setMandoubUsers();
@@ -120,15 +121,18 @@ public class MandoobAkedActivity extends AppCompatActivity {
 
 
                     {
+                        Log.d("TAG", "onResponse: hi1 "+response.getAddress());
 //
 
 if(response!=null){
-    Log.d("TAG", "onResponse: "+response.getAddress());
+    Log.d("TAG", "onResponse: hi "+response.getAddress());
     addressView.setText(response.getAddress());
 
     fullnameView.setText(response.getFullname());
-    phone.setText(response.getSecond_phone());
+    phone.setText(response.getPhone());
     email.setText(response.getEmail());
+    SearchableSpinner.setText(response.getVillage());
+
 
 }
 
