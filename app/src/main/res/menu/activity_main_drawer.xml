@@ -13,21 +13,30 @@
 
 
         <item
-            android:id="@+id/search"
-
-            android:title="الخدمات" />
-        <item
             android:id="@+id/profileFragment"
 
             android:title="حسابك" />
         <item
             android:id="@+id/activitiesFragment"
 
-            android:title="متابعة الأنشطة" />
+            android:title="الأنشطة" />
         <item
-            android:id="@+id/createMessageOptions"
+            android:id="@+id/daleelActivity"
 
-            android:title="خصائص" />
+            android:title="دليل المزارع" />
+
+
+        <item
+            android:id="@+id/whoActivity"
+
+            android:title="من نحن" />
+
+        <item
+            android:id="@+id/logout"
+
+            android:onClick="logout"
+
+            android:title="تسجيل خروج" />
     </group>
 
 

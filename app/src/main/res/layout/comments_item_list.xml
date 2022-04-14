@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:layoutDirection="ltr"
+        android:layout_marginLeft="3dp"
+
+
+        android:layout_marginBottom="3dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_profile"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textVieIncoming"
+            android:padding="5dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/ic_uzarsif_chat"
+
+            android:fontFamily="@font/helv"
+            android:text="اهلا بكم\n نرجو ادخال المعلومات للحصول على أفضل نتيجة"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp"></TextView>
+
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/out"
+        android:gravity="right"
+        android:layoutDirection="rtl"
+
+        android:layout_marginLeft="3dp"
+
+
+        android:layout_marginBottom="3dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/icon_profile"></ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/textVieOutGoing"
+            android:padding="5dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/ic_user_chat"
+
+            android:fontFamily="@font/helv"
+            android:text="اهلا بكم\n نرجو ادخال المعلومات للحصول على أفضل نتيجة"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15dp"></TextView>
+
+
+    </LinearLayout>
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        &lt;!&ndash;        <pl.droidsonroids.gif.GifImageView&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:id="@+id/incoming_icon"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_width="30dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:layout_height="30dp"&ndash;&gt;-->
+<!--        &lt;!&ndash;            android:src="@drawable/icon_elite2"></pl.droidsonroids.gif.GifImageView>&ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/client_nameInGOING"-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+
+<!--            android:paddingLeft="10dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:paddingRight="10dp"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:text="mousta"-->
+<!--            android:fontFamily="@font/ir_sharp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="12dp" />-->
+<!--    </LinearLayout>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textview"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:background="@drawable/bg_speech_bubble_outgoing"-->
+<!--        android:lineSpacingExtra="2dp"-->
+<!--        android:paddingLeft="10dp"-->
+<!--        android:paddingTop="4dp"-->
+<!--        android:paddingRight="20dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:text="asdasd"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:fontFamily="@font/helv"-->
+<!--        android:textSize="14dp"-->
+<!--        />-->
+
+</LinearLayout>

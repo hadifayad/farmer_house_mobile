@@ -1,0 +1,27 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ECEFF0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/officialAkedRecyclerView"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addOf"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_add"></androidx.appcompat.widget.AppCompatButton>
+
+
+
+</RelativeLayout>

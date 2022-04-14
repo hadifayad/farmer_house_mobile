@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".OkoodZera3aActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/profileViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_brown"
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_in_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/MineCustomTabText"
+                app:tabIndicatorColor="@color/white" />
+
+        </androidx.viewpager.widget.ViewPager>
+
+
+
+
+
+        <!--    <ImageView-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="180dp"-->
+        <!--        android:layout_alignParentBottom="true"-->
+
+
+        <!--        android:src="@drawable/splash_model"></ImageView>-->
+
+        <!--    <androidx.appcompat.widget.AppCompatButton-->
+        <!--        android:id="@+id/start"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_centerInParent="true"-->
+        <!--        android:layout_marginBottom="-7dp"-->
+        <!--        android:background="@drawable/ic_button_register"-->
+        <!--        android:fontFamily="@font/ir_sharp"-->
+        <!--        android:text="اشترك من خلال رقم هاتفك"-->
+        <!--        android:textAlignment="center"-->
+
+        <!--        android:textColor="@color/white"-->
+        <!--        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>-->
+
+    </RelativeLayout>
+
+
+</LinearLayout>

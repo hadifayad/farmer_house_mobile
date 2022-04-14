@@ -19,7 +19,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/helv"
 
-        android:text="لمتابعة نشاطك بكل سهولة"
+        android:text="لمتابعة نشاطاتك بكل سهولة"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28dp"></TextView>
@@ -45,7 +45,7 @@
         android:layout_marginTop="30dp"
         android:fontFamily="@font/ir_sharp"
 
-        android:text="سجل حسابك لمتابعة انشطتك"
+        android:text="سجل حسابك"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17dp"></TextView>

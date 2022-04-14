@@ -13,6 +13,7 @@ android:background="@drawable/new_background"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:visibility="gone"
         android:layout_margin="20dp"
         android:src="@drawable/ic_threepoints"></ImageView>
 
@@ -39,6 +40,18 @@ android:src="@drawable/icon_profile"
             android:orientation="vertical">
 
             <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/helv"
+                android:text="يوزرسيف"
+                android:textColor="@color/black"
+                android:textDirection="rtl"
+                android:textStyle="bold"></TextView>
+            <TextView
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,6 +60,7 @@ android:src="@drawable/icon_profile"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/helv"
                 android:text="محمد حسن"
+                android:visibility="gone"
                 android:textColor="@color/black"
                 android:textDirection="rtl"
                 android:textStyle="bold"></TextView>
@@ -70,6 +84,7 @@ android:layout_marginLeft="20dp"
                 android:fontFamily="@font/helv"
                 android:text="شارك حسن في زراعة 15 كيلومتر من الخس"
                 android:textColor="@color/black"
+                android:maxLines="3"
                 android:textDirection="rtl"
                 android:textSize="12dp"></TextView>
 

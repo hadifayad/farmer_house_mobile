@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEFF0"
+    tools:context=".ChatWithMandoubActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/helv"
+        android:text="البريد"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <ImageView
+        android:id="@+id/newMessageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_new_message"></ImageView>
+
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/searchText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_below="@id/newMessageButton"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:background="#F0F3F4"-->
+<!--        android:drawableEnd="@drawable/ic_search_default"-->
+<!--        android:drawablePadding="4dp"-->
+<!--        android:fontFamily="@font/helv"-->
+<!--        android:hint="ابحث في الرسائل "-->
+<!--        android:layoutDirection="rtl"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textDirection="rtl"></com.google.android.material.textfield.TextInputEditText>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chats_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/newMessageButton"
+        android:layoutDirection="rtl"></androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>
+

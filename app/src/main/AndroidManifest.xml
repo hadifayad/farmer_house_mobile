@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.farmerhouse">
+    package="com.uzarsif">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,40 +15,83 @@
         android:theme="@style/Theme.FarmerHouse"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AnsabMazro3atActivity"
-            android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
-            android:name=".EditProfileActivity"
+            android:name="com.uzarsif.WhoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:exported="false" />
         <activity
-            android:name=".Ansab"
+            android:name="com.uzarsif.ViewAkedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.uzarsif.MandoubNewActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".CreateMessageOptions"
+            android:name="com.uzarsif.MandoobAkedActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".inbox.ViewMessageActivity"
+            android:name="com.uzarsif.FarmerAkedActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".ViewMessage"
+            android:name="com.uzarsif.OkoodZera3aActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".inbox.CreateMessage"
+            android:name="com.uzarsif.MandoubFarmersActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.ChatCommentsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.ChatWithMandoubActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.DataFinal"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.DaleelActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.AnsabMazro3atActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.EditProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.Ansab"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.CreateMessageOptions"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.inbox.ViewMessageActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.ViewMessage"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="com.uzarsif.inbox.CreateMessage"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             tools:ignore="MissingClass" />
         <activity
-            android:name=".inbox.Inbox"
+            android:name="com.uzarsif.inbox.Inbox"
             android:exported="false"
             android:theme="@style/Theme.FarmerHouse.NoActionBar" />
         <activity
-            android:name=".Tour3"
+            android:name="com.uzarsif.Tour3"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
@@ -56,19 +100,19 @@
             android:required="false" />
 
         <activity
-            android:name=".Tour2"
+            android:name="com.uzarsif.Tour2"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Tour1"
+            android:name="com.uzarsif.Tour1"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".LoginOrSignup"
+            android:name="com.uzarsif.LoginOrSignup"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".splash"
+            android:name="com.uzarsif.splash"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
@@ -78,23 +122,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserData"
+            android:name="com.uzarsif.UserData"
             android:exported="false" />
         <activity
-            android:name=".Verify"
+            android:name="com.uzarsif.Verify"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".Signup"
+            android:name="com.uzarsif.Signup"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.uzarsif.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FarmerHouse.NoActionBar" />
 
         <service
-            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:name="com.uzarsif.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

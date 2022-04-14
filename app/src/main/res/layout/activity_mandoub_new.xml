@@ -1,0 +1,207 @@
+<ScrollView android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="@color/app_green"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        tools:context=".MandoubNewActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="29dp"
+                android:fontFamily="@font/helv"
+                android:text=" اضافة نشاط"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="28dp"></TextView>
+
+            <ImageView
+                android:id="@+id/dash2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text2"
+                android:layout_centerHorizontal="true"
+
+
+
+                android:layout_marginTop="30dp"
+
+
+                android:src="@drawable/ic_dash"></ImageView>
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="130dp"
+                android:layout_marginBottom="5dp"
+
+                android:fontFamily="@font/helv"
+                android:text="نوع النشاط"
+                android:textAlignment="center"
+
+                android:textColor="@color/white"
+
+
+                android:textSize="17dp"></TextView>
+
+            <Spinner
+                android:id="@+id/activity_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_button"
+                android:fontFamily="@font/ir_sharp"
+                android:textAlignment="center"
+
+                android:textColor="@color/black"
+
+                android:textColorHint="#808080"
+                android:textSize="17dp"
+                app:hintText="الوضع القانوني" />
+
+
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_type"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginBottom="5dp"
+
+                android:fontFamily="@font/helv"
+                android:text="التاريخ"
+                android:textAlignment="center"
+
+                android:textColor="@color/white"
+
+
+                android:textSize="17dp"></TextView>
+
+
+            <TextView
+                android:id="@+id/activity_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_button"
+                android:editable="false"
+                android:fontFamily="@font/ir_sharp"
+                android:gravity="center"
+                android:onClick="selectDate"
+
+
+                android:textAlignment="center"
+
+                android:textColor="@color/black"
+
+                android:textColorHint="#808080"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_time"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginBottom="5dp"
+
+                android:fontFamily="@font/helv"
+                android:text="ملاحظات"
+                android:textAlignment="center"
+
+                android:textColor="@color/white"
+
+
+                android:textSize="17dp"></TextView>
+
+            <EditText
+                android:id="@+id/activity_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title3"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+
+                android:background="@drawable/ic_button"
+                android:fontFamily="@font/ir_sharp"
+                android:gravity="center"
+                android:hint="ملاحظات"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
+                android:textSize="17dp"></EditText>
+
+            <TextView
+                android:id="@+id/title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_notes"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginBottom="5dp"
+
+                android:fontFamily="@font/helv"
+                android:text="المزارع"
+                android:textAlignment="center"
+
+                android:textColor="@color/white"
+
+
+                android:textSize="17dp"></TextView>
+
+
+            <Spinner
+                android:id="@+id/activity_farmer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title4"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/ic_button"
+                android:fontFamily="@font/ir_sharp"
+                android:gravity="center"
+                android:hint="المزارع"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
+                android:textSize="17dp"></Spinner>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activity_farmer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+
+                android:background="@drawable/ic_button_register"
+                android:fontFamily="@font/ir_sharp"
+                android:text="اضافة النشاط"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+
+
+
+
+        </RelativeLayout>
+    </ScrollView>
