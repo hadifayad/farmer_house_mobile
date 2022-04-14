@@ -7,34 +7,28 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.farmerhouse.ui.home.HomeFragment"
+        android:name="com.uzarsif.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.farmerhouse.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.farmerhouse.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <activity
-        android:id="@+id/createMessageOptions"
-        android:name="com.farmerhouse.CreateMessageOptions"
-        android:label="activity_create_message_options"
-        tools:layout="@layout/activity_create_message_options" />
-    <fragment
         android:id="@+id/profileFragment"
-        android:name="com.farmerhouse.ProfileFragment"
+        android:name="com.uzarsif.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/activitiesFragment"
-        android:name="com.farmerhouse.ActivitiesFragment"
+        android:name="com.uzarsif.ActivitiesFragment"
         android:label="fragment_activities"
         tools:layout="@layout/fragment_activities" />
+    <activity
+        android:id="@+id/daleelActivity"
+        android:name="com.uzarsif.DaleelActivity"
+        android:label="activity_daleel"
+        tools:layout="@layout/activity_daleel" />
+    <activity
+        android:id="@+id/whoActivity"
+        android:name="com.uzarsif.WhoActivity"
+        android:label="activity_who"
+        tools:layout="@layout/activity_who" />
 </navigation>

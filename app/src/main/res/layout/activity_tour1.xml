@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/helv"
-        android:text="ما هي ابرز نشاطات"
+        android:text="ما هي أبرز نشاطاتك"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="28dp"></TextView>

@@ -101,9 +101,7 @@
 
                     android:src="@drawable/ic_icon_profile_message"
 
-
-                    android:onClick="profilePictureClicked"
-                    android:outlineProvider="background"
+  android:outlineProvider="background"
                     android:scaleType="fitCenter" />
             </androidx.cardview.widget.CardView>
 

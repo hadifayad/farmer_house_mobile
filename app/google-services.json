@@ -14,6 +14,43 @@
       },
       "oauth_client": [
         {
+          "client_id": "681282021679-9o463p63se8bjmhggh70ca43euc4bndp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farmerhouse",
+            "certificate_hash": "995cedf1b756eaadba221a2aa9876a73573871d5"
+          }
+        },
+        {
+          "client_id": "681282021679-mi8fnah5fs3c7o060n434m7gr54l7jc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh0GvI3JeoA7Hku-dt5dOxxltNP41Exng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "681282021679-mi8fnah5fs3c7o060n434m7gr54l7jc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:681282021679:android:57ec2c3a6738e5bedcd9da",
+        "android_client_info": {
+          "package_name": "com.uzarsif"
+        }
+      },
+      "oauth_client": [
+        {
           "client_id": "681282021679-mi8fnah5fs3c7o060n434m7gr54l7jc7.apps.googleusercontent.com",
           "client_type": 3
         }

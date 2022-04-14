@@ -17,8 +17,8 @@
         android:title="" />
     <item
         android:id="@+id/search_bottom"
-        android:icon="@drawable/bottom_navigation_search_selector"
-        android:title="بحث"
+        android:icon="@drawable/book_selector"
+        android:title="دليل المزارع"
 
         />
 

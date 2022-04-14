@@ -65,51 +65,17 @@
 
         <!--            </androidx.cardview.widget.CardView>-->
 
-        <RelativeLayout
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_gravity="center">
 
-            <ImageView
-                android:id="@+id/prof"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_centerInParent="true"
+            android:src="@drawable/icon_profile"
+            android:scaleType="centerCrop"
 
+            android:layout_gravity="center"
 
-
-                android:background="@drawable/item_back"></ImageView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-
-
-                android:layout_centerInParent="true"
-
-
-
-                android:innerRadius="0dp"
-                android:shape="ring"
-                app:cardCornerRadius="100dp">
-
-                <ImageView
-                    android:id="@+id/image"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
-                    android:layout_centerInParent="true"
-
-                    android:src="@drawable/ic_icon_profile_message"
-
-
-                    android:onClick="profilePictureClicked"
-                    android:outlineProvider="background"
-                    android:scaleType="fitCenter" />
-            </androidx.cardview.widget.CardView>
-
-
-        </RelativeLayout>
+            ></ImageView>
 
 
         <!--        <androidx.cardview.widget.CardView-->
@@ -146,7 +112,7 @@
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/helv"
                 android:text=""
-                android:textColor="#334856"
+                android:textColor="@color/app_red"
                 android:textDirection="rtl"
                 android:textStyle="bold"></TextView>
 
