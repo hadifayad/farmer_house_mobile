@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.uzarsif.R;
 import com.uzarsif.models.UserActivity;
@@ -17,39 +19,37 @@ import java.util.List;
 
 public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<com.uzarsif.Adapters.ActivitiesRecyclerViewAdapter.MyViewHolder> {
 
-        List<UserActivity> UserActivities;
-        Context context;
+    List<UserActivity> UserActivities;
+    Context context;
 
 
-        public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-            ImageView icon;
-            TextView date , mawsem,name;
+        ImageView icon;
+        TextView date, mawsem, name;
 
 
-
-            public MyViewHolder(View view) {
-                super(view);
-
+        public MyViewHolder(View view) {
+            super(view);
 
 
-                icon = view.findViewById(R.id.type_icon);
-                date = view.findViewById(R.id.date);
-                mawsem = view.findViewById(R.id.mawsem);
-                name = view.findViewById(R.id.name);
+            icon = view.findViewById(R.id.type_icon);
+            date = view.findViewById(R.id.date);
+            mawsem = view.findViewById(R.id.mawsem);
+            name = view.findViewById(R.id.name);
 
-
-            }
-        }
-
-
-        public ActivitiesRecyclerViewAdapter(List<UserActivity> UserActivities ) {
-
-
-            this.UserActivities = UserActivities;
 
         }
+    }
+
+
+    public ActivitiesRecyclerViewAdapter(List<UserActivity> UserActivities) {
+
+
+        this.UserActivities = UserActivities;
+
+    }
 
 
         @Override
@@ -70,38 +70,33 @@ public class ActivitiesRecyclerViewAdapter extends RecyclerView.Adapter<com.uzar
             holder.date.setText(output);
 
 
-            if(activity.getMazrouat_type().equals("أشجار")){
-                holder.icon.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_fruit_item));
-                Log.d("TAG", "onBindViewHolder: "+activity.getMazrouat_type());
+        if (activity.getMazrouat_type().equals("أشجار")) {
+            holder.icon.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_fruit_item));
+            Log.d("TAG", "onBindViewHolder: " + activity.getMazrouat_type());
 
-            }
-            if(activity.getMazrouat_type().equals("بقوليات")){
-                holder.icon.setImageResource(R.drawable.ic_bakoleyat_icon);
-                Log.d("TAG", "onBindViewHolder: "+activity.getMazrouat_type());
-
-            }
-
-            if(activity.getMazrouat_type().equals("خضار")){
-                holder.icon.setImageResource(R.drawable.ic_khodar_icon);
-                Log.d("TAG", "onBindViewHolder: "+activity.getMazrouat_type());
-
-            }
-
-            holder.mawsem.setText(activity.getMawsem());
-            holder.name.setText(activity.getPlant());
-
-
-
-
-
+        }
+        if (activity.getMazrouat_type().equals("بقوليات")) {
+            holder.icon.setImageResource(R.drawable.ic_bakoleyat_icon);
+            Log.d("TAG", "onBindViewHolder: " + activity.getMazrouat_type());
 
         }
 
-        @Override
-        public int getItemCount() {
-            return UserActivities.size();
+        if (activity.getMazrouat_type().equals("خضار")) {
+            holder.icon.setImageResource(R.drawable.ic_khodar_icon);
+            Log.d("TAG", "onBindViewHolder: " + activity.getMazrouat_type());
+
         }
 
+        holder.mawsem.setText(activity.getMawsem());
+        holder.name.setText(activity.getPlant());
 
 
     }
+
+    @Override
+    public int getItemCount() {
+        return UserActivities.size();
+    }
+
+
+}
