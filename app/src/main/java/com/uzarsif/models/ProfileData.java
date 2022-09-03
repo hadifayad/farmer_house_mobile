@@ -7,8 +7,13 @@ public class ProfileData {
     @SerializedName("fullname")
     String fullname;
 
+    @SerializedName("mandoob")
+    String mandoob;
+
     @SerializedName("village")
     String village;
+    @SerializedName("village_id")
+    String village_id;
     @SerializedName("email")
     String email;
     @SerializedName("address")
@@ -69,6 +74,14 @@ public class ProfileData {
     @SerializedName("alat")
     String alat;
 
+    public void setVillage_id(String village_id) {
+        this.village_id = village_id;
+    }
+
+    public String getVillage_id() {
+        return village_id;
+    }
+
     public String getAlat() {
         return alat;
     }
@@ -91,6 +104,14 @@ public class ProfileData {
 
     public void setAutomatic_energy(String automatic_energy) {
         this.automatic_energy = automatic_energy;
+    }
+
+    public String getMandoob() {
+        return mandoob;
+    }
+
+    public void setMandoob(String mandoob) {
+        this.mandoob = mandoob;
     }
 
     public String getElectricity() {

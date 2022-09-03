@@ -128,7 +128,7 @@ public class Verify extends AppCompatActivity {
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_SIGNUP_USER);
 
         final ProgressDialog dialog = ProgressDialog.show(Verify.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
 
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,

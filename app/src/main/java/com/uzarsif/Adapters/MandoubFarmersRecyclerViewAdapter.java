@@ -80,7 +80,7 @@ public class MandoubFarmersRecyclerViewAdapter  extends RecyclerView.Adapter<Man
 
 
                 final ProgressDialog dialog = ProgressDialog.show(context, "",
-                        "Please wait...", true);
+                        "الرجاء الإنتظار ...", true);
 
                 String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT_WITH_MANDOOB);
                 Log.d("url", url.toString());

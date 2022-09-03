@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/ir_sharp"
-            android:text="للتنمية والتطوير الزراعي"
+            android:text="للتنمية والتطوير الزراعي والصناعي"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -70,26 +70,25 @@
     android:layout_weight="1">
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/helv"
-        android:paddingRight="33dp"
-        android:text="تابع تقدمك باستمرار
-"
         android:layout_marginTop="30dp"
-        android:id="@+id/text1"
+        android:fontFamily="@font/helv"
+        android:paddingRight="15dp"
+        android:text="معاً ننطلق ونعمل "
         android:textColor="@color/white"
         android:textSize="28dp"></TextView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/ir_sharp"
-        android:paddingRight="33dp"
-        android:layout_below="@+id/text1"
-        android:text="ضع هدفك نصب عينيك"
-        android:textColor="@color/white"
-        android:textSize="17dp"></TextView>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/ir_sharp"-->
+<!--        android:paddingRight="15dp"-->
+<!--        android:layout_below="@+id/text1"-->
+<!--        android:text="يداً بيد ننجح ونتميّز "-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="28dp"></TextView>-->
 
     <ImageView
         android:layout_width="match_parent"
@@ -105,12 +104,12 @@
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-7dp"
-        android:background="@drawable/button"
+        android:background="@color/app_brown"
         android:fontFamily="@font/ir_sharp"
-        android:text="أبدأ الآن"
+        android:text="إبدأ"
 
         android:textAlignment="center"
-        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+        android:textSize="20dp"></androidx.appcompat.widget.AppCompatButton>
 
 </RelativeLayout>
 

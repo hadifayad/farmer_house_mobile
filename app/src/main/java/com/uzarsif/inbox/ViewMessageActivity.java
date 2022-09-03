@@ -41,7 +41,7 @@ public class ViewMessageActivity extends AppCompatActivity {
         dataRecyclerView.setLayoutManager(layoutManager);
 
         final ProgressDialog dialog = ProgressDialog.show(ViewMessageActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHAT_DATA);

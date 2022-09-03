@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.uzarsif.ForgetPasswordActivity;
 import com.uzarsif.GsonRequest;
 import com.uzarsif.MainActivity;
 import com.uzarsif.NetworkHelper;
@@ -39,6 +41,7 @@ public class LoginInFragment extends Fragment {
 Button login;
 EditText phone,password;
 CountryCodePicker ccp;
+TextView forget;
 
     public LoginInFragment() {
         // Required empty public constructor
@@ -64,6 +67,7 @@ CountryCodePicker ccp;
         phone = view.findViewById(R.id.phone);
         password = view.findViewById(R.id.passwordView);
         ccp = view.findViewById(R.id.ccp);
+        forget = view.findViewById(R.id.forget);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,7 +98,7 @@ CountryCodePicker ccp;
 
                     params.put("password", passwordstring);
 
-//                params.put("role", role);
+
                     params.put("token", token);
 
 
@@ -151,6 +155,13 @@ CountryCodePicker ccp;
 
 
 
+        });
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ForgetPasswordActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

@@ -1,11 +1,13 @@
 package com.uzarsif.ui.home;
 
 import android.app.ProgressDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.uzarsif.Adapters.NewsRecyclerViewAdapter;
+import com.uzarsif.CircularProgressBar;
 import com.uzarsif.GsonRequest;
 import com.uzarsif.NetworkHelper;
 import com.uzarsif.R;
@@ -33,6 +36,7 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
     RecyclerView newsRecycleView;
+    CircularProgressBar circularProgressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -55,10 +59,17 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         newsRecycleView = view.findViewById(R.id.newsRecyclerView);
+        circularProgressBar = view.findViewById(R.id.circularProgress);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         newsRecycleView.setLayoutManager(layoutManager);
+        circularProgressBar.setProgressColor(R.color.app_brown);
+        circularProgressBar.setTextColor(R.color.app_green);
+
+        circularProgressBar.setProgress(60);
+
+
         final ProgressDialog dialog = ProgressDialog.show(getActivity(), "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_NEWS);

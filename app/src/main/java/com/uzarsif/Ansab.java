@@ -345,7 +345,7 @@ public class Ansab extends AppCompatActivity {
     public void getPlants() {
 
         final ProgressDialog dialog = ProgressDialog.show(Ansab.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_PLANTS);

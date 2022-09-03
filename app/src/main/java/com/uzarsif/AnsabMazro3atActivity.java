@@ -77,7 +77,7 @@ public class AnsabMazro3atActivity extends AppCompatActivity implements Zera3aTy
     public void setData() {
 
         final ProgressDialog dialog = ProgressDialog.show(AnsabMazro3atActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_ZERA3AT_TYPES);
@@ -111,10 +111,10 @@ public class AnsabMazro3atActivity extends AppCompatActivity implements Zera3aTy
         }
         if (size == x) { // all items are selected
 //            Toast.makeText(getApplicationContext(), "all selected", Toast.LENGTH_SHORT).show();
-            Log.d("TAG", "check:size "+size);
-            Log.d("TAG", "check: "+zera3aTypes.get(0).getName()+zera3aTypes.get(0).getResultId());
-            Log.d("TAG", "check: "+zera3aTypes.get(1).getName()+zera3aTypes.get(1).getResultId());
-            Log.d("TAG", "check: "+zera3aTypes.get(2).getName()+zera3aTypes.get(2).getResultId());
+//            Log.d("TAG", "check:size "+size);
+//            Log.d("TAG", "check: "+zera3aTypes.get(0).getName()+zera3aTypes.get(0).getResultId());
+//            Log.d("TAG", "check: "+zera3aTypes.get(1).getName()+zera3aTypes.get(1).getResultId());
+//            Log.d("TAG", "check: "+zera3aTypes.get(2).getName()+zera3aTypes.get(2).getResultId());
             getPlants();
 
         }
@@ -139,7 +139,7 @@ public class AnsabMazro3atActivity extends AppCompatActivity implements Zera3aTy
 
 
         final ProgressDialog dialog = ProgressDialog.show(AnsabMazro3atActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_PLANTS);
@@ -235,7 +235,7 @@ public class AnsabMazro3atActivity extends AppCompatActivity implements Zera3aTy
         plantText.setText(plant.getName());
         this.plantId = plant.getId();
         final ProgressDialog dialog = ProgressDialog.show(AnsabMazro3atActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_TOP_PARENT_AFTER_PICKING_PLANT);

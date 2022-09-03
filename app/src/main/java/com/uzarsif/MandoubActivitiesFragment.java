@@ -113,7 +113,7 @@ public class MandoubActivitiesFragment extends Fragment {
 
 
         final ProgressDialog dialog = ProgressDialog.show(getActivity(), "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.GET_MANDOUB_ACTIVTIES);

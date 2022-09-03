@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,6 +27,7 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.uzarsif.models.User;
 import com.uzarsif.models.Village;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
@@ -43,6 +47,9 @@ public class UserData extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_data);
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(Color.parseColor("#81bb28"));
 
         if(getIntent().hasExtra("phone") && getIntent().hasExtra("password")){
 
@@ -136,85 +143,101 @@ public class UserData extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
+
                 String url = NetworkHelper.getUrl(NetworkHelper.ACTION_SIGNUP_USER);
-                Log.d("TAG", "sendData: reach send data and signup");
-
-                final ProgressDialog dialog = ProgressDialog.show(UserData.this, "",
-                        "Please wait...", true);
-
-
-                final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-
+                Log.d("TAG", "onClick: +"+url);
 //
-                                Toast.makeText(UserData.this, "upload Successful",
-                                        Toast.LENGTH_LONG).show();
-                                Log.d("upload", response);
+
+                Map<String, String> params = new HashMap();
+                String villageIdString = villageId;
+                String addressString = addressView.getText().toString();
+                String fullnameString = fullnameView.getText().toString();
+                String secondPhoneString = secondPhone.getText().toString();
+                String emailString = email.getText().toString();
 
 
-                                dialog.dismiss();
-                                Intent i =  new Intent(UserData.this,LoginOrSignup.class);
-                                startActivity(i);
 
 
+                params.put("fullname", fullnameString);
+                params.put("phone", phoneNumberString);
+                params.put("password", passwordString);
+                params.put("villageId", villageIdString);
+                params.put("address", addressString);
+                params.put("email", emailString);
+                params.put("secondPhone", secondPhoneString);
+
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(UserData.this);
+                String token = prefs.getString("token", "");
+
+                params.put("token", token);
+
+//                        params.put("token", MyPreferencesUtils.getUserToken(Signup.this));
+
+
+                Log.d("tag", params.toString());
+
+
+
+                Log.d("tag", params.toString());
+                GsonRequest<User> myGsonRequest = new GsonRequest<User>(Request.Method.POST, url, User.class, null, params,
+                        response -> {
+
+                            if (response.getId() != null) {
+                                Log.d("TAG", "onClick: " + response.toString());
+
+                                SharedPreferences.Editor ed = prefs.edit();
+                                ed.putString("phone", response.getPhone());
+//                                    ed.putString(KEY_PASSWORD, response.getPassword().toString());
+                                ed.putString("profile", response.getProfile_picture());
+
+                                ed.putString("fullname", response.getFullname().toString());
+                                ed.putString("userId", response.getId().toString());
+                                ed.putString("token", response.getToken().toString());
+
+                                ed.putString("mandoobId", response.getMandoobId().toString());
+
+
+                                ed.putString("role", response.getUser_role().toString());
+
+//                            ed.putString(KEY_TOKEN, response.getRole().toString());
+//                            if (response.getLink() != null) {
+//                                ed.putString(KEY_LINK, response.getLink().toString());
+//                            }
+
+
+                                ed.commit();
+
+                                Toast.makeText(UserData.this, "تم تسجيل الدخول بنجاح", Toast.LENGTH_LONG).show();
+
+                                Intent intent = new Intent(UserData.this, MainActivity.class);
+                                startActivity(intent);
+                               finish();
+
+                            }
+                            else {
+                                Toast.makeText(UserData.this, "هذا الرقم مستخدم مسبقا", Toast.LENGTH_LONG).show();
 
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                dialog.dismiss();
-                                Toast.makeText(UserData.this, "error", Toast.LENGTH_LONG).show();
-                                Log.d("TAG", "onErrorResponse: "+error.getMessage().toString());
+//                                Toast.makeText(UserData.this, error.getMessage().toString(), Toast.LENGTH_LONG).show();
+                                // dialog.dismiss();
+                                Toast.makeText(UserData.this, "حدث خطأ", Toast.LENGTH_LONG).show();
 
-
+                                NetworkHelper.handleError(error);
                             }
-                        }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        HashMap<String, String> params = new HashMap<>();
-                        //    Map<String, String> params = new Hashtable<>();
-                        String villageIdString = villageId;
-                        String addressString = addressView.getText().toString();
-                        String fullnameString = fullnameView.getText().toString();
-                        String secondPhoneString = secondPhone.getText().toString();
-                        String emailString = email.getText().toString();
+                        });
+                VolleySingleton.getInstance(UserData.this).addToRequestQueue(myGsonRequest);
 
 
 
 
-                        params.put("fullname", fullnameString);
-                        params.put("phone", phoneNumberString);
-                        params.put("password", passwordString);
-                        params.put("villageId", villageIdString);
-                        params.put("address", addressString);
-                        params.put("email", emailString);
-                        params.put("secondPhone", secondPhoneString);
 
-                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(UserData.this);
-                        String token = prefs.getString("token", "");
-
-                        params.put("token", token);
-
-//                        params.put("token", MyPreferencesUtils.getUserToken(Signup.this));
-
-
-                        Log.d("tag", params.toString());
-                        return params;
-
-                    }
-                };
-                {
-                    int socketTimeout = 30000;
-                    RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-                    stringRequest.setRetryPolicy(policy);
-                    RequestQueue requestQueue = Volley.newRequestQueue(UserData.this);
-
-                    requestQueue.add(stringRequest);
-                }
-
+                /////////////////////////
 
 
             }

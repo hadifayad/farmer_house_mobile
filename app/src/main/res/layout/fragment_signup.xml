@@ -46,7 +46,7 @@
             android:hint="رقم هاتفك"
             android:textAlignment="center"
             android:textColor="@color/black"
-
+            android:inputType="phone"
             android:textColorHint="#808080"
             android:textSize="17dp"></EditText>
 

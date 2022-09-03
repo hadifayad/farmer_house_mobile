@@ -72,7 +72,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
     public void getNextChoices(int lastPosition, String id) {
 
 //        final ProgressDialog dialog = ProgressDialog.show(context, "",
-//                "Please wait...", true);
+//                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHILDREN_AND_SAVE_MESSAGE);
@@ -230,7 +230,7 @@ public class DataRecyclerViewAdapter extends RecyclerView.Adapter<DataRecyclerVi
 
 
 //        final ProgressDialog dialog = ProgressDialog.show(context, "",
-//                "Please wait...", true);
+//                "الرجاء الإنتظار ...", true);
 
 //        // volley
 //        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHILDREN);

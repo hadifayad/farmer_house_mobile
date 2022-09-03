@@ -88,7 +88,7 @@ public class DaleelActivity extends AppCompatActivity {
 
     public void getParents(){
                 final ProgressDialog dialog = ProgressDialog.show(DaleelActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_TOP_PARENT);
@@ -125,7 +125,7 @@ public class DaleelActivity extends AppCompatActivity {
     public void getChild(String childId,String childText , String childTitle, String childImage){
 
         final ProgressDialog dialog = ProgressDialog.show(DaleelActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHILDREN);

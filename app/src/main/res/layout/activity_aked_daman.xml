@@ -1,0 +1,413 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_green"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".AkedDaman">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressView"
+
+
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/helv"
+            android:text="عرض ضمان أرض"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"></TextView>
+
+        <ImageView
+            android:id="@+id/dash2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text2"
+            android:layout_centerHorizontal="true"
+
+
+
+            android:layout_marginTop="20dp"
+
+
+            android:src="@drawable/ic_dash"></ImageView>
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="الإسم الكامل"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:id="@+id/fullnameView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title1"
+            android:layout_centerHorizontal="true"
+
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="الإسم الكامل"
+            android:textAlignment="center"
+
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fullnameView"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="البلدة"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <TextView
+            android:id="@+id/SearchableSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+
+            android:textColorHint="#808080"
+            android:textSize="17dp"
+            app:hintText="اختر القرية" />
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SearchableSpinner"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="رقم الهاتف "
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title3"
+
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:hint="رقم الهاتف"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:id="@+id/title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="البريد الإلكتروني"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title4"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="البريد الإلكتروني"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></TextView>
+
+        <TextView
+            android:id="@+id/title5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="العنوان التفصيلي"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <TextView
+            android:id="@+id/addressView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title5"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="العنوان التفصيلي"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></TextView>
+
+
+
+        <TextView
+            android:id="@+id/title7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addressView"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="مكان الأرض"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <EditText
+            android:id="@+id/place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title7"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:hint="مكان الأرض"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <TextView
+            android:id="@+id/title8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="المساحة (دنم)"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <EditText
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title8"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="المساحة"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <TextView
+            android:id="@+id/title9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quantity"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="السعر(بالليرة اللبنانية)"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title9"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:inputType="number"
+            android:hint="السعر"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <TextView
+            android:id="@+id/title13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="المدة (عدد السنوات)"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+        <EditText
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title13"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:hint="المدة (عدد السنوات)"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></EditText>
+
+        <TextView
+            android:id="@+id/title12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/duration"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="5dp"
+
+            android:fontFamily="@font/helv"
+            android:text="ملاحظات"
+            android:textAlignment="center"
+
+            android:textColor="@color/white"
+
+
+            android:textSize="17dp"></TextView>
+
+
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title12"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:gravity="center"
+            android:hint="ملاحظات"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="15dp"></EditText>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notes"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/ic_button_register"
+            android:fontFamily="@font/ir_sharp"
+            android:text="حفظ"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+
+    </RelativeLayout>
+</ScrollView>

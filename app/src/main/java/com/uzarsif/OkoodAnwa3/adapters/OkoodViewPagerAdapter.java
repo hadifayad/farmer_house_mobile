@@ -45,10 +45,10 @@ public class OkoodViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "عقود مع الجمعية";
+                return "عقود مثبتة مع الجمعية";
             case 1:
 
-            return "طلب عقد زراعي";
+            return "طلب عقد مزارعة";
 
         }
         return "post";

@@ -68,9 +68,14 @@ public class UnOfficialRecyclerViewAdapter extends RecyclerView.Adapter<com.uzar
     @Override
     public void onBindViewHolder(final com.uzarsif.Adapters.UnOfficialRecyclerViewAdapter.MyViewHolder holder, final int position) {
         final MandoubAked aked = mandoubAkeds.get(position);
-        String input = aked.getDate();
-        String output = input.substring(0, 10);
-        holder.date.setText(aked.getDate());
+
+        if(aked.getDate()!="" && aked.getDate()!=null) {
+            Log.d("TAG", "onBindViewHolder: "+aked.getDate());
+            String input = aked.getDate();
+            String output = input.substring(0, 10);
+            holder.date.setText(output);
+
+        }
         holder.type.setText(aked.getType());
 
 

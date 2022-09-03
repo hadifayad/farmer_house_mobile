@@ -242,7 +242,7 @@ public class ChatCommentsActivity extends AppCompatActivity {
     public void setComments(String chatId){
 
 //        final ProgressDialog dialog = ProgressDialog.show(ChatCommentsActivity.this, "",
-//                "Please wait...", true);
+//                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_CHAT_COMMENTS);

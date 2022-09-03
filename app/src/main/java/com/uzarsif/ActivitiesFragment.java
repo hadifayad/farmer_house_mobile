@@ -95,7 +95,7 @@ public class ActivitiesFragment extends Fragment {
 
 
         final ProgressDialog dialog = ProgressDialog.show(getActivity(), "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_USER_ACTIVITIES);

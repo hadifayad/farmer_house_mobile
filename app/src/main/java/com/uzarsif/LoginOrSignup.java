@@ -37,6 +37,8 @@ public class LoginOrSignup extends AppCompatActivity {
         profileViewPagerAdapter = new ProfileViewPagerAdapter(getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         profileViewPager.setAdapter(profileViewPagerAdapter);
 
+        profileViewPager.setCurrentItem(1);
+
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;

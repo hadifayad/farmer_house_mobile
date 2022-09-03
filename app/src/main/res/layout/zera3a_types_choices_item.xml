@@ -17,7 +17,7 @@
 
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
-
+android:visibility="gone"
         android:background="@drawable/light_blue_shape"></ImageView>
 
     <TextView

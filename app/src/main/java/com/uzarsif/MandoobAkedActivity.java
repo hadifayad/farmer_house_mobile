@@ -78,7 +78,7 @@ public class MandoobAkedActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 farmer = farmersValuesArray.get(position).toString();
-                Log.d("TAG", "onItemSelected: "+farmer);
+//                Log.d("TAG", "onItemSelected: "+farmer);
                 getProfileData(farmer);
             }
 

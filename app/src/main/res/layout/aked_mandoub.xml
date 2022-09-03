@@ -41,7 +41,6 @@
             android:src="@drawable/ic_dash"></ImageView>
 
 
-
         <TextView
             android:id="@+id/title1"
             android:layout_width="wrap_content"
@@ -77,18 +76,19 @@
             android:textColor="@color/black"
             android:textColorHint="#808080"
             android:textSize="17dp"></Spinner>
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/activity_farmer"
+            android:layout_centerHorizontal="true"
 
 
             android:layout_marginBottom="5dp"
 
             android:fontFamily="@font/helv"
-            android:text="الاسم الكامل"
+            android:text="الإسم الكامل"
             android:textAlignment="center"
 
             android:textColor="@color/white"
@@ -105,7 +105,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
-            android:hint="الاسم الكامل"
+            android:hint="الإسم الكامل"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
@@ -192,7 +192,7 @@
             android:layout_marginBottom="5dp"
 
             android:fontFamily="@font/helv"
-            android:text="البريد الالكتروني"
+            android:text="البريد الإلكتروني"
             android:textAlignment="center"
 
             android:textColor="@color/white"
@@ -211,7 +211,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
-            android:hint="البريد الالكتروني"
+            android:hint="البريد الإلكتروني"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
@@ -262,7 +262,7 @@
             android:layout_marginBottom="5dp"
 
             android:fontFamily="@font/helv"
-            android:text="نوع المنتج"
+            android:text="إسم الصنف"
             android:textAlignment="center"
 
             android:textColor="@color/white"
@@ -281,7 +281,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
-            android:hint="نوع المنتج"
+            android:hint="إسم الصنف"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
@@ -316,6 +316,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
+            android:inputType="number"
             android:hint="مكان الزراعة"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -332,7 +333,7 @@
             android:layout_marginBottom="5dp"
 
             android:fontFamily="@font/helv"
-            android:text="الكمية"
+            android:text="الكمية(بالكلغ)"
             android:textAlignment="center"
 
             android:textColor="@color/white"
@@ -349,6 +350,7 @@
             android:layout_centerInParent="true"
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_button"
+            android:inputType="number"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
             android:hint="الكمية"
@@ -367,7 +369,7 @@
             android:layout_marginBottom="5dp"
 
             android:fontFamily="@font/helv"
-            android:text="السعر"
+            android:text=" السعر(بالليرة اللبنانية)"
             android:textAlignment="center"
 
             android:textColor="@color/white"
@@ -387,6 +389,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:hint="السعر"
+            android:inputType="number"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textColorHint="#808080"
@@ -420,6 +423,7 @@
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
             android:gravity="center"
+            android:editable="false"
             android:hint="تاريخ التسليم"
             android:onClick="selectDate"
             android:textAlignment="center"

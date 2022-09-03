@@ -114,7 +114,7 @@ public class OfficialFragment extends Fragment {
 
 
         final ProgressDialog dialog = ProgressDialog.show(getActivity(), "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
         String url;
         // volley
 

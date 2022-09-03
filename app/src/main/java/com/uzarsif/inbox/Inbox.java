@@ -44,7 +44,7 @@ ImageView newMessageButton;
         LinearLayoutManager layoutManager = new LinearLayoutManager(Inbox.this);
         messagesRecyclerView.setLayoutManager(layoutManager);
         final ProgressDialog dialog = ProgressDialog.show(Inbox.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_USER_CHATS);
@@ -82,7 +82,7 @@ ImageView newMessageButton;
                                         startActivity(i);
 
 //                final ProgressDialog dialog = ProgressDialog.show(Inbox.this, "",
-//                        "Please wait...", true);
+//                        "الرجاء الإنتظار ...", true);
 //                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(Inbox.this);
 //                        String userId = prefs.getString("userId", "");
 //                        String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT);

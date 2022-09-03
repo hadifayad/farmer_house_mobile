@@ -4,12 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#F0F3F4"
     tools:context=".ui.home.HomeFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+
+        android:background="@color/app_green">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="أخبار يوزرسيف"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/white"
+
+android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginTop="5dp"
+            android:textSize="25dp"
+            android:fontFamily="@font/helv"
+       ></TextView>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/back"
+        android:backgroundTint="@color/white"
+ android:id="@+id/profile"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <com.uzarsif.CircularProgressBar
+            android:id="@+id/circularProgress"
+
+android:layout_gravity="center_vertical"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/hel1"
+            android:text="اضغط هنا لمتابعة ملىء ملفك الزراعي"></TextView>
+    </LinearLayout>
+
+
+
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/newsRecyclerView"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginBottom="20dp"

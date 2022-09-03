@@ -2,9 +2,12 @@ package com.uzarsif.fragmentsInProfile;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.RetryPolicy;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.uzarsif.NetworkHelper;
 import com.uzarsif.R;
 import com.uzarsif.Verify;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -29,7 +42,10 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.hbb20.CountryCodePicker;
+import com.uzarsif.splash;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class SignupInFragment extends Fragment {
@@ -88,19 +104,81 @@ public class SignupInFragment extends Fragment {
                 String countryCode = countryCodePicker.getSelectedCountryCode();
                 String fullPhoneNumber =  "+"+countryCode + phoneNumberString;
                 if(fullPhoneNumber!= null && fullPhoneNumber!="" && !fullPhoneNumber.equalsIgnoreCase("") && passwordString!= null && passwordString!="" && !passwordString.equalsIgnoreCase("")){
-
+////check if number already used
                     dialog = ProgressDialog.show(getContext(), "",
                             "الرجاء الانتظار ..", true);
+                    String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CHECK_PHONE);
+
+                    final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                            new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Log.d("TAG", "sendData: reach send data and signup" +response);
+if(response.contains("true")){
+    dialog.dismiss();
+
+    dialog = ProgressDialog.show(getContext(), "",
+            "الرجاء الانتظار ..", true);
 
 
 
-                    PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
-                            .setPhoneNumber(fullPhoneNumber)
-                            .setTimeout(60L, TimeUnit.SECONDS)
-                            .setActivity(getActivity())
-                            .setCallbacks(mCallBacks)
-                            .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
+    PhoneAuthOptions options = PhoneAuthOptions.newBuilder(auth)
+            .setPhoneNumber(fullPhoneNumber)
+            .setTimeout(60L, TimeUnit.SECONDS)
+            .setActivity(getActivity())
+            .setCallbacks(mCallBacks)
+            .build();
+    PhoneAuthProvider.verifyPhoneNumber(options);
+
+
+}
+
+
+
+                                else{
+    dialog.dismiss();
+    Toast.makeText(getContext(), "رقم الهاتف مستخدم", Toast.LENGTH_LONG).show();
+//
+                                }
+
+
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+//                        dialog.dismiss();
+                                    Toast.makeText(getContext(), "رقم الهاتف مستخدم", Toast.LENGTH_LONG).show();
+//                        Log.d("TAG", "onErrorResponse: "+error.getMessage().toString());
+
+
+                                }
+                            }) {
+                        @Override
+                        protected Map<String, String> getParams() throws AuthFailureError {
+                            HashMap<String, String> params = new HashMap<>();
+                            //    Map<String, String> params = new Hashtable<>();
+
+                            params.put("phone", fullPhoneNumber);
+
+
+
+
+
+                            Log.d("tag", params.toString());
+                            return params;
+
+                        }
+                    };
+                    {
+                        int socketTimeout = 30000;
+                        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+                        stringRequest.setRetryPolicy(policy);
+                        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+
+                        requestQueue.add(stringRequest);
+                    }
+
 
                 }
                 else{

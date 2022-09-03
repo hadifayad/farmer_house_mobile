@@ -47,6 +47,13 @@ public class ChatWithMandoubActivity extends AppCompatActivity {
             Log.d("TAG", "onCreate: "+role);
             setMandoubChats();
         }
+        else if(role.contains("2")){
+            Intent i = new Intent(ChatWithMandoubActivity.this, AdminMessagesActivity.class);
+
+
+            startActivity(i);
+            finish();
+        }
         else{
             Log.d("TAG", "onCreate:else "+role);
             setChats();
@@ -61,6 +68,7 @@ public class ChatWithMandoubActivity extends AppCompatActivity {
                 String role = prefs.getString("role", "");
                 if(role.contains("1")){
 
+
                     Intent i = new Intent(ChatWithMandoubActivity.this, MandoubFarmersActivity.class);
 
 
@@ -68,6 +76,7 @@ public class ChatWithMandoubActivity extends AppCompatActivity {
 
 
                 }
+
 else{
                     createChat();
                 }
@@ -84,7 +93,7 @@ else{
 
 
         final ProgressDialog dialog = ProgressDialog.show(ChatWithMandoubActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ChatWithMandoubActivity.this);
@@ -120,7 +129,7 @@ else{
 
 
         final ProgressDialog dialog = ProgressDialog.show(ChatWithMandoubActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ChatWithMandoubActivity.this);
@@ -157,7 +166,7 @@ else{
         //////
 
         final ProgressDialog dialog = ProgressDialog.show(ChatWithMandoubActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT_WITH_MANDOOB);
         Log.d("url", url.toString());
@@ -166,7 +175,7 @@ else{
 
         Map<String, String> params = new HashMap();
         params.put("userId", userId);
-        params.put("mandoob", "4");
+//        params.put("mandoob", "4");
 
 
 
@@ -207,7 +216,7 @@ else{
         ////
 ////        String chatId =null;
 //        final ProgressDialog dialog = ProgressDialog.show(ChatWithMandoubActivity.this, "",
-//                "Please wait...", true);
+//                "الرجاء الإنتظار ...", true);
 //
 //        // volley
 //        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ChatWithMandoubActivity.this);

@@ -33,8 +33,12 @@ public class EditProfileActivity extends AppCompatActivity {
 MultiSpinner.MultiSpinnerListener listener;
     List valuesArray = new ArrayList() ;
     public String villageId , landVillageId;
+    private String villageChosen;
+    private String landChosen;
+    com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            villages;
 
-Spinner villages,landVillage,landLegal,landWater;
+    Spinner landVillage,landLegal,landWater;
     CheckBox landPond,landPublic,landWell;
     Button upload;
 ProgressBar progress;
@@ -84,8 +88,11 @@ ProgressBar progress;
 
 //        progress = findViewById(R.id.progress);
 //        progress.setProgress(85);
-        getVillages();
         getProfileData();
+        getVillages();
+
+
+
 //        MultiSpinner multiSpinner = (MultiSpinner) findViewById(R.id.masdarTa2a);
 //        List<String> items = new ArrayList<>();
 //        items.add("hadi");
@@ -135,7 +142,7 @@ ProgressBar progress;
         // waterType spinner
         List<String> waterTypeChoices = new ArrayList<String>();
         waterTypeChoices.add("الري البعلي");
-        waterTypeChoices.add("الري ببالتنقيط");
+        waterTypeChoices.add("الري بالتنقيط");
         waterTypeChoices.add("الري بالرش");
         waterTypeChoices.add("ري بالجر");
         ArrayAdapter<String> waterTypeChoicesAdapter = new ArrayAdapter<String>(this, R.layout.checked_text_customized, waterTypeChoices);
@@ -329,13 +336,22 @@ ProgressBar progress;
                         @Override
                         public void onResponse(Village[] response) {
 
-                            Log.d("TAG", "onResponse:length " + response.length);
+                            Log.d("TAG", "onResponse:cjosen " +villageChosen+" ");
 
                             String VillageArray[] = new String[response.length];
 
 
                             for (int i = 0; i < response.length; i++) {
                                 VillageArray[i] = response[i].getName();
+                                if(response[i].getId().equals(villageChosen)){
+                                    Log.d("TAG", "fet: "+villageChosen +"length" +i);
+                                    villageChosen =String.valueOf(i);
+                                    Log.d("TAG", "fet: "+villageChosen +"length" +i);
+                                }
+//                                if(response[i].getId()==landChosen){
+//                                    landChosen = String.valueOf(i);
+//
+//                                }
 //                            valuesArray[i] = response[i].getId();
                                 valuesArray.add(response[i].getId());
                             }
@@ -348,6 +364,15 @@ ProgressBar progress;
 
                             villages.setAdapter(spinnerArrayAdapter);
                             landVillage.setAdapter(spinnerArrayAdapter);
+                            Log.d("TAG", "onResponse: asds "+valuesArray.get(Integer.parseInt(villageChosen)) );
+//                            villages.setSelection();
+
+//                            villages.setSelection(1,true);
+//                            villages.setSelection(Integer.parseInt(villageChosen));
+
+
+//                            villages.sele
+//                            landVillage.setSelection(Integer.parseInt(landChosen));
 //                            landVillage.setSelection(valuesArray.get(Integer.parseInt(landVillageId)));
 //                            Log.d("TAG", "onResponse: "+landVillageId +"length"+ valuesArray.get(Integer.parseInt(landVillageId)));
 //                            for(int i =0 ; i<valuesArray.size();i++){
@@ -389,7 +414,11 @@ public void uploadData(){
     params.put("land_related_public_water",land_related_public_water);
     params.put("land_has_pond",land_has_pond);
     params.put("land_has_well",land_has_well);
-    params.put("land_village",land_village);
+
+
+        params.put("land_village",land_village);
+
+
     params.put("land_state",land_state);
     params.put("land_water",land_water);
     params.put("human",masdar1String);
@@ -414,6 +443,7 @@ public void uploadData(){
             new Response.Listener<User>() {
                 @Override
                 public void onResponse(User response) {
+                    finish();
 
 
 
@@ -463,7 +493,7 @@ public void getProfileData(){
 
 
                 {
-                    Log.d("TAG", "onResponse: "+response.toString());
+//                    Log.d("TAG", "onResponse: "+response.toString());
 //                    villages = findViewById(R.id.SearchableSpinner);
 //                    landVillage = findViewById(R.id.landVillage);
 //                    landLegal = findViewById(R.id.landLegal);
@@ -476,13 +506,15 @@ public void getProfileData(){
                     landHeight.setText(response.getLand_height());
                     landId.setText(response.getLand_id());
                     addressView.setText(response.getAddress());
+                    villageChosen = response.getVillage_id();
+                    landChosen = response.getLand_id();
 
                     fullnameView.setText(response.getFullname());
                     secondPhone.setText(response.getSecond_phone());
                     email.setText(response.getEmail());
                     landArea.setText(response.getLand_area());
-                    Log.d("TAG", "onResponse: "+valuesArray.size() +" land "+response.getLand_village());
-//                  villages.setSelection(Integer.parseInt(response.getVillage()));
+//                    Log.d("TAG", "onResponse: "+valuesArray.size() +" land "+response.getLand_village());
+//                  villages.setSelection(Integer.parseInt(response.getVillage_id()));
 //                  villages.setSelection(Integer.parseInt(response.getLand_village()));
                     villageId =  response.getVillage();
                     landVillageId =  response.getLand_village();
@@ -534,6 +566,7 @@ public void getProfileData(){
                     if(response.getShabaket_ray().toString().equals("1")){
                         mo3adat7.setChecked(true);
                     }
+
 
 
 

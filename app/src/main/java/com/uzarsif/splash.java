@@ -50,8 +50,9 @@ public class splash extends AppCompatActivity {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(splash.this);
         String firstTime = prefs.getString("firstTime", "");
-        String userId = prefs.getString("userId", "");
 
+        String userId = prefs.getString("userId", "");
+        String role = prefs.getString("role", "");
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null && getIntent().hasExtra("chatId")) {
@@ -95,7 +96,7 @@ public class splash extends AppCompatActivity {
 
 
 
-                        updateToken(userId, token);
+                        updateToken(userId, token,role);
                     }
 
 
@@ -144,12 +145,12 @@ public class splash extends AppCompatActivity {
         });
     }
 
-    public void updateToken(String userId, String token){
+    public void updateToken(String userId, String token ,String role){
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_UPDATE_TOKEN);
         Log.d("TAG", "sendData: reach send data and signup");
 
 //        final ProgressDialog dialog = ProgressDialog.show(splash.this, "",
-//                "Please wait...", true);
+//                "الرجاء الإنتظار ...", true);
 
 
         final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -159,7 +160,21 @@ public class splash extends AppCompatActivity {
 //dialog.dismiss();
 
                         Log.d("token", "success");
+                        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(splash.this);
+                        SharedPreferences.Editor ed = prefs.edit();
+                        Log.d("TAG", "onResponse: "+response.toString());
 
+
+
+                        ed.putString("role", response.toString());
+
+//                            ed.putString(KEY_TOKEN, response.getRole().toString());
+//                            if (response.getLink() != null) {
+//                                ed.putString(KEY_LINK, response.getLink().toString());
+//                            }
+
+
+                        ed.commit();
 
 
 
@@ -170,7 +185,7 @@ public class splash extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
 //                        dialog.dismiss();
                         Toast.makeText(splash.this, "error", Toast.LENGTH_LONG).show();
-                        Log.d("TAG", "onErrorResponse: "+error.getMessage().toString());
+//                        Log.d("TAG", "onErrorResponse: "+error.getMessage().toString());
 
 
                     }
@@ -186,6 +201,7 @@ public class splash extends AppCompatActivity {
 
 
                 params.put("token", token);
+                params.put("role", role);
 
 
 

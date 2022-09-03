@@ -2,79 +2,149 @@
 android:layout_height="match_parent"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-android:background="@color/app_green"
+android:background="@color/white"
 xmlns:android="http://schemas.android.com/apk/res/android"
 tools:context=".WhoActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/t"
+        android:gravity="center"
+        android:background="@color/app_green">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/app_green"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/helv"
+            android:layout_centerHorizontal="true"
+       android:textColor="@color/white"
+            android:textAlignment="center"
+            android:id="@+id/man"
+            android:textSize="25dp"
+            android:text="من نحن"
+
+            >
+
+
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+
+        android:layout_below="@id/t"
+        android:gravity="center"
+        android:background="@color/app_brown"></LinearLayout>
 
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
 
 
-
-    <TextView
-        android:id="@+id/daleell"
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-
-        android:text="@string/who"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:fontFamily="@font/ir_sharp"
-
-        android:textAlignment="center"
+        android:id="@+id/ta3reef"
+        android:layout_below="@id/man"
+        android:backgroundTint="@color/app_brown"
+        android:text="تعريف"
         android:textColor="@color/white"
-
-        android:textColorHint="#808080"
-        android:textSize="16dp"></TextView>
-    <TextView
-        android:id="@+id/txt2"
-        android:layout_below="@id/daleell"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-
-
-        android:text="@string/who2"
-
-        android:fontFamily="@font/ir_sharp"
-
-        android:textAlignment="center"
-        android:textColor="@color/white"
-
-        android:textColorHint="#808080"
-        android:textSize="16dp"></TextView>
-    <TextView
-        android:id="@+id/txt3"
-        android:layout_below="@id/txt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-        android:text="@string/who3"
-
         android:fontFamily="@font/helv"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginBottom="25dp"
+        android:textAlignment="center"
+        android:background="@drawable/ic_button"></androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bayt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ta3reef"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/ic_button"
+            android:backgroundTint="@color/app_brown"
+            android:fontFamily="@font/helv"
+            android:text="بيت المزارع"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"></androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/torok"
+            android:layout_below="@id/bayt"
+            android:backgroundTint="@color/app_brown"
+            android:text="طرق عملنا"
+            android:textColor="@color/white"
+            android:fontFamily="@font/helv"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginBottom="20dp"
+            android:textAlignment="center"
+            android:background="@drawable/ic_button"></androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/mazroat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/torok"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/ic_button"
+            android:backgroundTint="@color/app_brown"
+            android:fontFamily="@font/helv"
+            android:text="المزروعات المستهدفة"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"></androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/amal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mazroat"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/ic_button"
+        android:backgroundTint="@color/app_brown"
+        android:fontFamily="@font/helv"
+        android:text="عمل المندوبين والتواصل مع المزارعين"
 
         android:textAlignment="center"
         android:textColor="@color/white"
-
-        android:textColorHint="#808080"
-        android:textSize="20dp"></TextView>>
+        android:textSize="18dp"></androidx.appcompat.widget.AppCompatButton>
 
 
-    <!--<androidx.appcompat.widget.AppCompatButton-->
-    <!--    android:id="@+id/sell"-->
+
+
+
+
+    </LinearLayout>
+
+
 
 
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:layout_alignParentBottom="true"
+    android:tint="@color/app_green_deep"
 
 
     android:src="@drawable/splash_model"></ImageView>

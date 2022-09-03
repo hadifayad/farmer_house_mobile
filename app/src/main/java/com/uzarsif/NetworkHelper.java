@@ -37,8 +37,9 @@ public class NetworkHelper {
     public static final String ACTION_GET_NEWS ="mobile/get-news";
     public static final String ACTION_GET_CHILDREN ="mobile/get-children";
     public static final String ACTION_GET_TOP_PARENT ="mobile/get-top-parent";
-    public static final String ACTION_GET_USER_CHATS_WITH_MANDOUB ="mobile/get-user-chats-with-mandoub";
     public static final String ACTION_GET_TOP_PARENT_AFTER_PICKING_PLANT ="mobile/get-top-parent-after-picking-plant";
+    public static final String ACTION_GET_USER_CHATS_WITH_MANDOUB ="mobile/get-user-chats-with-mandoub";
+    public static final String ACTION_GET_ADMIN_CHATS ="mobile/get-admin-chats";
     public static final String ACTION_GET_PLANTS ="mobile/get-search-plants";
     public static final String ACTION_CREATE_CHAT ="mobile/create-chat";
     public static final String ACTION_GET_CHILDREN_AND_SAVE_MESSAGE = "mobile/get-children-and-save-message";
@@ -64,6 +65,8 @@ public class NetworkHelper {
     public static final String GET_MANDOUB_FARMER_AKEDS ="mobile/get-mandoub-farmer-akeds"  ;
     public static final String GET_FARMER_OFFICIAL_AKEDS = "mobile/get-farmer-official-akeds"  ;
     public static final String ACTION_UPDATE_TOKEN = "mobile/update-token"  ;
+    public static final String ACTION_CHECK_PHONE = "mobile/check-phone"  ;
+    public static final String ACTION_CHANGE_PASSWORD = "mobile/change-password";
 
     public static String getUrl(String action) {
         String serverURL = "https://" + SERVER_IP + "/web/index.php?r=";

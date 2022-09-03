@@ -169,6 +169,8 @@ public class FarmerAkedActivity extends AppCompatActivity {
             params.put("place",place.getText().toString());
             params.put("notes",notes.getText().toString());
             params.put("type",type.getText().toString());
+            params.put("area","");
+            params.put("duration","");
 
 
 

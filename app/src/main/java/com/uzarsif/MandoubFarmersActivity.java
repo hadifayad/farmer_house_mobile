@@ -38,7 +38,7 @@ public class MandoubFarmersActivity extends AppCompatActivity {
     public void setUsers(){
 
         final ProgressDialog dialog = ProgressDialog.show(MandoubFarmersActivity.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_MANDOUB_FARMERS);
         Log.d("url", url.toString());

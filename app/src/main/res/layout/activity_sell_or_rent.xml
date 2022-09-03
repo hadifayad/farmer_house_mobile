@@ -1,0 +1,96 @@
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/app_green"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".SellOrRent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+
+
+
+
+        <!--    <androidx.appcompat.widget.AppCompatButton-->
+        <!--    android:id="@+id/daleell"-->
+        <!--    android:layout_width="wrap_content"-->
+        <!--    android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--    android:layout_marginTop="30dp"-->
+        <!--    android:layout_marginBottom="10dp"-->
+        <!--    android:background="@drawable/ic_button"-->
+        <!--    android:fontFamily="@font/ir_sharp"-->
+        <!--    android:hint="دليل المزارع"-->
+        <!--    android:textAlignment="center"-->
+        <!--    android:textColor="@color/black"-->
+
+        <!--    android:textColorHint="#808080"-->
+        <!--        android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>>-->
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/be3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="طلب بيع منتج زراعي "
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/daman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_button"
+            android:fontFamily="@font/ir_sharp"
+            android:hint="عرض ضمان أرض"
+
+
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
+
+        <!--<androidx.appcompat.widget.AppCompatButton-->
+        <!--    android:id="@+id/sell"-->
+        <!--    android:layout_width="wrap_content"-->
+        <!--    android:layout_height="wrap_content"-->
+
+        <!--    android:layout_centerInParent="true"-->
+        <!--    android:layout_gravity="center"-->
+        <!--    android:layout_marginBottom="10dp"-->
+        <!--    android:background="@drawable/ic_button_register"-->
+        <!--    android:fontFamily="@font/ir_sharp"-->
+        <!--    android:text="بيع المحصول"-->
+        <!--    android:textAlignment="center"-->
+        <!--    android:textColor="@color/white"-->
+        <!--    android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>-->
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentBottom="true"
+
+
+        android:src="@drawable/splash_model"></ImageView>
+</RelativeLayout>

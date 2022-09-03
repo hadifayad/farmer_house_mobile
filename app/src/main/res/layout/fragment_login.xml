@@ -39,11 +39,12 @@
         android:layout_below="@+id/ccp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="10dp"
+        android:inputType="phone"
         android:background="@drawable/ic_button"
         android:fontFamily="@font/ir_sharp"
         android:hint="ادخل من خلال رقم هاتفك"
-        android:textAlignment="center"
 
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="#808080"
         android:textSize="17dp"></EditText>
@@ -65,14 +66,25 @@
         android:textColor="@color/black"
         android:textColorHint="#808080"
         android:textSize="17dp"></EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="نسيت كلمة المرور ؟ اضغط هنا"
+        android:textColor="@color/white"
+        android:id="@+id/forget"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login"
+        android:layout_marginTop="8dp"
+        android:textSize="14dp"
+        android:fontFamily="@font/hel1"></TextView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/passwordView"
-        android:layout_centerInParent="true"
 
+        android:layout_centerInParent="true"
         android:layout_marginBottom="-7dp"
         android:background="@drawable/ic_button_register"
         android:fontFamily="@font/ir_sharp"

@@ -16,6 +16,7 @@ public class ProfileViewPagerAdapter extends FragmentPagerAdapter {
     public ProfileViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
 
+
     }
 
     @NonNull
@@ -23,12 +24,13 @@ public class ProfileViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                Fragment postInProfileFragment = new SignupInFragment();
-
-                return postInProfileFragment;
-            case 1:
                 Fragment LoginInFragment = new LoginInFragment();
                 return LoginInFragment;
+            case 1:
+
+            Fragment postInProfileFragment = new SignupInFragment();
+
+            return postInProfileFragment;
 
         }
         Fragment SignupInFragment = new SignupInFragment();
@@ -44,9 +46,9 @@ public class ProfileViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         switch (position) {
-            case 0:
-                return "انشاء حساب";
             case 1:
+                return "انشاء حساب";
+            case 0:
                 return "تسجيل دخول";
 
         }

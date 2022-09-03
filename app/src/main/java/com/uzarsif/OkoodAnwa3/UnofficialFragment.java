@@ -28,6 +28,7 @@ import com.uzarsif.FarmerAkedActivity;
 import com.uzarsif.GsonRequest;
 import com.uzarsif.NetworkHelper;
 import com.uzarsif.R;
+import com.uzarsif.SellOrRent;
 import com.uzarsif.VolleySingleton;
 import com.uzarsif.models.MandoubAked;
 import com.google.firebase.FirebaseApp;
@@ -95,7 +96,7 @@ public class UnofficialFragment extends Fragment {
         addu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), FarmerAkedActivity.class);
+                Intent i = new Intent(getContext(), SellOrRent.class);
                 startActivity(i);
             }
         });
@@ -122,7 +123,7 @@ public class UnofficialFragment extends Fragment {
 
 
         final ProgressDialog dialog = ProgressDialog.show(getActivity(), "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
         String url = null;
 
         // volley

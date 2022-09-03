@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
 <LinearLayout android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,14 +12,14 @@
     android:weightSum="3"
     android:background="@color/app_green"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
     tools:context=".LoginOrSignup">
 
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:layout_weight="1.6"
+    android:layout_weight="1"
 
     android:background="@color/app_brown">
 
@@ -23,9 +29,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
 android:layout_alignParentRight="true"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginRight="88dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
 
 
         android:src="@drawable/ic_dot"></ImageView>
@@ -40,29 +46,19 @@ android:layout_alignParentRight="true"
         android:fontFamily="@font/helv"
         android:text="سجل حسابك الجديد"
         android:textColor="@color/white"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="5dp"
         android:textSize="30dp"
         android:textStyle="bold"
 
 
         ></TextView>
 
-    <ImageView
-        android:id="@+id/dash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/line1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="40dp"
 
-        android:layout_marginBottom="40dp"
-
-        android:src="@drawable/ic_dash"></ImageView>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dash"
+        android:layout_below="@id/line1"
         android:layout_alignParentRight="true"
         android:layout_marginRight="40dp"
         android:fontFamily="@font/ir_sharp"
@@ -80,7 +76,7 @@ android:layout_alignParentRight="true"
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:layout_weight="1.4">
+    android:layout_weight="2">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/profileViewPager"
@@ -128,3 +124,5 @@ android:layout_alignParentRight="true"
 
 
 </LinearLayout>
+
+</ScrollView>

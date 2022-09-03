@@ -44,7 +44,7 @@ tools:context=".CreateMessageOptions">
     android:layout_marginBottom="10dp"
     android:background="@drawable/ic_button"
     android:fontFamily="@font/ir_sharp"
-    android:hint="أنسب مزروعات"
+    android:hint="اختر أنسب مزروعات "
     android:inputType="textPassword"
     android:textAlignment="center"
     android:textColor="@color/black"
@@ -78,12 +78,12 @@ tools:context=".CreateMessageOptions">
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_button"
             android:fontFamily="@font/ir_sharp"
-            android:hint="عقود الزراعة"
-
-
+            android:hint="عقود المزراعة مع يوزرسيف (قريبا)"
+android:backgroundTint="#CC808080"
+android:clickable="false"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textColorHint="#808080"
+            android:textColorHint="@color/black"
             android:textSize="17dp"></androidx.appcompat.widget.AppCompatButton>
 
 <!--<androidx.appcompat.widget.AppCompatButton-->

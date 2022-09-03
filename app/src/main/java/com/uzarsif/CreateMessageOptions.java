@@ -62,7 +62,7 @@ public class CreateMessageOptions extends AppCompatActivity {
 
 //
 //                final ProgressDialog dialog = ProgressDialog.show(CreateMessageOptions.this, "",
-//                        "Please wait...", true);
+//                        "الرجاء الإنتظار ...", true);
 //                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(CreateMessageOptions.this);
 //                String userId = prefs.getString("userId", "");
 //                String url = NetworkHelper.getUrl(NetworkHelper.ACTION_CREATE_CHAT);

@@ -72,7 +72,7 @@ public class CreateMessage extends AppCompatActivity {
 
 
         final ProgressDialog dialog = ProgressDialog.show(CreateMessage.this, "",
-                "Please wait...", true);
+                "الرجاء الإنتظار ...", true);
 
         // volley
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_TOP_PARENT);
