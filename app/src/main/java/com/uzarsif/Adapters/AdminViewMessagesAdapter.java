@@ -81,10 +81,11 @@ public class AdminViewMessagesAdapter extends RecyclerView.Adapter<AdminViewMess
             @Override
             public void onClick(View v) {
 
-                Intent k = new Intent(context, ChatCommentsActivity.class);
+                Intent k = new Intent(context, com.uzarsif.AdminViewMessage.class);
+
 
                 k.putExtra("chatId", chat.getId());
-
+                k.putExtra("mandoub", chat.getMandoob());
                 Log.d("TAG", "onClick: +parent = "+k.toString());
                 context.startActivity(k);
 

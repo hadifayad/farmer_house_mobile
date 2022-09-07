@@ -10,6 +10,8 @@ public class AdminViewMessage {
     String user;
     @SerializedName("mandoub")
     String mandoub;
+    @SerializedName("mandoob")
+    String mandoob;
 
     @SerializedName("title")
     String title;
@@ -50,6 +52,10 @@ public class AdminViewMessage {
 
     public void setMandoob(String mandoob) {
         this.mandoub = mandoub;
+    }
+
+    public String getMandoob() {
+        return mandoob;
     }
 
     public String getTitle() {

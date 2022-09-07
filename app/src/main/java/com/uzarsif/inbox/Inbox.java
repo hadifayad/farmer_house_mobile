@@ -50,7 +50,7 @@ ImageView newMessageButton;
         String url = NetworkHelper.getUrl(NetworkHelper.ACTION_GET_USER_CHATS);
         Log.d("url", url.toString());
         Map<String, String> params = new HashMap();
-        params.put("userId", "2");
+//        params.put("userId", "2");
         GsonRequest<Chat[]> myGsonRequest = new GsonRequest<com.uzarsif.models.Chat[]>(Request.Method.POST, url, com.uzarsif.models.Chat[].class, null, params,
                 new Response.Listener<com.uzarsif.models.Chat[]>() {
                     @Override
